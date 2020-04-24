@@ -10,12 +10,15 @@ package game;
 //
 //
 
+import java.util.ArrayList;
 
-
-
-public class Game implements EndGameListner
+//singletonná kell tenni, idk how
+public class Game
 {
 	private int nOfPlayers;
+	private ArrayList<Player> players;
+	private Board board;
+	
 	public void startGame()
 	{
 	}
@@ -30,6 +33,10 @@ public class Game implements EndGameListner
 	
 	public void notifyWin()
 	{
+	}
+	
+	public void moveBear()
+	{		
 	}
 	
 	public void readFile(String s)

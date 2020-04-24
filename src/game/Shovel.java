@@ -13,7 +13,7 @@ package game;
 
 
 
-public class Shovel extends Item implements Item
+public class Shovel implements Item
 {
 	public void used(Piece p)
 	{

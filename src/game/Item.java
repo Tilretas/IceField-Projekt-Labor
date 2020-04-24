@@ -13,10 +13,7 @@ package game;
 
 
 
-public class Item
+public interface Item
 {
-	private Piece items;
-	public void used(Piece p)
-	{
-	}
+	public void used(Piece p);
 }

@@ -13,7 +13,7 @@ package game;
 
 
 
-public class Suit extends Item implements Item
+public class Suit implements Item
 {
 	public void used(Piece p)
 	{
@@ -21,5 +21,6 @@ public class Suit extends Item implements Item
 	
 	public Tile getDirection()
 	{
+		return new Tile(); //ideiglenes
 	}
 }

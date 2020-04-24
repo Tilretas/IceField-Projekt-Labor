@@ -10,16 +10,16 @@ package game;
 //
 //
 
-
-
+import java.util.ArrayList;
 
 public class Tile
 {
+	private ArrayList<Piece> playersOnTile;
+	private ArrayList<Tile> neighbors; //valahogy össze kéne kötni a directionnal -> map?
 	private int snow;
 	private boolean igloo;
-	private Object playersOnTile;
-	private Object capactiy;
-	private Tile neighbors;
+	private int capactiy;
+	
 	public void addSnow()
 	{
 	}
@@ -38,13 +38,12 @@ public class Tile
 	
 	public int getSnow()
 	{
+		return snow;
 	}
 	
 	public int getCapacity()
 	{
+		return capactiy;
 	}
 	
-	public class Jung, Yoontae
-	{
-	}
 }

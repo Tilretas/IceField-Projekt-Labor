@@ -13,7 +13,7 @@ package game;
 
 
 
-public class Part extends Item implements Item
+public class Part implements Item
 {
 	public void used(Piece p)
 	{

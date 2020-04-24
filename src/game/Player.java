@@ -17,6 +17,7 @@ public class Player
 {
 	private Piece piece;
 	private Colour colour;
+	
 	public void move(Tile t)
 	{
 	}

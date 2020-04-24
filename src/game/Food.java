@@ -13,7 +13,7 @@ package game;
 
 
 
-public class Food extends Item implements Item
+public class Food implements Item
 {
 	public void used(Piece p)
 	{
