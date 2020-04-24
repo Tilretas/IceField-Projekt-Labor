@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Piece
 {
-	private ArrayList<Item> inventory;
+	private ArrayList<Item> inventory = new ArrayList();
 	private int bodyTemp;
 	private int actionPoints;
 	private boolean inWater;
@@ -19,22 +19,27 @@ public abstract class Piece
 	
 	public void addItem(Item i)
 	{
+		inventory.add(i);
 	}
 	
 	public void removeItem(Item i)
 	{
+		inventory.remove(i);
 	}
 	
 	public void useItem(Item i)
 	{
+		i.used(this);
 	}
 	
 	public void incBodyTemp()
 	{
+		bodyTemp++;
 	}
 	
 	public void decBodyTemp()
 	{
+		bodyTemp--;
 	}
 	
 	public void setInWater(boolean value)
