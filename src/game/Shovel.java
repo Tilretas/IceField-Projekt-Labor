@@ -6,4 +6,9 @@ public class Shovel implements Item
 	{
 		p.getTile().removeSnow();
 	}
+	
+	public char getName() 
+	{
+		return 'S';
+	}
 }

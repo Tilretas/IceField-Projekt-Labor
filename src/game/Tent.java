@@ -10,4 +10,9 @@ public class Tent implements Item
 	public void destroy()
 	{
 	}
+	
+	public char getName() 
+	{
+		return 'T';
+	}
 }

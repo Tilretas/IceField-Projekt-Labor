@@ -14,4 +14,9 @@ public class Rope implements Item
 	private void savePiece(Piece p)
 	{
 	}
+	
+	public char getName() 
+	{
+		return 'R';
+	}
 }

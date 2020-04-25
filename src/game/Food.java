@@ -7,4 +7,8 @@ public class Food implements Item
 		p.incBodyTemp();
 		p.removeItem(this);
 	}
+	public char getName() 
+	{
+		return 'F';
+	}
 }

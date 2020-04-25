@@ -10,4 +10,9 @@ public class Suit implements Item
 	{
 		return new Tile(); //ideiglenes
 	}
+	
+	public char getName() 
+	{
+		return 'D'; //diving suit (ütközött a shovellel)
+	}
 }

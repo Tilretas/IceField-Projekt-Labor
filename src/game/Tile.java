@@ -35,6 +35,14 @@ public class Tile
 		return snow;
 	}
 	
+	public Item getItem() {
+		return null;
+	}
+	
+	public ArrayList<Piece> getPlayers(){
+		return playersOnTile;
+	}
+	
 	public int getCapacity()
 	{
 		return capactiy;

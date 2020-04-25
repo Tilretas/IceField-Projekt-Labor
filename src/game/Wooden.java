@@ -21,8 +21,13 @@ public class Wooden extends Shovel
 		}
 		catch(Exception e) 
 		{
-			System.out.println(e.toString());
+			System.out.println(e.toString()); //ez minek?
 		}
 		
+	}
+	
+	public char getName() 
+	{
+		return 'W';
 	}
 }
