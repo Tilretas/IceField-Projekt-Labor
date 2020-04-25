@@ -22,7 +22,7 @@ public class Board
 
 	}
 	
-	public void drawBoard() 
+	public void drawBoard() // ! medvét még nem rajzolja, mindig mutatja a teherbírást !
 	{	
 		for (int y = 0; y < 5; y++) {
 			System.out.println();
