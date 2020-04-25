@@ -5,6 +5,11 @@ public class Player
 	private Piece piece;
 	private Colour colour;
 	
+	public Piece getPiece() 
+	{
+		return piece;
+	}
+	
 	public void move(Tile t)
 	{
 	}
