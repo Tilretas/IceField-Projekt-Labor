@@ -44,6 +44,7 @@ public abstract class Piece
 	
 	public void setInWater(boolean value)
 	{
+		inWater = value;
 	}
 	
 	public void die()
