@@ -4,6 +4,14 @@ public class Wooden extends Shovel
 {
 	private int durability;
 
+	public int getDurability() {
+		return durability;
+	}
+
+	public void setDurability(int durability) {
+		this.durability = durability;
+	}
+
 	public void used(Piece p)
 	{
 		try 
