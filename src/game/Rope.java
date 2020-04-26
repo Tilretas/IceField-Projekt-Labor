@@ -4,6 +4,7 @@ public class Rope implements Item
 {
 	public void used(Piece p)
 	{
+		savePiece(getPiece());
 	}
 	
 	public Piece getPiece()
@@ -13,6 +14,7 @@ public class Rope implements Item
 	
 	private void savePiece(Piece p)
 	{
+		
 	}
 	
 	public char getName() 

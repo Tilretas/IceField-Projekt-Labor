@@ -43,6 +43,13 @@ public abstract class Piece
 	
 	public void useItem(Item i)
 	{
+		
+		if(actionPoints == 0)
+		{
+			System.out.println("No more action points!");
+			return;
+		}
+		
 		boolean hasItem = false;
 		try 
 		{
@@ -69,7 +76,13 @@ public abstract class Piece
 	
 	public void dig() 
 	{
-		this.getTile().removeSnow();
+		if(actionPoints == 0)
+		{
+			System.out.println("No more action points!");
+			return;
+		}
+		
+		this.getTile().removeSnow();		
 	}
 	
 	public void incBodyTemp()
