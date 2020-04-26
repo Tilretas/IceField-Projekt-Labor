@@ -20,9 +20,9 @@ public class Tile
 		snow--;
 	}
 	
-	public void movedOn(Player p)
+	public void movedOn(Piece p)
 	{
-		playersOnTile.add(p.getPiece());
+		playersOnTile.add(p);
 	}
 	
 	public void buildIgloo()

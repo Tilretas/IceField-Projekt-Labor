@@ -6,7 +6,7 @@ public class Sea extends Tile
 	{
 	}
 	
-	public void movedOn(Player p)
+	public void movedOn(Piece p)
 	{
 	}
 }

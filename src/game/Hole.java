@@ -3,9 +3,9 @@ package game;
 public class Hole extends Tile
 {
 	private boolean covered;
-	public void movedOn(Player p)
+	public void movedOn(Piece p)
 	{
-		playersOnTile.add(p.getPiece());
-		p.getPiece().setInWater(true);
+		playersOnTile.add(p);
+		p.setInWater(true);
 	}
 }
