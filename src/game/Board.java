@@ -4,8 +4,6 @@ import java.io.Console;
 import java.io.File;
 import java.util.ArrayList;
 
-import jdk.nashorn.internal.runtime.regexp.joni.Config;
-
 public class Board
 {
 	private ArrayList<Piece> pieces;
