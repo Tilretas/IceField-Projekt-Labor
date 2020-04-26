@@ -13,6 +13,20 @@ public abstract class Piece
 	
 	public void moved(Tile t)
 	{
+		//TODO
+		if(actionPoints == 0)
+		{
+			System.out.println("No more action points!");
+		}
+		else
+		{
+			if(t.bear == true)	//hogyan mukodik a medve?
+			{
+				
+			}
+			
+			t.movedOn(); //tile movedOn fv-e Player parametert kap, nem piece-t kene?
+		}
 	}
 	
 	public abstract void ability(Tile t);
