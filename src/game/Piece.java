@@ -29,18 +29,22 @@ public abstract class Piece
 	
 	public void useItem(Item i)
 	{
+		boolean hasItem = false;
 		try 
 		{
 			for(int j = 0; j < inventory.size(); j++) 
 			{
-				if(inventory.get(j).getClass().getClass().equals(i.getClass()))		//Ebben egyáltalán nem vagyok biztos hogy ez így jó, de nem tudom, hogy instanceof nélkül hogy kéne
+				if(inventory.get(j).getClass().equals(i.getClass()))		//Ebben egyáltalán nem vagyok biztos hogy ez így jó, de nem tudom, hogy instanceof nélkül hogy kéne
 				{
+					hasItem = true;
 					i.used(this);
+					break;
 				}
-				else 
-				{
-					throw new Exception("Nincs ilyen tárgyad!");
-				}
+			}
+			
+			if(!hasItem) 
+			{
+				throw new Exception("Nincs ilyen tárgyad!");
 			}
 		}
 		catch(Exception e) 
