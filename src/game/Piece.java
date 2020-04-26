@@ -20,12 +20,12 @@ public abstract class Piece
 		}
 		else
 		{
-			if(t.bear == true)	//hogyan mukodik a medve?
+			if(t.getBear() == true)	
 			{
-				
+				this.die();
+				//game over, de annak az implementációja nem itt van I guess
 			}
-			
-			t.movedOn(); //tile movedOn fv-e Player parametert kap, nem piece-t kene?
+			t.movedOn(this);
 		}
 	}
 	
