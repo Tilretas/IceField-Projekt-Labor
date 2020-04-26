@@ -11,6 +11,38 @@ public class Board
 	private ArrayList<Item> items;
 	private Bear bear;
 	
+	public ArrayList<Piece> getPieces() {
+		return pieces;
+	}
+
+	public void setPieces(ArrayList<Piece> pieces) {
+		this.pieces = pieces;
+	}
+
+	public ArrayList<Tile> getTiles() {
+		return tiles;
+	}
+
+	public void setTiles(ArrayList<Tile> tiles) {
+		this.tiles = tiles;
+	}
+
+	public ArrayList<Item> getItems() {
+		return items;
+	}
+
+	public void setItems(ArrayList<Item> items) {
+		this.items = items;
+	}
+
+	public Bear getBear() {
+		return bear;
+	}
+
+	public void setBear(Bear bear) {
+		this.bear = bear;
+	}
+
 	public void initBoard(File setup)
 	{
 		String confTiles[];

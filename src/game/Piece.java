@@ -9,6 +9,50 @@ public abstract class Piece
 	private int actionPoints;
 	private boolean inWater;
 	private Tile onTile;
+	public ArrayList<Item> getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(ArrayList<Item> inventory) {
+		this.inventory = inventory;
+	}
+
+	public int getBodyTemp() {
+		return bodyTemp;
+	}
+
+	public void setBodyTemp(int bodyTemp) {
+		this.bodyTemp = bodyTemp;
+	}
+
+	public int getActionPoints() {
+		return actionPoints;
+	}
+
+	public void setActionPoints(int actionPoints) {
+		this.actionPoints = actionPoints;
+	}
+
+	public Tile getOnTile() {
+		return onTile;
+	}
+
+	public void setOnTile(Tile onTile) {
+		this.onTile = onTile;
+	}
+
+	public Colour getColour() {
+		return colour;
+	}
+
+	public void setColour(Colour colour) {
+		this.colour = colour;
+	}
+
+	public boolean isInWater() {
+		return inWater;
+	}
+
 	private Colour colour;
 	
 	public void moved(Tile t)

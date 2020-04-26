@@ -2,6 +2,18 @@ package game;
 
 public class Player
 {
+	public Colour getColour() {
+		return colour;
+	}
+
+	public void setColour(Colour colour) {
+		this.colour = colour;
+	}
+
+	public void setPiece(Piece piece) {
+		this.piece = piece;
+	}
+
 	private Piece piece;
 	private Colour colour;
 	
