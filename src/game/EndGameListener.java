@@ -1,6 +1,6 @@
 package game;
 
-public class EndGameListner
+public class EndGameListener
 {
 	public void notifyPlayerDied(Piece p)
 	{

@@ -13,6 +13,20 @@ public abstract class Piece
 	
 	public void moved(Tile t)
 	{
+		//TODO
+		if(actionPoints == 0)
+		{
+			System.out.println("No more action points!");
+		}
+		else
+		{
+			if(t.getBear() == true)	
+			{
+				this.die();
+				//game over, de annak az implementációja nem itt van I guess
+			}
+			t.movedOn(this);
+		}
 	}
 	
 	public abstract void ability(Tile t);
@@ -29,7 +43,33 @@ public abstract class Piece
 	
 	public void useItem(Item i)
 	{
-		i.used(this);
+		boolean hasItem = false;
+		try 
+		{
+			for(int j = 0; j < inventory.size(); j++) 
+			{
+				if(inventory.get(j).getClass().equals(i.getClass()))		//Ebben egyáltalán nem vagyok biztos hogy ez így jó, de nem tudom, hogy instanceof nélkül hogy kéne
+				{
+					hasItem = true;
+					i.used(this);
+					break;
+				}
+			}
+			
+			if(!hasItem) 
+			{
+				throw new Exception("Nincs ilyen tárgyad!");
+			}
+		}
+		catch(Exception e) 
+		{
+			System.out.println(e.toString());
+		}
+	}
+	
+	public void dig() 
+	{
+		this.getTile().removeSnow();
 	}
 	
 	public void incBodyTemp()

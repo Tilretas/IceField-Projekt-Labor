@@ -7,7 +7,7 @@ public class Tile
 	protected ArrayList<Piece> playersOnTile;
 	private ArrayList<Tile> neighbors; //valahogy össze kéne kötni a directionnal -> map?
 	private int snow;
-	private boolean igloo;
+	private boolean igloo, bear;
 	private int capactiy;
 	
 	public void addSnow()
@@ -20,9 +20,9 @@ public class Tile
 		snow--;
 	}
 	
-	public void movedOn(Player p)
+	public void movedOn(Piece p)
 	{
-		playersOnTile.add(p.getPiece());
+		playersOnTile.add(p);
 	}
 	
 	public void buildIgloo()
@@ -46,6 +46,11 @@ public class Tile
 	public int getCapacity()
 	{
 		return capactiy;
+	}
+	
+	public boolean getBear()
+	{
+		return bear;
 	}
 	
 }

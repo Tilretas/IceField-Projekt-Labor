@@ -2,9 +2,9 @@ package game;
 
 public class Unstable extends Ice
 {
-	public void movedOn(Player p)
+	public void movedOn(Piece p)
 	{
-		playersOnTile.add(p.getPiece());
+		playersOnTile.add(p);
 		if(playersOnTile.size() > getCapacity())
 			flip();
 	}
