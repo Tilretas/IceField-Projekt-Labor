@@ -19,6 +19,7 @@ public class Wooden extends Shovel
 			if(durability > 0) 
 			{
 				p.getTile().removeSnow();
+				p.getTile().removeSnow();
 				durability--;				
 			}
 			else 
@@ -29,7 +30,7 @@ public class Wooden extends Shovel
 		}
 		catch(Exception e) 
 		{
-			System.out.println(e.toString()); //ez minek?
+			System.out.println(e.toString()); //ez minek? ; Gondoltam valahogy jelezni kéne, ha eltörik az ásó nem?
 		}
 		
 	}

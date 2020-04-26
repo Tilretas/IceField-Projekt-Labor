@@ -24,6 +24,7 @@ public class Player
 	
 	public void move(Tile t)
 	{
+		getPiece().moved(t);
 	}
 	
 	public void useItem(Item i)

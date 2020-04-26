@@ -8,9 +8,10 @@ public class Ice extends Tile
 		this.item = item;
 	}
 
-	public void movedOn(Player p)
+
+	public void movedOn(Piece p)
 	{
-		playersOnTile.add(p.getPiece());
+		playersOnTile.add(p);
 	}
 	
 	public Item getItem()
