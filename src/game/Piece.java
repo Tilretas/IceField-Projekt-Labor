@@ -51,7 +51,7 @@ public abstract class Piece
 		this.colour = colour;
 	}
 
-	public boolean isInWater() {
+	public boolean getInWater() {
 		return inWater;
 	}	
 	

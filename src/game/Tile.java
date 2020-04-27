@@ -5,14 +5,20 @@ import java.util.ArrayList;
 public class Tile
 {
 	protected ArrayList<Piece> playersOnTile;
-	private ArrayList<Tile> neighbors; //valahogy össze kéne kötni a directionnal -> map?
+	protected ArrayList<Tile> neighbors; //valahogy össze kéne kötni a directionnal -> map?
+	private boolean igloo = false;
+	private boolean bear = false; //nem �gy k�ne
+	private boolean checked = false;
 	private int snow;
-	private boolean igloo;
-	private boolean bear;
-	private boolean checked = true;
-	private int capactiy;
+	private int capacity;
 	
-	
+	public Tile(int c, int s) 
+	{
+		capacity = c;
+		snow = s;
+		playersOnTile = new ArrayList<Piece>();
+		neighbors = new ArrayList<Tile>();
+	}
   
 	public ArrayList<Piece> getPlayersOnTile() {
 		return playersOnTile;
@@ -38,16 +44,16 @@ public class Tile
 		this.igloo = igloo;
 	}
 
-	public int getCapactiy() {
-		return capactiy;
+	public int getCapacity() {
+		return capacity;
 	}
 
-	public void setCapactiy(int capactiy) {
-		this.capactiy = capactiy;
+	public void setCapacity(int c) {
+		capacity = c;
 	}
 
-	public void setSnow(int snow) {
-		this.snow = snow;
+	public void setSnow(int s) {
+		snow = s;
 	}
 	
 	public void addSnow()
@@ -60,10 +66,7 @@ public class Tile
 		snow--;
 	}
 	
-	public void movedOn(Piece p)
-	{
-		playersOnTile.add(p);
-	}
+	public void movedOn(Piece p) {}
 	
 	public void buildIgloo()
 	{
@@ -79,18 +82,23 @@ public class Tile
 		return null;
 	}
 	
+	public void setItem(Item i) {}
+	
 	public ArrayList<Piece> getPlayers(){
 		return playersOnTile;
-	}
-	
-	public int getCapacity()
-	{
-		return capactiy;
 	}
 	
 	public boolean getBear()
 	{
 		return bear;
 	}
+	
+	public void setBear(boolean b) {
+		bear = b;
+	}
+	
+	public boolean getChecked() { return checked; }
+	
+	public void setChecked(boolean c) { checked = c; }
 	
 }

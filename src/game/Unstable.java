@@ -2,6 +2,10 @@ package game;
 
 public class Unstable extends Ice
 {
+	public Unstable(int c, int s) {
+		super(c,s);
+	}
+	
 	public void movedOn(Piece p)
 	{
 		playersOnTile.add(p);

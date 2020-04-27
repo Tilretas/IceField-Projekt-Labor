@@ -4,8 +4,13 @@ public class Ice extends Tile
 {
 	private Item item;
 	
-	public void setItem(Item item) {
-		this.item = item;
+	public Ice(int c, int s) 
+	{
+		super(c, s);
+	}
+	
+	public void setItem(Item i) {
+		item = i;
 	}
 
 

@@ -2,8 +2,13 @@ package game;
 
 public class Hole extends Tile
 {
-	private boolean covered;
+	private boolean covered = true;
   
+	public Hole(int c, int s) 
+	{
+		super(c,s);
+	}
+	
 	public boolean isCovered() {
 		return covered;
 	}

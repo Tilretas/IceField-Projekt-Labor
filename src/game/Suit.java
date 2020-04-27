@@ -4,7 +4,7 @@ public class Suit implements Item
 {
 	public void used(Piece p)
 	{
-		if(p.isInWater()) 
+		if(p.getInWater()) 
 		{
 			p.moved(getDirection());
 		}
@@ -12,7 +12,7 @@ public class Suit implements Item
 	
 	public Tile getDirection()
 	{
-		return new Tile(); //ideiglenes  TODO
+		return new Tile(0,0); //ideiglenes  TODO
 	}
 	
 	public char getName() 

@@ -1,5 +1,6 @@
 package game;
 
+import java.io.IOException;
 import java.util.ArrayList;
 
 //singletonná kell tenni, idk how
@@ -40,8 +41,16 @@ public class Game
 		return board;
 	}
 	
-	public void startGame()
+	public void startGame(int n)
 	{
+		nOfPlayers = n;
+		board = new Board();
+		try {
+			board.initBoard("testmap");
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
 	
 	public void endGame(boolean win)
