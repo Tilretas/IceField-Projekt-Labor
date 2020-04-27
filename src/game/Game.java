@@ -10,6 +10,7 @@ public class Game
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private int nOfPlayers;
 	private Board board;
+	public boolean stop;
 
     public static Game getInstance() 
     { 
@@ -55,8 +56,13 @@ public class Game
 			e.printStackTrace();
 		}
 		
+		
+	}
+	
+	public void play()
+	{
 		int p = 0;
-		while(true) 
+		while(!stop) 
 		{
 			board.drawBoard();
 			players.get(p).playerInput();

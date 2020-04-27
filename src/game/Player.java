@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import com.sun.prism.paint.Stop;
+
 public class Player
 
 {
@@ -67,6 +69,10 @@ public class Player
 			case 5:
 				System.out.println("Pick upping...");
 				pickUpItem();				
+				break;
+				
+			case 0:
+				Game.getInstance().stop = true;
 				break;
 				
 			default:
