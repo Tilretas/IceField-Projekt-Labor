@@ -13,6 +13,7 @@ public class Tent implements Item
 
 	public void used(Piece p)
 	{
+		//Game.getInstance().getBoard().getTiles().
 	}
 	
 	public void destroy()
