@@ -1,10 +1,14 @@
 package game;
 
+import java.io.*;
+import java.util.*;
+
 public class Test
 {
 	private boolean exit;
     private boolean running;
-
+    private boolean save = false;
+    private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
     
     private Test()
     {
@@ -13,11 +17,6 @@ public class Test
     	//...
     }
     
-   /* public static void main(String[] args)
-    {
-    	Test test = new Test();
-    }
-    */
     private void run()
     {
     	while(!exit)
@@ -26,5 +25,22 @@ public class Test
     	}
     }
     
+    private List<String> ReadLine()
+    {
+        String line;
+        List<String> input;
+        try
+        {
+            line = br.readLine();
+            if (line != null)
+            {
+                input = Arrays.asList(line.split(" "));
+                return input;
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return null;
+    }
 
 }
