@@ -5,6 +5,17 @@ import java.util.ArrayList;
 //singletonná kell tenni, idk how
 public class Game
 {
+	private static final Game instance = new Game();
+	
+	private int nOfPlayers;
+	private ArrayList<Player> players;
+	private Board board;
+
+    public static Game getInstance() 
+    { 
+        return instance; 
+    } 
+    
 	public void setnOfPlayers(int nOfPlayers) {
 		this.nOfPlayers = nOfPlayers;
 	}
@@ -28,10 +39,6 @@ public class Game
 	public Board getBoard() {
 		return board;
 	}
-
-	private int nOfPlayers;
-	private ArrayList<Player> players;
-	private Board board;
 	
 	public void startGame()
 	{
