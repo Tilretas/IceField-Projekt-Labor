@@ -9,6 +9,8 @@ public abstract class Piece
 	private int actionPoints;
 	private boolean inWater;
 	private Tile onTile;
+	private Colour colour;
+	
 	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
@@ -51,9 +53,7 @@ public abstract class Piece
 
 	public boolean isInWater() {
 		return inWater;
-	}
-
-	private Colour colour;
+	}	
 	
 	public void moved(Tile t)
 	{
@@ -99,7 +99,7 @@ public abstract class Piece
 		{
 			for(int j = 0; j < inventory.size(); j++) 
 			{
-				if(inventory.get(j).getClass().equals(i.getClass()))		//Ebben egyáltalán nem vagyok biztos hogy ez így jó, de nem tudom, hogy instanceof nélkül hogy kéne
+				if(inventory.get(j).getClass().equals(i.getClass()))		//Megnéztem, mûködik a feltétel
 				{
 					hasItem = true;
 					i.used(this);
