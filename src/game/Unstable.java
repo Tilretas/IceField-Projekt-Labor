@@ -9,6 +9,7 @@ public class Unstable extends Ice
 	public void movedOn(Piece p)
 	{
 		pieces.add(p);
+		p.setOnTile(this);
 		if(pieces.size() > getCapacity())
 			flip();
 	}

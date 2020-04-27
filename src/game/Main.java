@@ -18,5 +18,13 @@ public class Main {
 		System.out.println("\n");
 		board.drawBoard();
 		System.out.print("\n" + e.getInWater());
+		
+		
+		Suit s = new Suit();
+		//e.setOnTile(tiles.get(21));
+		e.setActionPoints(5);
+		e.addItem(s);
+		e.useItem(s);
+		board.drawBoard();
 	}
 }

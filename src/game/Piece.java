@@ -69,7 +69,8 @@ public abstract class Piece
 				this.die();
 				//game over, de annak az implementációja nem itt van I guess
 			}
-			t.movedOn(this);
+			onTile.removePiece(this);
+			t.movedOn(this);			
 		}
 	}
 	
