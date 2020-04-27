@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public class Tile
 {
-	protected ArrayList<Piece> playersOnTile;
+	protected ArrayList<Piece> pieces;
 	protected ArrayList<Tile> neighbors; //valahogy Ã¶ssze kÃ©ne kÃ¶tni a directionnal -> map?
 	private boolean igloo = false;
 	private boolean bear = false; //nem így kéne
@@ -16,17 +16,15 @@ public class Tile
 	{
 		capacity = c;
 		snow = s;
-		playersOnTile = new ArrayList<Piece>();
+		pieces = new ArrayList<Piece>();
 		neighbors = new ArrayList<Tile>();
 	}
   
-	public ArrayList<Piece> getPlayersOnTile() {
-		return playersOnTile;
+	public ArrayList<Piece> getPieces() {
+		return pieces;
 	}
 
-	public void setPlayersOnTile(ArrayList<Piece> playersOnTile) {
-		this.playersOnTile = playersOnTile;
-	}
+	public void setPieces(ArrayList<Piece> p) { pieces = p; }
 
 	public ArrayList<Tile> getNeighbors() {
 		return neighbors;
@@ -36,21 +34,13 @@ public class Tile
 		this.neighbors = neighbors;
 	}
 
-	public boolean isIgloo() {
-		return igloo;
-	}
+	public boolean getIgloo() { return igloo; }
 
-	public void setIgloo(boolean igloo) {
-		this.igloo = igloo;
-	}
+	public void setIgloo(boolean i) { igloo = i; }
 
-	public int getCapacity() {
-		return capacity;
-	}
+	public int getCapacity() { return capacity; }
 
-	public void setCapacity(int c) {
-		capacity = c;
-	}
+	public void setCapacity(int c) { capacity = c; }
 
 	public void setSnow(int s) {
 		snow = s;
@@ -61,11 +51,9 @@ public class Tile
 		snow++;
 	}
 	
-	public void removeSnow()
-	{
-		snow--;
-	}
+	public void removeSnow() { snow--; }
 	
+	public void removePiece(Piece p) {}
 	public void movedOn(Piece p) {}
 	
 	public void buildIgloo()
@@ -83,10 +71,6 @@ public class Tile
 	}
 	
 	public void setItem(Item i) {}
-	
-	public ArrayList<Piece> getPlayers(){
-		return playersOnTile;
-	}
 	
 	public boolean getBear()
 	{

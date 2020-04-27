@@ -81,28 +81,34 @@ public class Board
 	public void drawBoard()
 	{	
 		for (int y = 0; y < 5; y++) {
+			
 			for (int i = 0; i < 29; i++)
 				System.out.print("-");
 			System.out.println();
+			
 			for (int x = 0; x < 5; x++) {
-				int s = tiles.get(y*5 + x).getSnow();
-				char p = (char) (tiles.get(y*5 + x).getPlayers().size() + '0');
+				
+				char i = 'X';
+				if (tiles.get(y*5 + x).getItem() != null)
+					i = tiles.get(y*5 + x).getItem().getName();
+				char p = (char) (tiles.get(y*5 + x).getPieces().size() + '0');
 				if (p == '0')
 					p = 'X';
 				if (tiles.get(y*5 + x).getBear())
 					p = 'B';
-				System.out.print(s + " " + p + " | ");
+				System.out.print(p + " " + i + " | ");
 			}
 			
-			System.out.println("");
+			System.out.println();
 			for (int x = 0; x < 5; x++) {
-				char i = 'X';
+				
+				int s = tiles.get(y*5 + x).getSnow();
 				char c = 'X';
-				if (tiles.get(y*5 + x).getItem() != null)
-					i = tiles.get(y*5 + x).getItem().getName();
 				if(tiles.get(y*5 + x).getChecked())
 					c = (char) (tiles.get(y*5 + x).getCapacity() + '0');
-				System.out.print(i + " " + c + " | ");
+				if (c == '9')
+					c = 'S';
+				System.out.print(s + " " + c + " | ");
 			}
 			System.out.println();
 		}
