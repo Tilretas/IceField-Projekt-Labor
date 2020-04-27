@@ -1,11 +1,12 @@
 package game;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 public class Tile
 {
 	protected ArrayList<Piece> pieces;
-	protected ArrayList<Tile> neighbors; //valahogy Ã¶ssze kÃ©ne kÃ¶tni a directionnal -> map?
+	protected HashMap<Direction, Tile> neighbors;
 	private boolean igloo = false;
 	private boolean bear = false; //nem így kéne
 	private boolean checked = false;
@@ -17,16 +18,16 @@ public class Tile
 		capacity = c;
 		snow = s;
 		pieces = new ArrayList<Piece>();
-		neighbors = new ArrayList<Tile>();
+		neighbors = new HashMap<>();
 	}
   
 	public ArrayList<Piece> getPieces() { return pieces; }
 
 	public void setPieces(ArrayList<Piece> p) { pieces = p; }
 
-	public ArrayList<Tile> getNeighbors() { return neighbors; }
+	public Tile getNeighbor(Direction d) { return neighbors.get(d);	}
 
-	public void setNeighbors(ArrayList<Tile> n) { neighbors = n; }
+	public void setNeighbor(Direction d, Tile t) { neighbors.put(d, t);	}
 
 	public boolean getIgloo() { return igloo; }
 
