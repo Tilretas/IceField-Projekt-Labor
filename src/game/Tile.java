@@ -20,19 +20,13 @@ public class Tile
 		neighbors = new ArrayList<Tile>();
 	}
   
-	public ArrayList<Piece> getPieces() {
-		return pieces;
-	}
+	public ArrayList<Piece> getPieces() { return pieces; }
 
 	public void setPieces(ArrayList<Piece> p) { pieces = p; }
 
-	public ArrayList<Tile> getNeighbors() {
-		return neighbors;
-	}
+	public ArrayList<Tile> getNeighbors() { return neighbors; }
 
-	public void setNeighbors(ArrayList<Tile> neighbors) {
-		this.neighbors = neighbors;
-	}
+	public void setNeighbors(ArrayList<Tile> n) { neighbors = n; }
 
 	public boolean getIgloo() { return igloo; }
 
@@ -42,44 +36,27 @@ public class Tile
 
 	public void setCapacity(int c) { capacity = c; }
 
-	public void setSnow(int s) {
-		snow = s;
-	}
+	public void setSnow(int s) { snow = s; }
 	
-	public void addSnow()
-	{
-		snow++;
-	}
+	public void addSnow() { snow++; }
 	
 	public void removeSnow() { snow--; }
 	
-	public void removePiece(Piece p) {}
+	public void removePiece(Piece p) { pieces.remove(p); }
+	
 	public void movedOn(Piece p) {}
 	
-	public void buildIgloo()
-	{
-		igloo = true;
-	}
+	public void buildIgloo() { igloo = true; }
 	
-	public int getSnow()
-	{
-		return snow;
-	}
+	public int getSnow() { return snow; }
 	
-	public Item getItem() {
-		return null;
-	}
+	public Item getItem() { return null; }
 	
 	public void setItem(Item i) {}
 	
-	public boolean getBear()
-	{
-		return bear;
-	}
+	public boolean getBear() { return bear; }
 	
-	public void setBear(boolean b) {
-		bear = b;
-	}
+	public void setBear(boolean b) { bear = b; }
 	
 	public boolean getChecked() { return checked; }
 	
