@@ -28,5 +28,7 @@ public class Main {
 		board.drawBoard();
 		System.out.println("\n");
 
+		//game.play();
+		
 	}
 }
