@@ -1,18 +1,25 @@
 package game;
 
+import java.util.Scanner;
+
 public class Suit implements Item
 {
 	public void used(Piece p)
 	{
 		if(p.getInWater()) 
 		{
-			p.moved(getDirection());
+			p.moved(getDirection());              //Szomszédosság ellenõrzése még hiányzik
 		}
 	}
 	
 	public Tile getDirection()
 	{
-		return new Tile(0,0); //ideiglenes  TODO
+		Scanner scr = new Scanner(System.in);
+		System.out.println("Adj meg egy mezõt:");
+		int tile_num = scr.nextInt();
+		scr.close();
+		
+		return Game.getInstance().getBoard().getTiles().get(tile_num);
 	}
 	
 	public char getName() 

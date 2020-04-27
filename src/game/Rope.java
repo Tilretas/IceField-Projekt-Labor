@@ -9,7 +9,8 @@ public class Rope implements Item
 	
 	public Piece getPiece()
 	{
-		return new Eskimo(); //ideiglenes
+		//return Game.getInstance().getBoard().getTiles().get().getPlayersOnTile().get();
+		return new Eskimo();
 	}
 	
 	private void savePiece(Piece p)
