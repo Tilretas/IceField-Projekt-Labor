@@ -33,7 +33,11 @@ public class Tile
 
 	public void setIgloo(boolean i) { igloo = i; }
 
-	public int getCapacity() { return capacity; }
+	public int getCapacity() 
+	{ 
+		checked = true;
+		return capacity;
+	}
 
 	public void setCapacity(int c) { capacity = c; }
 

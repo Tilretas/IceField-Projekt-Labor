@@ -8,7 +8,7 @@ public abstract class Piece
 	private int bodyTemp;
 	private int actionPoints;
 	private boolean inWater;
-	private Tile onTile;
+	private Tile onTile = null;
 	private Colour colour;
 	
 	public ArrayList<Item> getInventory() {
@@ -35,13 +35,7 @@ public abstract class Piece
 		this.actionPoints = actionPoints;
 	}
 
-	public Tile getOnTile() {
-		return onTile;
-	}
-
-	public void setOnTile(Tile onTile) {
-		this.onTile = onTile;
-	}
+	public void setTile(Tile t) { onTile = t; }
 
 	public Colour getColour() {
 		return colour;
@@ -69,12 +63,13 @@ public abstract class Piece
 				this.die();
 				//game over, de annak az implementációja nem itt van I guess
 			}
-			onTile.removePiece(this);
+			if(onTile != null)
+				onTile.removePiece(this);
 			t.movedOn(this);			
 		}
 	}
 	
-	public abstract void ability(Tile t);
+	public abstract void ability();
 	
 	public void addItem(Item i)
 	{

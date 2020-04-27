@@ -20,7 +20,7 @@ public class Hole extends Tile
 	public void movedOn(Piece p)
 	{
 		pieces.add(p);
-		p.setOnTile(this);
+		p.setTile(this);
 		p.setInWater(true);
 	}
 }

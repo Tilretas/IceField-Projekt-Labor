@@ -52,22 +52,16 @@ public class Board
 
 	public void initBoard(String setupFile) throws IOException
 	{
-		int [][] confTiles = new int[5][5];
+		String [] confTiles = new String[5];
 		String confPieces;
 		String confItems;
 
 		FileInputStream fstream = new FileInputStream("testmap.txt");
 		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
-		String line;
 		
 		for (int y = 0; y < 5; y++) 
 		{
-			line = br.readLine();
-			Scanner sc = new Scanner(line);
-			for (int x = 0; x < 5; x++) 
-			{
-				confTiles[y][x] = sc.nextInt();
-			}
+			confTiles[y] = br.readLine();
 		}
 		
 		confPieces = br.readLine();
@@ -116,23 +110,34 @@ public class Board
 			System.out.print("-");
 	}
 	
-	public void createTiles(int[][] confTiles)
+	public void createTiles(String[] confTiles)
 	{
+		int [][] conf = new int[5][5];
+		for (int y = 0; y < 5; y++) 
+		{
+			
+			Scanner sc = new Scanner(confTiles[y]);
+			for (int x = 0; x < 5; x++) 
+			{
+				conf[y][x] = sc.nextInt();
+			}
+		}
+		
 		for (int y = 0; y < 5; y++) 
 		{
 			for (int x = 0; x < 5; x++) 
 			{
-				switch (confTiles[y][x] / 100) {
+				switch (conf[y][x] / 100) {
 				case 0:
-					tiles.add(new Ice(9, confTiles[y][x] % 10));
+					tiles.add(new Ice(9, conf[y][x] % 10));
 					break;
 					
 				case 1:
-					tiles.add(new Unstable(confTiles[y][x] / 10 % 10, confTiles[y][x] % 10));
+					tiles.add(new Unstable(conf[y][x] / 10 % 10, conf[y][x] % 10));
 					break;
 					
 				case 2:
-					tiles.add(new Hole(0, confTiles[y][x] % 10));
+					tiles.add(new Hole(0, conf[y][x] % 10));
 					break;
 
 				default:
@@ -148,5 +153,16 @@ public class Board
 	
 	public void spawnPieces(String confPieces)
 	{
+		int s = Integer.parseInt(confPieces);
+		
+		for (int i = 0; i < Game.getInstance().getnOfPlayers(); i++) {
+			if (i % 2 == 0)
+				pieces.add(new Eskimo());
+			else
+				pieces.add(new Explorer());
+			pieces.get(i).setActionPoints(5);
+			pieces.get(i).moved(tiles.get(s));
+			Game.getInstance().getPlayers().get(i).setPiece(pieces.get(i));
+		}
 	}
 }

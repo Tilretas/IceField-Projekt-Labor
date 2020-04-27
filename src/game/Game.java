@@ -3,13 +3,12 @@ package game;
 import java.io.IOException;
 import java.util.ArrayList;
 
-//singletonná kell tenni, idk how
 public class Game
 {
 	private static final Game instance = new Game();
 	
+	private ArrayList<Player> players = new ArrayList<Player>();
 	private int nOfPlayers;
-	private ArrayList<Player> players;
 	private Board board;
 
     public static Game getInstance() 
@@ -17,8 +16,8 @@ public class Game
         return instance; 
     } 
     
-	public void setnOfPlayers(int nOfPlayers) {
-		this.nOfPlayers = nOfPlayers;
+	public void setnOfPlayers(int n) {
+		nOfPlayers = n;
 	}
 
 	public void setPlayers(ArrayList<Player> players) {
@@ -44,12 +43,26 @@ public class Game
 	public void startGame(int n)
 	{
 		nOfPlayers = n;
+		for (int i = 0; i < n; i++) {
+			players.add(new Player());
+		}
+		
 		board = new Board();
 		try {
 			board.initBoard("testmap");
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
+		}
+		
+		int p = 0;
+		while(true) 
+		{
+			board.drawBoard();
+			players.get(p).playerInput();
+			p++;
+			if(p >= nOfPlayers)
+				p = 0;
 		}
 	}
 	

@@ -10,7 +10,7 @@ public class Main {
 		ArrayList<Tile> tiles = board.getTiles();
 		board.drawBoard();
 		
-		tiles.get(13).setBear(true);
+		tiles.get(8).setBear(true);
 		tiles.get(3).setChecked(true);
 		tiles.get(5).setItem(new Rope());
 		Eskimo e = new Eskimo();
@@ -24,7 +24,9 @@ public class Main {
 		//e.setOnTile(tiles.get(21));
 		e.setActionPoints(5);
 		e.addItem(s);
-		e.useItem(s);
+		//e.useItem(s);
 		board.drawBoard();
+		System.out.println("\n");
+
 	}
 }

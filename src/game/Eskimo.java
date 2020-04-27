@@ -2,7 +2,7 @@ package game;
 
 public class Eskimo extends Piece
 {
-	public void ability(Tile t)
+	public void ability()
 	{
 		this.getTile().buildIgloo();
 	}
