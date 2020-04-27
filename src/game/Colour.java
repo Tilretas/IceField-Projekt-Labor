@@ -1,5 +1,11 @@
 package game;
 
-public enum Colour {
-//todo
+public enum Colour
+{
+	RED,
+	YELLOW,
+	PURPLE,
+	GREEN,
+	BLACK,
+	BLUE
 }
