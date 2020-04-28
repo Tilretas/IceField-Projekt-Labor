@@ -161,6 +161,8 @@ public abstract class Piece
 	 */
 	public void die() { Game.getInstance().notifyPlayerDied(this); }
 	
+	//getter - setterek -------------------------
+	
 	public ArrayList<Item> getInventory() { return inventory; }
 	
 	public int getBodyTemp() { return bodyTemp; }
@@ -186,5 +188,8 @@ public abstract class Piece
 	public void setSuffocate(boolean s) { suffocate = s; }
 	
 	public Tile getTile() { return onTile; }
+	
+	//getter - setterek ---------vége------------
+
 }
 
