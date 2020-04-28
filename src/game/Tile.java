@@ -32,12 +32,10 @@ public class Tile
 	public boolean isNeighbor(Tile t) 
 	{
 		boolean isneighbor = false;
-		for(int i = 0; i < neighbors.size(); i++) 
+		
+		if(neighbors.get(Direction.UP).equals(t) || neighbors.get(Direction.RIGHT).equals(t) || neighbors.get(Direction.LEFT).equals(t) || neighbors.get(Direction.DOWN).equals(t)) 
 		{
-			if(neighbors.get(Direction.UP).equals(t) || neighbors.get(Direction.RIGHT).equals(t) || neighbors.get(Direction.LEFT).equals(t) || neighbors.get(Direction.DOWN).equals(t)) 
-			{
-				isneighbor = true;
-			}
+			isneighbor = true;
 		}
 		
 		return isneighbor;
