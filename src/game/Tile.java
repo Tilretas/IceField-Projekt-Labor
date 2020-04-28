@@ -28,7 +28,20 @@ public class Tile
 	public Tile getNeighbor(Direction d) { return neighbors.get(d);	}
 
 	public void setNeighbor(Direction d, Tile t) { neighbors.put(d, t);	}
-
+	
+	public boolean isNeighbor(Tile t) 
+	{
+		boolean isneighbor = false;
+		for(int i = 0; i < neighbors.size(); i++) 
+		{
+			if(neighbors.get(Direction.UP).equals(t) || neighbors.get(Direction.RIGHT).equals(t) || neighbors.get(Direction.LEFT).equals(t) || neighbors.get(Direction.DOWN).equals(t)) 
+			{
+				isneighbor = true;
+			}
+		}
+		
+		return isneighbor;
+	}
 	public boolean getIgloo() { return igloo; }
 
 	public void setIgloo(boolean i) { igloo = i; }
