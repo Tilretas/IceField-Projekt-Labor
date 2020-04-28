@@ -23,6 +23,7 @@ public class Explorer extends Piece
 		if(idx == 0)
 		{
 			getTile().setChecked(true);
+			setActionPoints(getActionPoints() - 1);
 			return;
 		}
 		while(getTile().getNeighbor(Direction.values()[idx-1]) == null) 
