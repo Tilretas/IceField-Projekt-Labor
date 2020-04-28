@@ -15,7 +15,7 @@ public class Suit implements Item
 	public Tile getDirection()
 	{
 		Scanner scr = new Scanner(System.in);
-		System.out.println("Adj meg egy mezõt:");
+		System.out.println("On which tile do you want ot move? (Tile index 0-24):");
 		int tile_num = scr.nextInt();
 		scr.close();
 		

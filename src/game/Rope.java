@@ -6,7 +6,7 @@ public class Rope implements Item
 {
 	public void used(Piece p)
 	{
-		savePiece(getPiece());
+		getPiece().moved(p.getTile());
 	}
 	
 	public Piece getPiece()
