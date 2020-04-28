@@ -105,7 +105,7 @@ public abstract class Piece
 			
 			if(!hasItem) 
 			{
-				throw new Exception("Nincs ilyen tárgyad!");
+				throw new Exception("You don't have this item in your inventory!");
 			}
 		}
 		catch(Exception e) 

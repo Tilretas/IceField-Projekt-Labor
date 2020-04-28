@@ -22,7 +22,7 @@ public class Rope implements Item
 	
 	private void savePiece(Piece p)
 	{
-		
+		//Nem kell, de még nem töröltem, hátha mégis
 	}
 	
 	public char getName() 
