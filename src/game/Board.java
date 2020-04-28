@@ -149,6 +149,47 @@ public class Board
 	
 	public void generateItems(String confItems)
 	{
+		Scanner sc = new Scanner(confItems);
+		int i;
+		while (sc.hasNext()) //nem szép emgoldás, de csak így tudtam
+		{
+			i = sc.nextInt();
+			
+			switch (i / 100) {
+			case 1:
+				tiles.get(i % 100).setItem(new Part());
+				break;
+				
+			case 2:
+				tiles.get(i % 100).setItem(new Food());
+				break;
+				
+			case 3:
+				tiles.get(i % 100).setItem(new Suit());
+				break;
+				
+			case 4:
+				tiles.get(i % 100).setItem(new Rope());
+				break;
+				
+			case 5:
+				tiles.get(i % 100).setItem(new Tent());
+				break;
+				
+			case 6:
+				tiles.get(i % 100).setItem(new Shovel());
+				break;
+				
+			case 7:
+				tiles.get(i % 100).setItem(new Wooden());
+				break;
+				
+			default:
+				break;
+			}
+		}
+		
+		
 	}
 	
 	public void spawnPieces(String confPieces)
