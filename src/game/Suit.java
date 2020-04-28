@@ -9,6 +9,8 @@ public class Suit implements Item
 		if(p.getInWater()) 
 		{
 			p.moved(getDirection());              //Szomszédosság ellenõrzése még hiányzik
+			p.setInWater(false);
+			p.setSuffocate(false);
 		}
 	}
 	

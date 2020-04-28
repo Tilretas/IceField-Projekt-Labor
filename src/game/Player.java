@@ -37,51 +37,62 @@ public class Player
 		Scanner sc = new Scanner(System.in);
 		int cmd;
 		boolean wrong = true;
+		piece.setActionPoints(4);
+		System.out.println(); //melyik játékos, melyik mezõn
+		if (piece.getInWater()) 
+		{
+			if (piece.getSuffocate())
+				piece.die();
+			else piece.setSuffocate(true);
+		}
 		
-		while(wrong) {
-			wrong = false;
-			System.out.println("What do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
-			cmd = sc.nextInt();
-			
-			switch (cmd) {
-			case 1:
-				System.out.println("Moving...");
-				move();				
-				break;
+		while(piece.getActionPoints() > 0) 
+		{
+			while(wrong) {
+				wrong = false;
+				System.out.println("What do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
+				cmd = sc.nextInt();
+				
+				switch (cmd) {
+				case 1:
+					System.out.println("Moving...");
+					move();				
+					break;
 
-			case 2:
-				System.out.println("Digging...");
-				dig();				
-				break;
-				
-			case 3:
-				System.out.println("Abiliting...");
-				useAbility();				
-				break;
-				
-			case 4:
-				System.out.println("Iteming...");
-				useItem();				
-				break;
-				
-			case 5:
-				System.out.println("Pick upping...");
-				pickUpItem();				
-				break;
-				
-			case 0:
-				Game.getInstance().stop = true;
-				break;
-				
-			case -1:
-				Game.getInstance().stop = true;
-				Game.getInstance().testStart = true;
-				break;
-				
-			default:
-				wrong = true;
-				System.out.println("Incorrect input!");
-				break;
+				case 2:
+					System.out.println("Digging...");
+					dig();				
+					break;
+					
+				case 3:
+					System.out.println("Abiliting...");
+					useAbility();				
+					break;
+					
+				case 4:
+					System.out.println("Iteming...");
+					useItem();				
+					break;
+					
+				case 5:
+					System.out.println("Pick upping...");
+					pickUpItem();				
+					break;
+					
+				case 0:
+					piece.setActionPoints(0);
+					break;
+					
+				case -1:
+					Game.getInstance().stop = true;
+					//Game.getInstance().testStart = true;
+					break;
+					
+				default:
+					wrong = true;
+					System.out.println("Incorrect input!");
+					break;
+				}
 			}
 		}
 	}

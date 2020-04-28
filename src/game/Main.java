@@ -32,6 +32,9 @@ public class Main {
 		//e.useItem(s);
 		board.drawBoard();
 		System.out.println("\n");
+		
+		System.out.println(tiles.get(0).getNeighbor(Direction.UP).getSnow() + " " + tiles.get(12).getNeighbor(Direction.RIGHT).getSnow() + " " + tiles.get(12).getNeighbor(Direction.DOWN).getSnow() + " " + tiles.get(12).getNeighbor(Direction.LEFT).getSnow());
+		
 
 		game.play();
 		

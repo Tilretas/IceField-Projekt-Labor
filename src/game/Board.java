@@ -145,6 +145,29 @@ public class Board
 				}
 			}
 		}
+		
+		for (int i = 0; i < 25; i++)
+		{
+			if(i < 5)
+				tiles.get(i).setNeighbor(Direction.UP, null);
+			else
+				tiles.get(i).setNeighbor(Direction.UP, tiles.get(i-5));
+			
+			if(i % 5 == 4)
+				tiles.get(i).setNeighbor(Direction.RIGHT, null);
+			else
+				tiles.get(i).setNeighbor(Direction.RIGHT, tiles.get(i+1));
+			
+			if(i > 19)
+				tiles.get(i).setNeighbor(Direction.DOWN, null);
+			else
+				tiles.get(i).setNeighbor(Direction.DOWN, tiles.get(i+5));
+			
+			if(i % 5 == 0)
+				tiles.get(i).setNeighbor(Direction.LEFT, null);
+			else
+				tiles.get(i).setNeighbor(Direction.LEFT, tiles.get(i-1));
+		}
 	}
 	
 	public void generateItems(String confItems)

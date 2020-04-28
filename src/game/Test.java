@@ -9,6 +9,7 @@ public class Test
     private boolean running;
     private boolean save = false;
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    Board board = Game.getInstance().getBoard();
     
     public Test()
     {

@@ -8,46 +8,9 @@ public abstract class Piece
 	private int bodyTemp;
 	private int actionPoints;
 	private boolean inWater;
+	private boolean suffocate;
 	private Tile onTile = null;
 	private Colour colour;
-	
-	public ArrayList<Item> getInventory() {
-		return inventory;
-	}
-
-	public void setInventory(ArrayList<Item> inventory) {
-		this.inventory = inventory;
-	}
-
-	public int getBodyTemp() {
-		return bodyTemp;
-	}
-
-	public void setBodyTemp(int bodyTemp) {
-		this.bodyTemp = bodyTemp;
-	}
-
-	public int getActionPoints() {
-		return actionPoints;
-	}
-
-	public void setActionPoints(int actionPoints) {
-		this.actionPoints = actionPoints;
-	}
-
-	public void setTile(Tile t) { onTile = t; }
-
-	public Colour getColour() {
-		return colour;
-	}
-
-	public void setColour(Colour colour) {
-		this.colour = colour;
-	}
-
-	public boolean getInWater() {
-		return inWater;
-	}	
 	
 	public void moved(Tile t)
 	{
@@ -58,27 +21,12 @@ public abstract class Piece
 		}
 		else
 		{
-			if(t.getBear() == true)	
-			{
-				this.die();
-				//game over, de annak az implementációja nem itt van I guess
-			}
 			if(onTile != null)
 				onTile.removePiece(this);
 			t.movedOn(this);			
+			if(t.getBear() == true)	
+				this.die();
 		}
-	}
-	
-	public abstract void ability();
-	
-	public void addItem(Item i)
-	{
-		inventory.add(i);
-	}
-	
-	public void removeItem(Item i)
-	{
-		inventory.remove(i);
 	}
 	
 	public void useItem(Item i)
@@ -125,6 +73,57 @@ public abstract class Piece
 		this.getTile().removeSnow();		
 	}
 	
+	public ArrayList<Item> getInventory() {
+		return inventory;
+	}
+
+	public void setInventory(ArrayList<Item> inventory) {
+		this.inventory = inventory;
+	}
+
+	public int getBodyTemp() {
+		return bodyTemp;
+	}
+
+	public void setBodyTemp(int bodyTemp) {
+		this.bodyTemp = bodyTemp;
+	}
+
+	public int getActionPoints() {
+		return actionPoints;
+	}
+
+	public void setActionPoints(int actionPoints) {
+		this.actionPoints = actionPoints;
+	}
+
+	public void setTile(Tile t) { onTile = t; }
+
+	public Colour getColour() {
+		return colour;
+	}
+
+	public void setColour(Colour colour) {
+		this.colour = colour;
+	}
+
+	public boolean getInWater() {
+		return inWater;
+	}	
+	
+	public abstract void ability();
+	
+	public void addItem(Item i)
+	{
+		inventory.add(i);
+	}
+	
+	public void removeItem(Item i)
+	{
+		inventory.remove(i);
+	}
+	
+	
 	public void incBodyTemp()
 	{
 		bodyTemp++;
@@ -142,7 +141,12 @@ public abstract class Piece
 	
 	public void die()
 	{	
+		System.out.println("You ded");
 	}
+	
+	public boolean getSuffocate() { return suffocate; }
+	
+	public void setSuffocate(boolean s) { suffocate = s; }
 	
 	public Tile getTile()
 	{

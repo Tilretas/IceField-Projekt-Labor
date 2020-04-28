@@ -11,7 +11,10 @@ public class Unstable extends Ice
 		pieces.add(p);
 		p.setTile(this);
 		if(pieces.size() > getCapacity())
+		{
 			flip();
+			p.setSuffocate(true);
+		}
 	}
 	
 	public void flip()
