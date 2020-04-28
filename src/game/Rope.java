@@ -4,6 +4,11 @@ import java.util.Scanner;
 
 public class Rope implements Item
 {
+	/**
+	 * A kötél used függvénye, a paraméterként kapott piece mezõjére mozgatja a vízben lévõ piecet.
+	 * 
+	 *  @param p A piece aki használja a kötelet
+	 */
 	public void used(Piece p)
 	{
 		Piece saved = getPiece();
@@ -16,6 +21,12 @@ public class Rope implements Item
 		}
 	}
 	
+	/**
+	 * Megkérdezi a felhasználótól, hogy hol van a kimentedõ piece és, hogy melyik az
+	 * 
+	 * @return A kimentedõ piece
+	 */
+	
 	public Piece getPiece()
 	{
 		Scanner scr = new Scanner(System.in);
@@ -25,11 +36,6 @@ public class Rope implements Item
 		int piece = scr.nextInt();
 		
 		return Game.getInstance().getBoard().getTiles().get(location).getPieces().get(piece);
-	}
-	
-	private void savePiece(Piece p)
-	{
-		//Nem kell, de még nem töröltem, hátha mégis
 	}
 	
 	public char getName() 
