@@ -16,6 +16,7 @@ public class Board
 	private ArrayList<Piece> pieces = new ArrayList<Piece>();
 	private ArrayList<Tile> tiles = new ArrayList<Tile>();
 	private ArrayList<Item> items = new ArrayList<Item>();
+	private ArrayList<Tent> tents = new ArrayList<Tent>();
 	private Bear bear;
 
 	public void initBoard(String setupFile) throws IOException
@@ -197,6 +198,9 @@ public class Board
 			pieces.get(i).moved(tiles.get(s));
 			Game.getInstance().getPlayers().get(i).setPiece(pieces.get(i));
 		}
+		bear = new Bear();
+		bear.moved(tiles.get(0));
+		
 	}
 	
 	public ArrayList<Piece> getPieces() { return pieces; }
@@ -204,6 +208,8 @@ public class Board
 	public ArrayList<Tile> getTiles() { return tiles; }
 	
 	public ArrayList<Item> getItems() { return items; }
+	
+	public ArrayList<Tent> getTents() { return tents; }
 	
 	public Bear getBear() { return bear;	}
 	

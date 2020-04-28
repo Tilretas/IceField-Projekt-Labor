@@ -9,7 +9,6 @@ public class Main {
 		Board board = game.getBoard();
 		ArrayList<Tile> tiles = board.getTiles();
 		
-		tiles.get(8).setBear(true);
 		tiles.get(3).setChecked(true);
 		tiles.get(5).setItem(new Rope());
 		Eskimo e = new Eskimo();
@@ -29,9 +28,10 @@ public class Main {
 		//e.useItem(s);
 		System.out.println("\n");
 
-
-		//board.drawBoard();
-		game.play();
+		
+		board.drawBoard();
+		board.getPieces().get(0).die();
+		//game.play();
 		
 	}
 }

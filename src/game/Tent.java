@@ -9,12 +9,10 @@ public class Tent implements Item, Shelter
 		onTile = p.getTile();
 		p.getInventory().remove(this);
 		p.getTile().setShelter(this);
+		Game.getInstance().getBoard().getTents().add(this);
 	}
 	
-	public void destroy()
-	{
-		
-	}
+	public void destroy() { onTile.setShelter(null); }
 	
 	public char getName() 
 	{
@@ -23,7 +21,8 @@ public class Tent implements Item, Shelter
 	
 	public boolean defend()
 	{
-		onTile.setShelter(null);
+		if(onTile != null)
+			destroy();
 		return false;
 	}
 }

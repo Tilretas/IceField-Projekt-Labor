@@ -7,7 +7,7 @@ public class Tile
 {
 	protected ArrayList<Piece> pieces;
 	protected HashMap<Direction, Tile> neighbors;
-	private boolean bear = false; //nem így kéne
+	private Bear bear = null; //nem így kéne
 	private boolean checked = false;
 	private Shelter shelter = null;
 	private int snow;
@@ -68,9 +68,14 @@ public class Tile
 	
 	public void setItem(Item i) {}
 	
-	public boolean getBear() { return bear; }
+	public boolean getBear()
+	{
+		if(bear == null)
+			return false;
+		else return true;
+	}
 	
-	public void setBear(boolean b) { bear = b; }
+	public void setBear(Bear b) { bear = b; }
 	
 	public boolean getChecked() { return checked; }
 	

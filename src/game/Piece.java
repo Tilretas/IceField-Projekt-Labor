@@ -141,7 +141,7 @@ public abstract class Piece
 	
 	public void die()
 	{	
-		System.out.println("You ded");
+		Game.getInstance().endGame(false);
 	}
 	
 	public boolean getSuffocate() { return suffocate; }

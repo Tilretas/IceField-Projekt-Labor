@@ -2,6 +2,7 @@ package game;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Random;
 
 public class Game
 {
@@ -19,30 +20,6 @@ public class Game
         return instance; 
     } 
     
-	public void setnOfPlayers(int n) {
-		nOfPlayers = n;
-	}
-
-	public void setPlayers(ArrayList<Player> players) {
-		this.players = players;
-	}
-
-	public void setBoard(Board board) {
-		this.board = board;
-	}
-
-	public int getnOfPlayers() {
-		return nOfPlayers;
-	}
-
-	public ArrayList<Player> getPlayers() {
-		return players;
-	}
-
-	public Board getBoard() {
-		return board;
-	}
-	
 	public void startGame(int n)
 	{
 		nOfPlayers = n;
@@ -69,7 +46,10 @@ public class Game
 			players.get(p).playerInput();
 			p++;
 			if(p >= nOfPlayers)
+			{
+				endRound();
 				p = 0;
+			}
 		}
 		if(testStart)
 		{
@@ -83,8 +63,27 @@ public class Game
 		test.run();
 	}
 	
+	public void endRound()
+	{
+		Random r = new Random();
+		int x = r.nextInt(10);
+		if(x == 0)
+			snowStorm();
+		moveBear();
+		for (Tent t : board.getTents()) 
+			t.destroy();
+		board.getTents().clear();
+	}
+	
 	public void endGame(boolean win)
 	{
+		stop = true;
+		testStart = false;
+		
+		if(win)
+			System.out.println("\nYou survived. WoW!");
+		else
+			System.out.println("\nSomeone died :( \nThe Coffin Niggas are on their way...");
 	}
 	
 	public void notifyPlayerDied(Piece p)
@@ -97,11 +96,12 @@ public class Game
 	}
 	
 	public void moveBear()
-	{		
-	}
-	
-	public void readFile(String s)
 	{
+		Random r = new Random();
+		int x;
+		Bear b = board.getBear();
+		while (b.getTile().getNeighbor(Direction.values()[x = r.nextInt(4)]) == null);
+		b.moved(b.getTile().getNeighbor(Direction.values()[x]));
 	}
 	
 	public void snowStorm()
@@ -112,7 +112,19 @@ public class Game
     	}
     	for(Piece p : board.getPieces())
     	{
-    		p.decBodyTemp();
+    		if(p.getTile().getShelter() == null)
+    		{
+    			p.decBodyTemp();
+    			if(p.getBodyTemp() <= 0)
+    				p.die();
+    		}
     	}  
 	}
+
+	public int getnOfPlayers() { return nOfPlayers; }
+	
+	public ArrayList<Player> getPlayers() {	return players;	}
+	
+	public Board getBoard() { return board; }
 }
+

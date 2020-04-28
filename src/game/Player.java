@@ -34,6 +34,8 @@ public class Player
 	
 	public void playerInput() 
 	{
+		if(Game.getInstance().stop == true)
+			return;
 		Scanner sc = new Scanner(System.in);
 		int cmd;
 		boolean wrong = true;
