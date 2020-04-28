@@ -37,7 +37,7 @@ public class Rope implements Item
 	public Piece getPiece()
 	{
 		Scanner scr = new Scanner(System.in);
-		System.out.println("Which piece do you want to save?(0-" + (Game.getInstance().getnOfPlayers()-1));
+		System.out.println("Which piece do you want to save?(0-" + (Game.getInstance().getnOfPlayers()-1) + ")");
 		int idx = scr.nextInt();
 		if(idx < 0 || idx > Game.getInstance().getnOfPlayers()-1) 
 		{
