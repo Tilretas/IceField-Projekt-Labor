@@ -39,12 +39,12 @@ public class Test
     			case 1:
     				System.out.println("Onto which tile would you like to add the piece? (0 - 24)");
     				tile = sc.nextInt();
-    				System.out.println("Which kind of piece would you like to add (Eskimo / Explorer)?");
-    				type = sc.nextLine();
+    				System.out.println("Which kind of piece would you like to add? (1: Eskimo | 2: Explorer)");
+    				int p = sc.nextInt();
     				System.out.println("What colour do you want your piece to be? (1: RED | 2: YELLOW | 3: PURPLE | 4: GREEN | 5: CYAN | 6: BLUE");
     				id = sc.nextInt();
     				System.out.println("Adding new piece...");
-    				TestAddPiece(tile, type, Colour.values()[id - 1]);
+    				TestAddPiece(tile, p, Colour.values()[id - 1]);
     				break;
     			case 2:
     				System.out.println("Onto which tile would you like to add the bear? (0 - 24)");
@@ -124,20 +124,20 @@ public class Test
 	/*
      *  Placing an eskimo/explorer with unique colour id on a given tile
      */
-    private void TestAddPiece(int tile, String type, Colour id) {
+    private void TestAddPiece(int tile, int type, Colour id) {
     	try {   		
             if (tile > 24 || tile < 0) {					//Ha nem a pálya része a megadott mezõ, error
                 throw new Exception();
             }
             
-            if(type == "Eskimo") {							
+            if(type == 1) {							
             	Eskimo eskimo = new Eskimo();				//Eskimo létrehozása
             	eskimo.setActionPoints(5);					//Akciópontjainak beállítása
             	eskimo.setColour(id);						//Beállítjuk az azonosítóját, ami a színe
             	eskimo.moved(board.getTiles().get(tile));	//Odamozgatjuk lényegében a moved-al a megadott mezõre
             	board.getPieces().add(eskimo);				//Majd végül a piecek tömbjéhez adása
             }
-            else if(type == "Explorer") {
+            else if(type == 2) {
             	Explorer explorer = new Explorer();			//Explorer létrehozása
             	explorer.setActionPoints(5);				//Akciópontjainak beállítása
             	explorer.setColour(id);						//Beállítjuk az azonosítóját, ami a színe
