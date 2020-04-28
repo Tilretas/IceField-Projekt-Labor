@@ -195,7 +195,8 @@ public class Board
 	public void spawnPieces(String confPieces)
 	{
 		int s = Integer.parseInt(confPieces);
-		
+		if (s < 0 || s > 24)
+			s = 13;
 		for (int i = 0; i < Game.getInstance().getnOfPlayers(); i++) {
 			if (i % 2 == 0)
 				pieces.add(new Eskimo());
