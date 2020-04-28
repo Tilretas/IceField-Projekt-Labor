@@ -73,9 +73,14 @@ public class Game
 		}
 		if(testStart)
 		{
-			test = new Test();
-			test.run();
+			testMode();
 		}
+	}
+	
+	public void testMode()
+	{
+		test = new Test();
+		test.run();
 	}
 	
 	public void endGame(boolean win)

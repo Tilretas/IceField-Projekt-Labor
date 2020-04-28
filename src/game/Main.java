@@ -30,8 +30,8 @@ public class Main {
 		System.out.println("\n");
 
 
-		board.drawBoard();
-		//game.play();
+		//board.drawBoard();
+		game.play();
 		
 	}
 }
