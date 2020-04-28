@@ -7,9 +7,9 @@ public class Tile
 {
 	protected ArrayList<Piece> pieces;
 	protected HashMap<Direction, Tile> neighbors;
-	private boolean igloo = false;
 	private boolean bear = false; //nem így kéne
 	private boolean checked = false;
+	private Shelter shelter = null;
 	private int snow;
 	private int capacity;
 	
@@ -40,9 +40,9 @@ public class Tile
 		
 		return isneighbor;
 	}
-	public boolean getIgloo() { return igloo; }
+	public Shelter getShelter() { return shelter; }
 
-	public void setIgloo(boolean i) { igloo = i; }
+	public void setShelter(Shelter s) { shelter = s; }
 
 	public int getCapacity() 
 	{ 
@@ -61,9 +61,7 @@ public class Tile
 	public void removePiece(Piece p) { pieces.remove(p); }
 	
 	public void movedOn(Piece p) {}
-	
-	public void buildIgloo() { igloo = true; }
-	
+		
 	public int getSnow() { return snow; }
 	
 	public Item getItem() { return null; }

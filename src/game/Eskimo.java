@@ -4,6 +4,6 @@ public class Eskimo extends Piece
 {
 	public void ability()
 	{
-		this.getTile().buildIgloo();
+		this.getTile().setShelter(new Igloo());
 	}
 }
