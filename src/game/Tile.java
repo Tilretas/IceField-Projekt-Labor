@@ -81,11 +81,7 @@ public class Tile
 
 	public void setShelter(Shelter s) { shelter = s; }
 
-	public int getCapacity() 
-	{ 
-		checked = true;
-		return capacity;
-	}
+	public int getCapacity() { return capacity;	}
 
 	public void setCapacity(int c) { capacity = c; }
 

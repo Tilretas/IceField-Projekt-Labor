@@ -19,6 +19,12 @@ public class Board
 	private ArrayList<Tent> tents = new ArrayList<Tent>();
 	private Bear bear;
 
+	/**
+	 * A tábla elõkészítéséért, és a rajta lévõ elemek beolvasásáért felelõs.
+	 * Stringekbe tárolja a beolvasott informácót
+	 * 
+	 * @param setupFile A txt címe, ahonnan beolvassa a pálya felépítését
+	 */
 	public void initBoard(String setupFile) throws IOException
 	{
 		String [] confTiles = new String[5];
@@ -41,6 +47,14 @@ public class Board
 		generateItems(confItems);
 	}
 	
+	/**
+	 * A tábla konzolra való kiírásáért felelõs függvény.
+	 * 5x5 mezõ van, minden mezõ 2x2 karakternek felel meg.
+	 * Bal felsõ érték: a mezõn lévõ játékosok számát jelzi (ha medve van a mezõn, akkor 'B', ha iglu 'I', ha sátor akkor 'T').
+	 * Jobb felsõ: A mezõn lévõ tárgy kezdõbetûje.
+	 * Bal alsó: A mezõn lévõ hórétegek száma.
+	 * Jobb alsó: A mezõ kapacitása ('X' ha ismeretlen, 'S' ha stabil, '0' ha lyuk).
+	 */
 	public void drawBoard()
 	{	
 		for (int y = 0; y < 5; y++) {
@@ -84,6 +98,12 @@ public class Board
 			System.out.print("-");
 	}
 	
+	/**
+	 * 
+	 * 
+	 * 
+	 * @param 
+	 */
 	public void createTiles(String[] confTiles)
 	{
 		int [][] conf = new int[5][5];

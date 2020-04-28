@@ -13,8 +13,6 @@ public class Food implements Item
 		p.removeItem(this);
 		p.setActionPoints(p.getActionPoints() - 1);
 	}
-	public char getName() 
-	{
-		return 'F';
-	}
+	
+	public char getName() { return 'F';	}
 }

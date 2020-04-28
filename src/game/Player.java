@@ -73,7 +73,8 @@ public class Player
 			wrong = true;
 			while(wrong) {
 				wrong = false;
-				System.out.println("\nNext player is: " + colour + ", standing on tile: " + Game.getInstance().getBoard().getTiles().indexOf(piece.getTile()) + ", with " + piece.getActionPoints() +" action points.\nWhat do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
+				System.out.println("\nNext player is: " + colour + ", standing on row: " + (Game.getInstance().getBoard().getTiles().indexOf(piece.getTile()) / 5 + 1) + " and col: " + (Game.getInstance().getBoard().getTiles().indexOf(piece.getTile()) % 5 + 1) + ", with " + piece.getActionPoints() +" action points.");
+				System.out.println("What do you want to do?\\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
 				cmd = sc.nextInt();
 				
 				switch (cmd) {
@@ -126,18 +127,20 @@ public class Player
 	 */
 	private void move() 
 	{
-		System.out.println("Where do you want to move? | Tile index(0-24): ");
+		System.out.println("Where do you want to move? (1: up | 2: right | 3: down | 4: left) ");
 		Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
-		while(idx < 0 || idx > 24)
+		if(idx < 1 || idx > 4) 
+		{			
+			System.out.println("There are only four directions...");
+			return;
+		}
+		while(piece.getTile().getNeighbor(Direction.values()[idx-1]) == null)
 		{
-			System.out.println("Incorrect tile index!");
+			System.out.println("There is no tile in that direction! Try again...");
 			idx = sc.nextInt();
 		}
-		if(piece.getTile().isNeighbor(Game.getInstance().getBoard().getTiles().get(idx)))
-			piece.moved(Game.getInstance().getBoard().getTiles().get(idx));
-		else
-			System.out.println("You can only move to a neighboring tile!");
+		piece.moved(piece.getTile().getNeighbor(Direction.values()[idx-1]));
 	}
 	
 	/**

@@ -25,7 +25,7 @@ public class Unstable extends Ice
 	 */
 	public void flip()
 	{
-		for(int i = 0; i < getCapacity(); i++)
-			pieces.get(i).setInWater(true);
+		for(Piece p : getPieces())
+			p.setInWater(true);
 	}
 }
