@@ -3,17 +3,17 @@ package game;
 public class Tent implements Item
 {
 	private Tile onTile;
-	public Tile getOnTile() {
+	public Tile getTile() {
 		return onTile;
 	}
 
-	public void setOnTile(Tile onTile) {
-		this.onTile = onTile;
+	public void setOnTile(Tile t) {
+		onTile = t;
 	}
 
 	public void used(Piece p)
 	{
-		//Game.getInstance().getBoard().getTiles().
+		setOnTile(p.getTile());
 	}
 	
 	public void destroy()
