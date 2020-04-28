@@ -12,6 +12,12 @@ public abstract class Piece
 	private Tile onTile = null;
 	private Colour colour;
 	
+	/**
+	 * A bábut mozgató függvényünk, mely le is ellenõrzi, 
+	 * hogy van-e medve a kiválasztott mezõn
+	 * 
+	 * @param t a mezõ, melyre a bábut mozgatni akarjuk
+	 */
 	public void moved(Tile t)
 	{
 		//TODO
@@ -30,6 +36,11 @@ public abstract class Piece
 		}
 	}
 	
+	/**
+	 * Függvény, mely az eszközök használatáért felelõs.
+	 * 
+	 * @param i Az eszköz, amit használni akarunk 
+	 */
 	public void useItem(Item i)
 	{
 		
@@ -62,7 +73,9 @@ public abstract class Piece
 			System.out.println(e.toString());
 		}
 	}
-	
+	/**
+	 * Az ásásért felelõs függvény
+	 */
 	public void dig() 
 	{
 		if(actionPoints == 0)

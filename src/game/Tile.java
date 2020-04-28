@@ -7,12 +7,20 @@ public class Tile
 {
 	protected ArrayList<Piece> pieces;
 	protected HashMap<Direction, Tile> neighbors;
-	private Bear bear = null; //nem �gy k�ne
+	private Bear bear = null; //nem így kéne
 	private boolean checked = false;
 	private Shelter shelter = null;
 	private int snow;
 	private int capacity;
 	
+	/**
+	 * A Tile konstruktora. Beállitja a mezõ kapacitását valamint
+	 * a rajta található hómennyiséget, és inicializálja a bábukat
+	 * található listát, valamint a szomszédokat tartalmazó HashMap-ot
+	 * 	 
+	 * @param c	Erre fogjuk beállitani a mezõ kapacitását
+	 * @param s	Erre fogjuk beállitani a mezõ hómennyiségét
+	 */
 	public Tile(int c, int s) 
 	{
 		capacity = c;
@@ -29,6 +37,14 @@ public class Tile
 
 	public void setNeighbor(Direction d, Tile t) { neighbors.put(d, t);	}
 	
+	/**
+	 * Ellenõrzi, hogy a paraméternek kapott mezõ ennek
+	 * a mezõnek a szomszédja-e (felette, alatta, jobbra
+	 * vagy balra található tõle)
+	 * 
+	 * @param t A mezõ, melyrõl meg akarjuk határozni, hogy szomszédos-e
+	 * @return 	Boolean-t ad vissza (true ha szomszédos, false ha nem)
+	 */
 	public boolean isNeighbor(Tile t) 
 	{
 		boolean isneighbor = false;
