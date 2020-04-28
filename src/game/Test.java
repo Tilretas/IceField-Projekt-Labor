@@ -309,4 +309,17 @@ public class Test
     		System.out.println("Given tile is not part of the board");
     	}
     }
+    
+    private void TestSnowStorm()
+    {
+    	for(Tile t : board.getTiles())
+    	{
+    		t.addSnow();
+    	}
+    	for(Piece p : board.getPieces())
+    	{
+    		p.decBodyTemp();
+    	}  
+    }
+    
 }
