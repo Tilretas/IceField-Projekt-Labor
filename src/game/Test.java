@@ -28,7 +28,7 @@ public class Test
     		
     		while(wrong) {
     			wrong = false;
-    			System.out.println("What do you want to do?\n 1: AddPiece | 2: AddBear | 3: AddItem | 4: GiveItem | 5: CreateTile\n");
+    			System.out.println("What do you want to do?\n 1: AddPiece | 2: AddBear | 3: AddItem | 4: GiveItem | 5: CreateTile | 6: SnowStorm\n");
     			cmd = sc.nextInt();
     			
     			int tile;
@@ -85,7 +85,12 @@ public class Test
     				else if(t == 3) TestCreateHole(tile);
     				else System.out.println("Incorrect tile type input");
     				break;
-
+    			
+    			case 6:
+    				System.out.println("Initiating snowstorm");
+    				TestSnowStorm();				
+    				break;
+    				
     			case 0:
     				exit = true;
     				break;
