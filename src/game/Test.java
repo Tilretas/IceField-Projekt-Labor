@@ -27,39 +27,66 @@ public class Test
     		
     		while(wrong) {
     			wrong = false;
-    			System.out.println("What do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
+    			System.out.println("What do you want to do?\n 1: AddPiece | 2: AddBear | 3: AddItem | 4: GiveItem | 5: CreateTile\n");
     			cmd = sc.nextInt();
+    			
+    			int tile;
+    			String type;
+    			int id;
     			
     			switch (cmd) {
     			case 1:
-    				System.out.println("Moving...");
-    				//move();	//nem a case ben valósítom meg a további dolgokat, hanem külön függvényekben		
+    				System.out.println("Onto which tile would you like to add the piece? (0 - 24)");
+    				tile = sc.nextInt();
+    				System.out.println("Which kind of piece would you like to add (Eskimo / Explorer)?");
+    				type = sc.nextLine();
+    				System.out.println("What colour do you want your piece to be? (1: RED | 2: YELLOW | 3: PURPLE | 4: GREEN | 5: CYAN | 6: BLUE");
+    				id = sc.nextInt();
+    				System.out.println("Adding new piece...");
+    				TestAddPiece(tile, type, Colour.values()[id - 1]);
     				break;
-
     			case 2:
-    				System.out.println("Digging...");
-    				//dig();				
+    				System.out.println("Onto which tile would you like to add the bear? (0 - 24)");
+    				tile = sc.nextInt();
+    				System.out.println("Adding bear...");
+    				TestAddBear(tile);			
     				break;
     				
     			case 3:
-    				System.out.println("Abiliting...");
-    				//useAbility();				
+    				System.out.println("Onto which tile would you like to add the item? (0 - 24)");
+    				tile = sc.nextInt();
+    				System.out.println("Which kind of item would you like to add? (Part | Food | Suit | Rope | Tent | Shovel | Wooden)");
+    				type = sc.nextLine();	
+    				System.out.println("Adding item...");
+    				TestAddItem(tile, type);
     				break;
     				
     			case 4:
-    				System.out.println("Iteming...");
-    				//useItem();				
+    				System.out.println("Which piece would you like to give the item to? (1: RED | 2: YELLOW | 3: PURPLE | 4: GREEN | 5: CYAN | 6: BLUE");
+    				id = sc.nextInt();
+    				System.out.println("Which kind of item would you like to add? (Part | Food | Suit | Rope | Tent | Shovel | Wooden)");
+    				type = sc.nextLine();
+    				System.out.println("Giving item...");
+    				TestGiveItem(Colour.values()[id - 1], type);
     				break;
     				
     			case 5:
-    				System.out.println("Pick upping...");
-    				//pickUpItem();				
+    				System.out.println("Which kind of tile would you like to create? (1: Ice | 2: Unstable | 3: Hole");
+    				int t = sc.nextInt();
+    				System.out.println("Where do you want to create your tile? (0 - 24)");
+    				tile = sc.nextInt();
+    				if(t == 1) TestCreateIce(tile);
+    				else if(t == 2) {
+    					System.out.println("How many would you like your Unstable's capacity to be? (1 - 5)");
+        				int cap = sc.nextInt();
+    					TestCreateUnstable(tile, cap);
+    				}
+    				else if(t == 3) TestCreateHole(tile);
+    				else System.out.println("Incorrect tile type input");
     				break;
-    				
     			case 0:
     				exit = true;
     				break;
-    				
     			default:
     				wrong = true;
     				System.out.println("Incorrect input!");
@@ -90,16 +117,9 @@ public class Test
 	/*
      *  Placing an eskimo/explorer with unique colour id on a given tile
      */
-    private void TestAddPiece(List<String> input) {
-    	try {
-    		if(input.size() != 3) {							//3 paramétert adunk át, ha nem, error
-    			throw new NumberFormatException();
-    		}
-    		int s = Integer.parseInt(input.get(1));			//Az elsõ a tile
-    		String type = input.get(2);						//A második a típusa (explorer/eskimo)
-    		Colour id = Colour.valueOf(input.get(3));		//Harmadik az id-je ami szín
-    		
-            if (s > 24 || s < 0) {							//Ha nem a pálya része a megadott mezõ, error
+    private void TestAddPiece(int tile, String type, Colour id) {
+    	try {   		
+            if (tile > 24 || tile < 0) {					//Ha nem a pálya része a megadott mezõ, error
                 throw new Exception();
             }
             
@@ -107,21 +127,19 @@ public class Test
             	Eskimo eskimo = new Eskimo();				//Eskimo létrehozása
             	eskimo.setActionPoints(5);					//Akciópontjainak beállítása
             	eskimo.setColour(id);						//Beállítjuk az azonosítóját, ami a színe
-            	eskimo.moved(board.getTiles().get(s));		//Odamozgatjuk lényegében a moved-al a megadott mezõre
+            	eskimo.moved(board.getTiles().get(tile));	//Odamozgatjuk lényegében a moved-al a megadott mezõre
             	board.getPieces().add(eskimo);				//Majd végül a piecek tömbjéhez adása
             }
             else if(type == "Explorer") {
             	Explorer explorer = new Explorer();			//Explorer létrehozása
             	explorer.setActionPoints(5);				//Akciópontjainak beállítása
             	explorer.setColour(id);						//Beállítjuk az azonosítóját, ami a színe
-            	explorer.moved(board.getTiles().get(s));	//Odamozgatjuk lényegében a moved-al a megadott mezõre
+            	explorer.moved(board.getTiles().get(tile));	//Odamozgatjuk lényegében a moved-al a megadott mezõre
             	board.getPieces().add(explorer);			//Majd végül a piecek tömbjéhez adása
             }
             else {
             	throw new IOException();					//Ha nem Eskimot vagy Explorert adtunk meg, error
             }
-    	} catch (NumberFormatException e) {
-    		System.out.println("Invalid paramters");
     	} catch (IOException e) {
     		System.out.println("Given piece type does not exist");
     	} catch (Exception e) {
@@ -132,13 +150,13 @@ public class Test
     /*
      *  Placing the bear on a given tile
      */
-    private void TestAddBear(int s) {
+    private void TestAddBear(int tile) {
     	try {
-            if (s > 24 || s < 0) {							//Ha nem a pálya része a megadott mezõ, error
+            if (tile > 24 || tile < 0) {							//Ha nem a pálya része a megadott mezõ, error
                 throw new Exception();
             }
             Bear bear = new Bear();
-            bear.moved(board.getTiles().get(s));			//Odamozgatjuk lényegében a moved-al a megadott mezõre
+            bear.moved(board.getTiles().get(tile));					//Odamozgatjuk lényegében a moved-al a megadott mezõre
     	} catch (Exception e) {
     		System.out.println("Given tile is not part of the board");
     	}
@@ -147,45 +165,37 @@ public class Test
     /*
      *  Adding specific item to a given tile
      */
-    private void TestAddItem(List<String> input) {
-    	try {
-    		if(input.size() != 2) {							//2 paramétert adunk át, ha nem, error
-    			throw new NumberFormatException();
-    		}
-    		int s = Integer.parseInt(input.get(1));			//Az elsõ a tile
-    		String type = input.get(2);						//A második a lehelyezni kívánt item típusa
-    		
-    		if (s > 24 || s < 0) {							//Ha nem a pálya része a megadott mezõ, error
+    private void TestAddItem(int tile, String type) {
+    	try {    		
+    		if (tile > 24 || tile < 0) {							//Ha nem a pálya része a megadott mezõ, error
                 throw new Exception();
             }
     		
-    		switch(type) {									//Hozzáadjuk a megadott mezõhöz a megadott típusú itemet
+    		switch(type) {											//Hozzáadjuk a megadott mezõhöz a megadott típusú itemet
 	    		case "Part":
-	    			board.getTiles().get(s).setItem(new Part());
+	    			board.getTiles().get(tile).setItem(new Part());
 	    			break;
 	    		case "Food":
-	    			board.getTiles().get(s).setItem(new Food());
+	    			board.getTiles().get(tile).setItem(new Food());
 	    			break;
 	    		case "Suit":
-	    			board.getTiles().get(s).setItem(new Suit());
+	    			board.getTiles().get(tile).setItem(new Suit());
 	    			break;
 	    		case "Rope":
-	    			board.getTiles().get(s).setItem(new Rope());
+	    			board.getTiles().get(tile).setItem(new Rope());
 	    			break;
 	    		case "Tent":
-	    			board.getTiles().get(s).setItem(new Tent());
+	    			board.getTiles().get(tile).setItem(new Tent());
 	    			break;
 	    		case "Shovel":
-	    			board.getTiles().get(s).setItem(new Shovel());
+	    			board.getTiles().get(tile).setItem(new Shovel());
 	    			break;
 	    		case "Wooden":
-	    			board.getTiles().get(s).setItem(new Wooden());
+	    			board.getTiles().get(tile).setItem(new Wooden());
 	    			break;
 	    		default:
 	    			throw new IOException();
     		}
-    	} catch (NumberFormatException e) {
-    		System.out.println("Invalid paramters");
     	} catch (IOException e) {
     		System.out.println("Given item type does not exist");
     	} catch (Exception e) {
@@ -196,14 +206,8 @@ public class Test
     /*
      *  Adding specific item to given piece (distinction by colour)
      */
-    private void TestGiveItem(List<String> input) {
+    private void TestGiveItem(Colour id, String type) {
     	try {
-    		if(input.size() != 2) {							//2 paramétert adunk át, ha nem, error
-    			throw new NumberFormatException();
-    		}
-    		Colour id = Colour.valueOf(input.get(3));		//Elsõ az id-je ami szín
-    		String type = input.get(2);						//Második az odaadni kívánt item típusa
-    		
     		Item item;
     		
     		switch(type) {									//Létrehozzuk a megadott típusú itemet
@@ -241,8 +245,6 @@ public class Test
     		}
     		if(!found)												//Ha nincs olyan színû bábu, exception3
     			throw new Exception();
-       	} catch (NumberFormatException e) {
-    		System.out.println("Invalid paramters");
     	} catch (IOException e) {
     		System.out.println("Given item type does not exist");
     	} catch (Exception e) {
@@ -253,18 +255,12 @@ public class Test
     /*
      *  Creating an ice by replacing the old tile
      */
-    private void TestCreateIce(List<String> input) {
+    private void TestCreateIce(int tile) {
     	try {
-    		if(input.size() != 3) {								//3 paramétert adunk át, ha nem, error
-    			throw new NumberFormatException();
-    		}
-    		int s = Integer.parseInt(input.get(1));				//Az elsõ a tile
-    		int cap = Integer.parseInt(input.get(2));			//A második a capacity
-    		int snw = Integer.parseInt(input.get(3));			//A harmadik a snow
-	    	if (s > 24 || s < 0) {								//Ha nem a pálya része a megadott mezõ, error
+	    	if (tile > 24 || tile < 0) {							//Ha nem a pálya része a megadott mezõ, error
 	            throw new Exception();
 	        }
-	    	board.getTiles().set(s, new Ice(cap, snw));			//Beállítjuk a megadott mezõt ice-ra									Ice-nál capacity???
+	    	board.getTiles().set(tile, new Ice(9, 0));			//Beállítjuk a megadott mezõt ice-ra									Ice-nál capacity???
     	} catch (Exception e) {
     		System.out.println("Given piece does not exist");
     	}
@@ -273,18 +269,12 @@ public class Test
     /*
      *  Creating an unstable ice by replacing the old tile
      */
-    private void TestCreateUnstalbe(List<String> input) {
+    private void TestCreateUnstable(int tile, int cap) {
     	try {
-    		if(input.size() != 3) {								//3 paramétert adunk át, ha nem, error
-    			throw new NumberFormatException();
-    		}
-    		int s = Integer.parseInt(input.get(1));				//Az elsõ a tile
-    		int cap = Integer.parseInt(input.get(2));			//A második a capacity
-    		int snw = Integer.parseInt(input.get(3));			//A harmadik a snow
-	    	if (s > 24 || s < 0) {								//Ha nem a pálya része a megadott mezõ, error
+	    	if (tile > 24 || tile < 0) {								//Ha nem a pálya része a megadott mezõ, error
 	            throw new Exception();
 	        }
-	    	board.getTiles().set(s, new Unstable(cap, snw));	//Beállítjuk a megadott mezõt unstable-re
+	    	board.getTiles().set(tile, new Unstable(cap, 0));			//Beállítjuk a megadott mezõt unstable-re
     	} catch (Exception e) {
     		System.out.println("Given tile is not part of the board");
     	}
@@ -293,18 +283,12 @@ public class Test
     /*
      *  Creating a hole by replacing the old tile
      */
-    private void TestCreateHole(List<String> input) {
+    private void TestCreateHole(int tile) {
     	try {
-    		if(input.size() != 3) {								//3 paramétert adunk át, ha nem, error
-    			throw new NumberFormatException();
-    		}
-    		int s = Integer.parseInt(input.get(1));				//Az elsõ a tile
-    		int cap = Integer.parseInt(input.get(2));			//A második a capacity
-    		int snw = Integer.parseInt(input.get(3));			//A harmadik a snow
-	    	if (s > 24 || s < 0) {								//Ha nem a pálya része a megadott mezõ, error
+	    	if (tile > 24 || tile < 0) {								//Ha nem a pálya része a megadott mezõ, error
 	            throw new Exception();
 	        }
-	    	board.getTiles().set(s, new Unstable(cap, snw));	//Beállítjuk a megadott mezõt hole-ra										HOLE-nál capacity???
+	    	board.getTiles().set(tile, new Unstable(0, 0));				//Beállítjuk a megadott mezõt hole-ra
     	} catch (Exception e) {
     		System.out.println("Given tile is not part of the board");
     	}
