@@ -9,6 +9,7 @@ public class Test
     private boolean running;
     private boolean save = false;
     private BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+    Board board = Game.getInstance().getBoard();
     
     public Test()
     {
@@ -293,4 +294,17 @@ public class Test
     		System.out.println("Given tile is not part of the board");
     	}
     }
+    
+    private void TestSnowStorm()
+    {
+    	for(Tile t : board.getTiles())
+    	{
+    		t.addSnow();
+    	}
+    	for(Piece p : board.getPieces())
+    	{
+    		p.decBodyTemp();
+    	}  
+    }
+    
 }

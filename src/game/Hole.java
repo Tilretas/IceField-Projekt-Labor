@@ -2,19 +2,10 @@ package game;
 
 public class Hole extends Tile
 {
-	private boolean covered = true;
-  
+	
 	public Hole(int c, int s) 
 	{
 		super(c,s);
-	}
-	
-	public boolean isCovered() {
-		return covered;
-	}
-
-	public void setCovered(boolean covered) {
-		this.covered = covered;
 	}
 
 	public void movedOn(Piece p)
@@ -22,5 +13,7 @@ public class Hole extends Tile
 		pieces.add(p);
 		p.setTile(this);
 		p.setInWater(true);
+		p.setSuffocate(true);
+		this.setChecked(true);
 	}
 }

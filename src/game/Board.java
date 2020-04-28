@@ -17,38 +17,6 @@ public class Board
 	private ArrayList<Tile> tiles = new ArrayList<Tile>();
 	private ArrayList<Item> items = new ArrayList<Item>();
 	private Bear bear;
-	
-	public ArrayList<Piece> getPieces() {
-		return pieces;
-	}
-
-	public void setPieces(ArrayList<Piece> pieces) {
-		this.pieces = pieces;
-	}
-
-	public ArrayList<Tile> getTiles() {
-		return tiles;
-	}
-
-	public void setTiles(ArrayList<Tile> tiles) {
-		this.tiles = tiles;
-	}
-
-	public ArrayList<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(ArrayList<Item> items) {
-		this.items = items;
-	}
-
-	public Bear getBear() {
-		return bear;
-	}
-
-	public void setBear(Bear bear) {
-		this.bear = bear;
-	}
 
 	public void initBoard(String setupFile) throws IOException
 	{
@@ -145,6 +113,29 @@ public class Board
 				}
 			}
 		}
+		
+		for (int i = 0; i < 25; i++)
+		{
+			if(i < 5)
+				tiles.get(i).setNeighbor(Direction.UP, null);
+			else
+				tiles.get(i).setNeighbor(Direction.UP, tiles.get(i-5));
+			
+			if(i % 5 == 4)
+				tiles.get(i).setNeighbor(Direction.RIGHT, null);
+			else
+				tiles.get(i).setNeighbor(Direction.RIGHT, tiles.get(i+1));
+			
+			if(i > 19)
+				tiles.get(i).setNeighbor(Direction.DOWN, null);
+			else
+				tiles.get(i).setNeighbor(Direction.DOWN, tiles.get(i+5));
+			
+			if(i % 5 == 0)
+				tiles.get(i).setNeighbor(Direction.LEFT, null);
+			else
+				tiles.get(i).setNeighbor(Direction.LEFT, tiles.get(i-1));
+		}
 	}
 	
 	public void generateItems(String confItems)
@@ -207,4 +198,14 @@ public class Board
 			Game.getInstance().getPlayers().get(i).setPiece(pieces.get(i));
 		}
 	}
+	
+	public ArrayList<Piece> getPieces() { return pieces; }
+	
+	public ArrayList<Tile> getTiles() { return tiles; }
+	
+	public ArrayList<Item> getItems() { return items; }
+	
+	public Bear getBear() { return bear;	}
+	
+	public void setBear(Bear b) { bear = b; }
 }

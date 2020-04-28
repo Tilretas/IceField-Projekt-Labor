@@ -8,7 +8,6 @@ public class Main {
 		game.startGame(4);
 		Board board = game.getBoard();
 		ArrayList<Tile> tiles = board.getTiles();
-		board.drawBoard();
 		
 		tiles.get(8).setBear(true);
 		tiles.get(3).setChecked(true);
@@ -16,8 +15,6 @@ public class Main {
 		Eskimo e = new Eskimo();
 		tiles.get(21).movedOn(e);
 		System.out.println("\n");
-		board.drawBoard();
-		System.out.print("\n" + e.getInWater());
 		
 		
 		Suit s = new Suit();
@@ -30,9 +27,10 @@ public class Main {
 		board.getPieces().get(0).addItem(new Tent());
 		board.getPieces().get(0).addItem(new Part());
 		//e.useItem(s);
-		board.drawBoard();
 		System.out.println("\n");
 
+
+		//board.drawBoard();
 		game.play();
 		
 	}

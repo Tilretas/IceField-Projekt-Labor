@@ -6,7 +6,13 @@ public class Rope implements Item
 {
 	public void used(Piece p)
 	{
-		getPiece().moved(p.getTile());
+		Piece saved = getPiece();
+		if(saved.getInWater())
+		{
+			saved.moved(p.getTile());
+			saved.setInWater(false);
+			saved.setSuffocate(false);
+		}
 	}
 	
 	public Piece getPiece()

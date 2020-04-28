@@ -73,9 +73,14 @@ public class Game
 		}
 		if(testStart)
 		{
-			test = new Test();
-			test.run();
+			testMode();
 		}
+	}
+	
+	public void testMode()
+	{
+		test = new Test();
+		test.run();
 	}
 	
 	public void endGame(boolean win)
@@ -88,6 +93,7 @@ public class Game
 	
 	public void notifyWin()
 	{
+		System.out.println("VICTORY");
 	}
 	
 	public void moveBear()
@@ -100,5 +106,13 @@ public class Game
 	
 	public void snowStorm()
 	{
+		for(Tile t : board.getTiles())
+    	{
+    		t.addSnow();
+    	}
+    	for(Piece p : board.getPieces())
+    	{
+    		p.decBodyTemp();
+    	}  
 	}
 }
