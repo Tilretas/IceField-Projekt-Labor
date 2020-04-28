@@ -59,6 +59,11 @@ public class Board
 					p = 'X';
 				if (tiles.get(y*5 + x).getBear())
 					p = 'B';
+				if (tiles.get(y*5 + x).getShelter() != null)
+					if (tiles.get(y*5 + x).getShelter().defend())
+						p = 'I';
+					else
+						p = 'T';
 				System.out.print(p + " " + i + " | ");
 			}
 			

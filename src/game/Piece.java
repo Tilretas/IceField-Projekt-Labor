@@ -26,6 +26,7 @@ public abstract class Piece
 			t.movedOn(this);			
 			if(t.getBear() == true)	
 				this.die();
+			actionPoints--;
 		}
 	}
 	
@@ -69,17 +70,27 @@ public abstract class Piece
 			System.out.println("No more action points!");
 			return;
 		}
-		
-		this.getTile().removeSnow();		
+		if(this.getTile().getSnow() > 0) 
+		{
+			this.getTile().removeSnow();		
+			actionPoints--;
+		}
+		else 
+			System.out.println("\nThere is no more snow to dig!");
 	}
+	
+	public void pickUp()
+	{
+		inventory.add(onTile.getItem());
+		onTile.setItem(null);
+		actionPoints--;
+	}
+	
 	
 	public ArrayList<Item> getInventory() {
 		return inventory;
 	}
 
-	public void setInventory(ArrayList<Item> inventory) {
-		this.inventory = inventory;
-	}
 
 	public int getBodyTemp() {
 		return bodyTemp;
@@ -141,7 +152,7 @@ public abstract class Piece
 	
 	public void die()
 	{	
-		Game.getInstance().endGame(false);
+		Game.getInstance().notifyPlayerDied(this);
 	}
 	
 	public boolean getSuffocate() { return suffocate; }

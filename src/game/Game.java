@@ -24,7 +24,7 @@ public class Game
 	{
 		nOfPlayers = n;
 		for (int i = 0; i < n; i++) {
-			players.add(new Player());
+			players.add(new Player(Colour.values()[i]));
 		}
 		
 		board = new Board();
@@ -42,7 +42,6 @@ public class Game
 		int p = 0;
 		while(!stop) 
 		{
-			board.drawBoard();
 			players.get(p).playerInput();
 			p++;
 			if(p >= nOfPlayers)
@@ -88,11 +87,12 @@ public class Game
 	
 	public void notifyPlayerDied(Piece p)
 	{
+		endGame(false);
 	}
 	
 	public void notifyWin()
 	{
-		System.out.println("VICTORY");
+		endGame(true);
 	}
 	
 	public void moveBear()
