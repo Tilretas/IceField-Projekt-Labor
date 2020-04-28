@@ -84,8 +84,9 @@ public class Player
 					break;
 					
 				case -1:
+					piece.setActionPoints(0);
 					Game.getInstance().stop = true;
-					//Game.getInstance().testStart = true;
+					Game.getInstance().testStart = true;
 					break;
 					
 				default:
