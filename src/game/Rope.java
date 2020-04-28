@@ -12,6 +12,7 @@ public class Rope implements Item
 			saved.moved(p.getTile());
 			saved.setInWater(false);
 			saved.setSuffocate(false);
+			p.setActionPoints(p.getActionPoints() - 1);
 		}
 	}
 	
