@@ -10,8 +10,14 @@ public class Part implements Item
 				if (this.getClass() == i.getClass())
 					counter++;
 		
-		if(counter >= 3)
+		if(counter >= 3) 
+		{
+			for(Piece b : p.getTile().getPieces())
+				b.setActionPoints(b.getActionPoints() - 1);
 			Game.getInstance().notifyWin();
+		}
+			
+			
 		
 	}
 	

@@ -11,6 +11,7 @@ public class Suit implements Item
 			p.moved(getDirection());              //Szomszédosság ellenõrzése még hiányzik
 			p.setInWater(false);
 			p.setSuffocate(false);
+			p.setActionPoints(p.getActionPoints() - 1);
 		}
 	}
 	

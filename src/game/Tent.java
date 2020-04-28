@@ -9,6 +9,7 @@ public class Tent implements Item, Shelter
 		onTile = p.getTile();
 		p.getInventory().remove(this);
 		p.getTile().setShelter(this);
+		p.setActionPoints(p.getActionPoints() - 1);
 		Game.getInstance().getBoard().getTents().add(this);
 	}
 	

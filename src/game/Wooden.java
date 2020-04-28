@@ -20,12 +20,13 @@ public class Wooden extends Shovel
 			{
 				p.getTile().removeSnow();
 				p.getTile().removeSnow();
+				p.setActionPoints(p.getActionPoints() - 1);
 				durability--;				
 			}
 			else 
 			{
 				p.removeItem(this);
-				throw new Exception("Eltört az ásó!");
+				throw new Exception("The shovel broke!");
 			}
 		}
 		catch(Exception e) 

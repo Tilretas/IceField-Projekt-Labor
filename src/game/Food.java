@@ -6,6 +6,7 @@ public class Food implements Item
 	{
 		p.incBodyTemp();
 		p.removeItem(this);
+		p.setActionPoints(p.getActionPoints() - 1);
 	}
 	public char getName() 
 	{
