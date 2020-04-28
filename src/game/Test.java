@@ -18,6 +18,10 @@ public class Test
     	//...
     }
     
+    /**
+     *  This function communicates with the user,
+     *  Here you can choose which test you would like to run.
+     */
     public void run()
     {
     	while(!exit)
@@ -121,8 +125,11 @@ public class Test
         return null;
     }
 
-	/*
+	/**
      *  Placing an eskimo/explorer with unique colour id on a given tile
+     *  @param tile The tile to add the piece on
+     *  @param type Eskimo/Explorer
+     *  @param id The colour of the piece
      */
     private void TestAddPiece(int tile, int type, Colour id) {
     	try {   		
@@ -154,8 +161,9 @@ public class Test
     	}
     }
     
-    /*
+    /**
      *  Placing the bear on a given tile
+     *  @param tile The tile to place the bear on
      */
     private void TestAddBear(int tile) {
     	try {
@@ -169,8 +177,10 @@ public class Test
     	}
     }
     
-    /*
+    /**
      *  Adding specific item to a given tile
+     *  @param tile The tile to place the item in
+     *  @param type The type of the item
      */
     private void TestAddItem(int tile, String type) {
     	try {    		
@@ -210,8 +220,10 @@ public class Test
     	} 
     }
     
-    /*
+    /**
      *  Adding specific item to given piece (distinction by colour)
+     *  @param id The colour of the piece to give the item to
+     *  @param type The type of the item
      */
     private void TestGiveItem(Colour id, String type) {
     	try {
@@ -259,8 +271,9 @@ public class Test
     	} 
     }
     
-    /*
+    /**
      *  Creating an ice by replacing the old tile
+     *  @param tile The tile you change to ice
      */
     private void TestCreateIce(int tile) {
     	try {
@@ -273,8 +286,9 @@ public class Test
     	}
     }
     
-    /*
+    /**
      *  Creating an unstable ice by replacing the old tile
+     *  @param tile The tile you change to unstable
      */
     private void TestCreateUnstable(int tile, int cap) {
     	try {
@@ -287,8 +301,9 @@ public class Test
     	}
     }
     
-    /*
+    /**
      *  Creating a hole by replacing the old tile
+     *  @param tile The tile you change to hole
      */
     private void TestCreateHole(int tile) {
     	try {
@@ -301,6 +316,9 @@ public class Test
     	}
     }
     
+    /**
+     *  Simulating the snowstorm
+     */
     private void TestSnowStorm()
     {
     	Game.getInstance().snowStorm();
