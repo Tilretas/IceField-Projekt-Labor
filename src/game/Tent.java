@@ -31,6 +31,12 @@ public class Tent implements Item, Shelter
 		return 'T';
 	}
 	
+	/**
+	 * Visszadja, hogy megvéd-e a medve támadástól
+	 * Lebontja a sátrat medve támadás esetén
+	 * 
+	 * @return mindig false, mert a sátor nem véd a medvétõl
+	 */
 	public boolean defend()
 	{
 		if(onTile != null)
