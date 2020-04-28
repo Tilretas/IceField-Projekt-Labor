@@ -2,6 +2,11 @@ package game;
 
 public class Part implements Item
 {
+	/**
+	 * Megnézi, hogy megvan-e az összes alkatrész, és értesíti a játékot arról, hogy ezzel a játékosok nyertek
+	 * 
+	 * @param p A piece, aki az összeszerelést kezdeményezi
+	 */
 	public void used(Piece p)
 	{
 		int counter = 0;

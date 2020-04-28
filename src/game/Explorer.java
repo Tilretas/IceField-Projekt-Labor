@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 public class Explorer extends Piece
 {
+	/**
+	 * A sarkkutató képességét megvalósító függvény.
+	 * Megkérdezi a felhasználótól, hogy melyik mezõ kapacitását szeretné megnézni
+	 */
 	public void ability()
 	{
 		System.out.println("\nWhich neighboring tile do you want to check?(1: up | 2: right | 3: down | 4: left");

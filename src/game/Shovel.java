@@ -2,6 +2,11 @@ package game;
 
 public class Shovel implements Item
 {
+	/**
+	 * Az ásó hasznlatát megvalósító függvény
+	 * 
+	 * @param p Az ásót használó piece
+	 */
 	public void used(Piece p)
 	{
 		p.getTile().removeSnow();

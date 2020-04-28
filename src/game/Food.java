@@ -2,6 +2,11 @@ package game;
 
 public class Food implements Item
 {
+	/**
+	 * A piece elfogyaszt egy élelmet, ami növeli a testhõjét
+	 * 
+	 * @param p A piece, aki használja az itemet 
+	 */
 	public void used(Piece p)
 	{
 		p.incBodyTemp();

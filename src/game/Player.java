@@ -5,9 +5,21 @@ import java.util.Scanner;
 public class Player
 
 {
+	/**
+	 * A játékoshoz tartozó piece
+	 */
 	private Piece piece;
+	
+	/**
+	 * A játékoshoz tartozó szín
+	 */
 	private Colour colour;
 
+	/**
+	 * A Player osztály konstruktora, inicializálja a colour attribútumot
+	 * 
+	 * @param c A Player színe
+	 */
 	public Player(Colour c) { colour = c; }
 	
 	public Colour getColour() {
@@ -27,11 +39,19 @@ public class Player
 		return piece;
 	}
 	
+	/**
+	 * A paraméterként kapott mezõre lépteti a piece-t
+	 * 
+	 * @param t A mezõ, ahova lépni akarunk
+	 */
 	public void move(Tile t)
 	{
 		getPiece().moved(t);
 	}
 	
+	/**
+	 * A felhasználói input bekéréséért és végrehajtásáért felel
+	 */
 	public void playerInput() 
 	{
 		if(Game.getInstance().stop == true)
@@ -101,6 +121,9 @@ public class Player
 		}
 	}
 	
+	/**
+	 * A felhasználó által megadott mezõre lépteti a piece-t, ha az szomszédos a jelenlegi mezõjével
+	 */
 	private void move() 
 	{
 		System.out.println("Where do you want to move? | Tile index(0-24): ");
@@ -117,16 +140,25 @@ public class Player
 			System.out.println("You can only move to a neighboring tile!");
 	}
 	
+	/**
+	 * 1 hómennyiséget ás a piece jelenlegi mezõjén
+	 */
 	private void dig() 
 	{
 		piece.dig();
 	}
 	
+	/**
+	 * A piece használja a képességét
+	 */
 	private void useAbility()
 	{
 		piece.ability();
 	}
 	
+	/**
+	 * Mekkérdézi a felhasználótól, hogy melyik tárgyat akarja használni, majd használja
+	 */
 	private void useItem()
 	{
 		System.out.println("Which item do you want to use? | Item index(0-"+ (piece.getInventory().size()-1) + "):\n");
@@ -142,6 +174,9 @@ public class Player
 		piece.useItem(piece.getInventory().get(idx));
 	}
 	
+	/**
+	 * Felvesz egy tárgyat
+	 */
 	private void pickUpItem()
 	{
 		if (piece.getTile().getItem() == null)

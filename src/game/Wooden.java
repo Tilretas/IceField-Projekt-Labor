@@ -2,6 +2,9 @@ package game;
 
 public class Wooden extends Shovel
 {
+	/**
+	 * A faásó tartóssága(ahányszor használni lehet)
+	 */
 	private int durability;
 
 	public int getDurability() {
@@ -12,6 +15,11 @@ public class Wooden extends Shovel
 		this.durability = durability;
 	}
 
+	/**
+	 * A faásó használatát megvalósító függvény
+	 * 
+	 * @param p Az ásót használó piece
+	 */
 	public void used(Piece p)
 	{
 		try 

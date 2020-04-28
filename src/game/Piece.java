@@ -4,12 +4,39 @@ import java.util.ArrayList;
 
 public abstract class Piece
 {
+	/**
+	 * A piece inventory-a
+	 */
 	private ArrayList<Item> inventory = new ArrayList();
+	
+	/**
+	 * A piece testhõje
+	 */
 	private int bodyTemp;
+	
+	/**
+	 * A piece akciópontjai
+	 */
 	private int actionPoints;
+	
+	/**
+	 * Vízben van-e a piece
+	 */
 	private boolean inWater;
+	
+	/**
+	 * Fullasdozik-e a piece 
+	 */
 	private boolean suffocate;
+	
+	/**
+	 * A mezõ, amelyiken a piece van
+	 */
 	private Tile onTile = null;
+	
+	/**
+	 * A piece színe
+	 */
 	private Colour colour;
 	
 	/**
@@ -92,6 +119,9 @@ public abstract class Piece
 			System.out.println("\nThere is no more snow to dig!");
 	}
 	
+	/**
+	 * A tárgyfelvételt megvalósító függvény
+	 */
 	public void pickUp()
 	{
 		inventory.add(onTile.getItem());
@@ -137,22 +167,37 @@ public abstract class Piece
 	
 	public abstract void ability();
 	
+	/**
+	 * Hozzáadja a paraméterként kapott tárgyat a piece inventory-hoz
+	 * 
+	 * @param i Az a tárgy, amit hozzáadunk az inventory-hoz
+	 */
 	public void addItem(Item i)
 	{
 		inventory.add(i);
 	}
 	
+	/**
+	 * Kiveszi a paraméterként kapott tárgyat a piece inventory-ból
+	 * 
+	 * @param i Az a tárgy, amit kiveszünk az inventory-ból
+	 */
 	public void removeItem(Item i)
 	{
 		inventory.remove(i);
 	}
 	
-	
+	/**
+	 * Eggyel növeli a piece testhõjét
+	 */
 	public void incBodyTemp()
 	{
 		bodyTemp++;
 	}
 	
+	/**
+	 * Eggyel csökkenti a piece testhõjét
+	 */
 	public void decBodyTemp()
 	{
 		bodyTemp--;
@@ -163,6 +208,9 @@ public abstract class Piece
 		inWater = value;
 	}
 	
+	/**
+	 * Értesíti a játékot, hogy az egyik játékos meghalt
+	 */
 	public void die()
 	{	
 		Game.getInstance().notifyPlayerDied(this);

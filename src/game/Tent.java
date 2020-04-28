@@ -2,8 +2,16 @@ package game;
 
 public class Tent implements Item, Shelter
 {
+	/**
+	 * A mezõ, amelyiken a sátor van
+	 */
 	private Tile onTile;
 
+	/**
+	 * Lehelyezi a sátrat a paraméterként kapott piece mezõjére
+	 * 
+	 * @param p A piece, aki lerakja a sátrat
+	 */
 	public void used(Piece p)
 	{
 		onTile = p.getTile();
@@ -13,6 +21,9 @@ public class Tent implements Item, Shelter
 		Game.getInstance().getBoard().getTents().add(this);
 	}
 	
+	/**
+	 * Lebontja a sátrat
+	 */
 	public void destroy() { onTile.setShelter(null); }
 	
 	public char getName() 

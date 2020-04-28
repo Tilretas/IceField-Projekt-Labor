@@ -5,12 +5,33 @@ import java.util.HashMap;
 
 public class Tile
 {
-	protected ArrayList<Piece> pieces;
+	/**
+	 * A mezőn lévő játékosokat tárolja
+	 */
+	protected ArrayList<Piece> pieces;	
+	/**
+	 * A mezővel szomszédos mezők
+	 */
 	protected HashMap<Direction, Tile> neighbors;
+	/**
+	 * Medve a mezőn
+	 */
 	private Bear bear = null; //nem így kéne
+	/**
+	 * Volt-e már ellenőrizve a mező kapacitása
+	 */
 	private boolean checked = false;
+	/**
+	 * Menedék a mezőn
+	 */
 	private Shelter shelter = null;
+	/**
+	 * Hómennyiség a mezőn
+	 */
 	private int snow;
+	/**
+	 * A mező kapacitása
+	 */
 	private int capacity;
 	
 	/**
@@ -70,10 +91,21 @@ public class Tile
 
 	public void setSnow(int s) { snow = s; }
 	
+	/**
+	 * Eggyel növeli a hó mennyiségét 
+	 */
 	public void addSnow() { snow++; }
 	
+	/**
+	 * Eggyel csökkenti a hó mennyiségét
+	 */
 	public void removeSnow() { snow--; }
 	
+	/**
+	 * A paraméterként kapott piece-t eltávolítja a mezőn lévő piece-ek közül
+	 * 
+	 * @param p Az eltávolítandó piece
+	 */
 	public void removePiece(Piece p) { pieces.remove(p); }
 	
 	public void movedOn(Piece p) {}
