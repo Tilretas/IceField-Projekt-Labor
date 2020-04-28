@@ -28,7 +28,7 @@ public class Test
     		
     		while(wrong) {
     			wrong = false;
-    			System.out.println("What do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
+    			System.out.println("What do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item | 6: Initiate snowstorm\n");
     			cmd = sc.nextInt();
     			
     			switch (cmd) {
@@ -55,6 +55,11 @@ public class Test
     			case 5:
     				System.out.println("Pick upping...");
     				//pickUpItem();				
+    				break;
+    			
+    			case 6:
+    				System.out.println("Initiating snowstorm");
+    				TestSnowStorm();				
     				break;
     				
     			case 0:
@@ -313,14 +318,7 @@ public class Test
     
     private void TestSnowStorm()
     {
-    	for(Tile t : board.getTiles())
-    	{
-    		t.addSnow();
-    	}
-    	for(Piece p : board.getPieces())
-    	{
-    		p.decBodyTemp();
-    	}  
+    	Game.getInstance().snowStorm();
     }
     
 }
