@@ -12,6 +12,13 @@ public class Rope implements Item
 	public void used(Piece p)
 	{
 		Piece saved = getPiece();
+		if(saved == null)
+			return;
+		if(saved == p)
+		{
+			System.out.println("There's only one thing that you can use a rope on yourself for, and that stuff's waaaay too dark.");
+			return;
+		}
 		if(saved.getInWater())
 		{
 			saved.moved(p.getTile());
@@ -30,12 +37,17 @@ public class Rope implements Item
 	public Piece getPiece()
 	{
 		Scanner scr = new Scanner(System.in);
-		System.out.println("Where is the piece you want to save? (Tile index 0-24):");
-		int location = scr.nextInt();
-		System.out.println("Which piece do you want to save?");
-		int piece = scr.nextInt();
+		System.out.println("Which piece do you want to save?(0-" + (Game.getInstance().getnOfPlayers()-1));
+		int idx = scr.nextInt();
+		if(idx < 0 || idx > Game.getInstance().getnOfPlayers()-1) 
+		{
+			System.out.println("There isn't a piece with that index!");
+			return null;
+		}
+		while(!Game.getInstance().getBoard().getPieces().get(idx).getInWater())
+			System.out.println("That piece isn't in da wa'er!");
 		
-		return Game.getInstance().getBoard().getTiles().get(location).getPieces().get(piece);
+		return Game.getInstance().getBoard().getPieces().get(idx);
 	}
 	
 	public char getName() 

@@ -13,7 +13,10 @@ public class Suit implements Item
 	{
 		if(p.getInWater()) 
 		{
-			p.moved(getDirection());              
+			Tile t = getDirection(p.getTile());
+			if(t== null)
+				return;
+			p.moved(t);              
 			p.setInWater(false);
 			p.setSuffocate(false);
 			p.setActionPoints(p.getActionPoints() - 1);
@@ -25,14 +28,27 @@ public class Suit implements Item
 	 * 
 	 * @return A mezõ, ahova lépni fog
 	 */
-	public Tile getDirection()
+	public Tile getDirection(Tile t)
 	{
 		Scanner scr = new Scanner(System.in);
-		System.out.println("On which tile do you want ot move? (Tile index 0-24):");
-		int tile_num = scr.nextInt();
-		scr.close();
+		System.out.println("On which tile do you want to move? (1: up | 2: right | 3: down | 4: left):");
+		int idx = scr.nextInt();
 		
-		return Game.getInstance().getBoard().getTiles().get(tile_num);
+		if(idx < 1 || idx > 4) 
+		{
+			System.out.println("There are only four options...");
+			scr.close();
+			return null;
+		}
+		
+		while(t.getNeighbor(Direction.values()[idx-1]) == null) 
+		{
+			System.out.println("There is no tile in that direction!");
+			idx = scr.nextInt();			
+		}
+		
+		scr.close();
+		return t.getNeighbor(Direction.values()[idx-1]);
 	}
 	
 	public char getName() 
