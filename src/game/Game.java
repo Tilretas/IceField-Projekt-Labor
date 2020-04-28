@@ -106,5 +106,13 @@ public class Game
 	
 	public void snowStorm()
 	{
+		for(Tile t : board.getTiles())
+    	{
+    		t.addSnow();
+    	}
+    	for(Piece p : board.getPieces())
+    	{
+    		p.decBodyTemp();
+    	}  
 	}
 }
