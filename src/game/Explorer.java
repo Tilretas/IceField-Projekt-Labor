@@ -23,6 +23,7 @@ public class Explorer extends Piece
 		if(idx == 0)
 		{
 			getTile().setChecked(true);
+			setActionPoints(getActionPoints() - 1);
 			return;
 		}
 		while(getTile().getNeighbor(Direction.values()[idx-1]) == null) 
@@ -31,7 +32,7 @@ public class Explorer extends Piece
 			idx = sc.nextInt();			
 		}
 		getTile().getNeighbor(Direction.values()[idx-1]).setChecked(true);
-		this.setActionPoints(getActionPoints()-1);				
+		setActionPoints(getActionPoints()-1);				
 	}
 	
 }
