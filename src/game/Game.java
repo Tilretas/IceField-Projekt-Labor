@@ -88,6 +88,7 @@ public class Game
 	
 	public void notifyWin()
 	{
+		System.out.println("VICTORY");
 	}
 	
 	public void moveBear()

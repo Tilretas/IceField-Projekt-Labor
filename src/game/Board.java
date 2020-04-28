@@ -17,38 +17,6 @@ public class Board
 	private ArrayList<Tile> tiles = new ArrayList<Tile>();
 	private ArrayList<Item> items = new ArrayList<Item>();
 	private Bear bear;
-	
-	public ArrayList<Piece> getPieces() {
-		return pieces;
-	}
-
-	public void setPieces(ArrayList<Piece> pieces) {
-		this.pieces = pieces;
-	}
-
-	public ArrayList<Tile> getTiles() {
-		return tiles;
-	}
-
-	public void setTiles(ArrayList<Tile> tiles) {
-		this.tiles = tiles;
-	}
-
-	public ArrayList<Item> getItems() {
-		return items;
-	}
-
-	public void setItems(ArrayList<Item> items) {
-		this.items = items;
-	}
-
-	public Bear getBear() {
-		return bear;
-	}
-
-	public void setBear(Bear bear) {
-		this.bear = bear;
-	}
 
 	public void initBoard(String setupFile) throws IOException
 	{
@@ -230,4 +198,14 @@ public class Board
 			Game.getInstance().getPlayers().get(i).setPiece(pieces.get(i));
 		}
 	}
+	
+	public ArrayList<Piece> getPieces() { return pieces; }
+	
+	public ArrayList<Tile> getTiles() { return tiles; }
+	
+	public ArrayList<Item> getItems() { return items; }
+	
+	public Bear getBear() { return bear;	}
+	
+	public void setBear(Bear b) { bear = b; }
 }
