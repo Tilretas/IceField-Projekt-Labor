@@ -40,7 +40,7 @@ public class Player
 	}
 	
 	/**
-	 * A paraméterként kapott mezõre lépteti a piece-t
+	 * A paraméterként kapott mezõre lépteti a piece-t.
 	 * 
 	 * @param t A mezõ, ahova lépni akarunk
 	 */
@@ -127,6 +127,11 @@ public class Player
 	 */
 	private void move() 
 	{
+		if(getPiece().getInWater() == true)
+		{
+			System.out.println("You need to use a diving suit to get out of water!");
+			return;
+		}
 		System.out.println("Where do you want to move? (1: up | 2: right | 3: down | 4: left) ");
 		Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
