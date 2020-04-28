@@ -31,7 +31,7 @@ public class Explorer extends Piece
 			idx = sc.nextInt();			
 		}
 		getTile().getNeighbor(Direction.values()[idx-1]).setChecked(true);
-		this.setActionPoints(getActionPoints()-1);				
+		setActionPoints(getActionPoints()-1);				
 	}
 	
 }

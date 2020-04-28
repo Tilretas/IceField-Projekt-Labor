@@ -99,10 +99,13 @@ public class Board
 	}
 	
 	/**
+	 * A mezõk(Tile) létrehozásáért felelõs függvény.
+	 * 5x5 Tile-t hoz létre a konfigurációnak megfelelõen, ahol minden Tile egy 3 számjegyû szám.
+	 * Százas helyiérték: Mezõ típusa (0: jég | 1: instabil jég | 2: lyuk).
+	 * Tizes: Mezõ teherbírása (ha jég, akkor 9, ha lyuk akkor 0).
+	 * Egyes: Mezõn lévõ hórétegek száma.
 	 * 
-	 * 
-	 * 
-	 * @param 
+	 * @param confTiles Mezõk konfigurációs stringje.
 	 */
 	public void createTiles(String[] confTiles)
 	{
@@ -164,6 +167,12 @@ public class Board
 		}
 	}
 	
+	/**
+	 * A tárgyak generálásáért felelõs.
+	 * A kapott stringben 3 számjegyû számok vannak, ahol a százas helyérték a tárgy fajtája, a tizes-egyes a mezõ indexe ahova a tárgy karül.
+	 * 
+	 * @param confItems A tárgyak konfigurációs stringje.
+	 */
 	public void generateItems(String confItems)
 	{
 		Scanner sc = new Scanner(confItems);
@@ -209,6 +218,13 @@ public class Board
 		
 	}
 	
+	/**
+	 * A bábuk létrehozásáért felelõs.
+	 * A stringben lévõ szám meghatározza, hogy melyik mezõre kerüljenek a bábuk.
+	 * Minden játékos 1 bábut kap.
+	 * 
+	 * @param confPieces A kezdõ mezõt tartalmazó string.
+	 */
 	public void spawnPieces(String confPieces)
 	{
 		int s = Integer.parseInt(confPieces);
@@ -228,6 +244,8 @@ public class Board
 		
 	}
 	
+	//getter - setterek -------------------------
+	
 	public ArrayList<Piece> getPieces() { return pieces; }
 	
 	public ArrayList<Tile> getTiles() { return tiles; }
@@ -239,4 +257,7 @@ public class Board
 	public Bear getBear() { return bear;	}
 	
 	public void setBear(Bear b) { bear = b; }
+	
+	//getter - setterek ---------vége------------
+
 }

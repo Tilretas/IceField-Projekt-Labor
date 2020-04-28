@@ -5,8 +5,8 @@ public class Bear
 	private Tile onTile = null;
 		
 	/**
-	 * A sarkkutató képességét megvalósító függvény.
-	 * Megkérdezi a felhasználótól, hogy melyik mezõ kapacitását szeretné megnézni
+	 * A medve mozgását megvalósító függvény.
+	 * A megadott mezõre mozdgatja a medvét, ahol vannak fedetlen bábuk, megtámadja azokat.
 	 * 
 	 * @param t - A Tile ahova a medve mozog
 	 */
