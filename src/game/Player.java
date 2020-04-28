@@ -2,8 +2,6 @@ package game;
 
 import java.util.Scanner;
 
-import com.sun.prism.paint.Stop;
-
 public class Player
 
 {
@@ -75,6 +73,11 @@ public class Player
 				Game.getInstance().stop = true;
 				break;
 				
+			case -1:
+				Game.getInstance().stop = true;
+				Game.getInstance().testStart = true;
+				break;
+				
 			default:
 				wrong = true;
 				System.out.println("Incorrect input!");
@@ -108,7 +111,9 @@ public class Player
 	
 	private void useItem()
 	{
-		System.out.println("Which item do you want to use? | Item index(0-"+ piece.getInventory().size() + "): ");
+		System.out.println("Which item do you want to use? | Item index(0-"+ (piece.getInventory().size()-1) + "):\n");
+		for (int i = 0; i < piece.getInventory().size(); i++)
+			System.out.print(i + ": " + piece.getInventory().get(i).getName() + " | ");
 		Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
 		while(idx < 0 || idx > piece.getInventory().size() - 1)

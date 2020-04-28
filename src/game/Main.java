@@ -24,11 +24,16 @@ public class Main {
 		//e.setOnTile(tiles.get(21));
 		e.setActionPoints(5);
 		e.addItem(s);
+		board.getPieces().get(0).addItem(new Rope());
+		board.getPieces().get(0).addItem(new Suit());
+		board.getPieces().get(0).addItem(new Wooden());
+		board.getPieces().get(0).addItem(new Tent());
+		board.getPieces().get(0).addItem(new Part());
 		//e.useItem(s);
 		board.drawBoard();
 		System.out.println("\n");
 
-		//game.play();
+		game.play();
 		
 	}
 }

@@ -11,6 +11,8 @@ public class Game
 	private int nOfPlayers;
 	private Board board;
 	public boolean stop;
+	public boolean testStart;
+	private Test test;
 
     public static Game getInstance() 
     { 
@@ -54,13 +56,12 @@ public class Game
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-		}
-		
-		
+		}	
 	}
 	
 	public void play()
 	{
+		stop = false;
 		int p = 0;
 		while(!stop) 
 		{
@@ -69,6 +70,11 @@ public class Game
 			p++;
 			if(p >= nOfPlayers)
 				p = 0;
+		}
+		if(testStart)
+		{
+			test = new Test();
+			test.run();
 		}
 	}
 	
