@@ -100,6 +100,7 @@ public abstract class Piece
 			System.out.println(e.toString());
 		}
 	}
+	
 	/**
 	 * Az ásásért felelõs függvény
 	 */
@@ -129,42 +130,6 @@ public abstract class Piece
 		actionPoints--;
 	}
 	
-	
-	public ArrayList<Item> getInventory() {
-		return inventory;
-	}
-
-
-	public int getBodyTemp() {
-		return bodyTemp;
-	}
-
-	public void setBodyTemp(int bodyTemp) {
-		this.bodyTemp = bodyTemp;
-	}
-
-	public int getActionPoints() {
-		return actionPoints;
-	}
-
-	public void setActionPoints(int actionPoints) {
-		this.actionPoints = actionPoints;
-	}
-
-	public void setTile(Tile t) { onTile = t; }
-
-	public Colour getColour() {
-		return colour;
-	}
-
-	public void setColour(Colour colour) {
-		this.colour = colour;
-	}
-
-	public boolean getInWater() {
-		return inWater;
-	}	
-	
 	public abstract void ability();
 	
 	/**
@@ -172,56 +137,54 @@ public abstract class Piece
 	 * 
 	 * @param i Az a tárgy, amit hozzáadunk az inventory-hoz
 	 */
-	public void addItem(Item i)
-	{
-		inventory.add(i);
-	}
+	public void addItem(Item i) { inventory.add(i); }
 	
 	/**
 	 * Kiveszi a paraméterként kapott tárgyat a piece inventory-ból
 	 * 
 	 * @param i Az a tárgy, amit kiveszünk az inventory-ból
 	 */
-	public void removeItem(Item i)
-	{
-		inventory.remove(i);
-	}
+	public void removeItem(Item i) { inventory.remove(i); }
 	
 	/**
 	 * Eggyel növeli a piece testhõjét
 	 */
-	public void incBodyTemp()
-	{
-		bodyTemp++;
-	}
+	public void incBodyTemp() { bodyTemp++; }
 	
 	/**
 	 * Eggyel csökkenti a piece testhõjét
 	 */
-	public void decBodyTemp()
-	{
-		bodyTemp--;
-	}
-	
-	public void setInWater(boolean value)
-	{
-		inWater = value;
-	}
+	public void decBodyTemp() { bodyTemp--; }
 	
 	/**
 	 * Értesíti a játékot, hogy az egyik játékos meghalt
 	 */
-	public void die()
-	{	
-		Game.getInstance().notifyPlayerDied(this);
-	}
+	public void die() { Game.getInstance().notifyPlayerDied(this); }
 	
+	public ArrayList<Item> getInventory() { return inventory; }
+	
+	public int getBodyTemp() { return bodyTemp; }
+	
+	public void setBodyTemp(int b) { bodyTemp = b; }
+	
+	public int getActionPoints() { return actionPoints; }
+	
+	public void setActionPoints(int a) { actionPoints = a; }
+	
+	public void setTile(Tile t) { onTile = t; }
+	
+	public Colour getColour() { return colour; }
+	
+	public void setColour(Colour c) { colour = c; }
+	
+	public boolean getInWater() { return inWater; }	
+	
+	public void setInWater(boolean value) { inWater = value; }
+
 	public boolean getSuffocate() { return suffocate; }
 	
 	public void setSuffocate(boolean s) { suffocate = s; }
 	
-	public Tile getTile()
-	{
-		return onTile;
-	}
+	public Tile getTile() { return onTile; }
 }
+

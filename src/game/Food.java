@@ -3,7 +3,7 @@ package game;
 public class Food implements Item
 {
 	/**
-	 * A piece elfogyaszt egy élelmet, ami növeli a testhõjét
+	 * A piece elfogyaszt egy élelmet, ami növeli a testhõjét.
 	 * 
 	 * @param p A piece, aki használja az itemet 
 	 */
