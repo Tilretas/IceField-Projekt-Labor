@@ -50,8 +50,12 @@ public class Rope implements Item
 		return Game.getInstance().getBoard().getPieces().get(idx);
 	}
 	
+	//getter - setterek -------------------------
+	
 	public char getName() 
 	{
 		return 'R';
 	}
+	
+	//getter - setterek ---------vége------------
 }
