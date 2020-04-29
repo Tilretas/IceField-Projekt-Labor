@@ -3,8 +3,6 @@ package game;
 import java.io.*;
 import java.util.*;
 
-import com.sun.prism.paint.Stop;
-
 public class Test
 {
 	private boolean exit;
