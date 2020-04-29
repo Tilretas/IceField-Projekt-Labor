@@ -165,6 +165,8 @@ public class Game
 	
 	public Board getBoard() { return board; }
 	
+	public boolean getTestStart() { return testStart; }
+	
 	//getter - setterek ---------vége------------
 }
 

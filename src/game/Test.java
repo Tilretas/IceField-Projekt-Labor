@@ -35,7 +35,7 @@ public class Test
     		while(wrong) {
     			wrong = false;
     			System.out.println("Test mode: ON");
-    			System.out.println("What do you want to do?\n 1: AddPiece | 2: AddBear | 3: AddItem | 4: GiveItem | 5: CreateTile | 6: SnowStorm\n");
+    			System.out.println("What do you want to do?\n 1: AddPiece | 2: AddBear | 3: AddItem | 4: GiveItem | 5: CreateTile | 6: SnowStorm | 0: Test OFF\n");
     			cmd = sc.nextInt();
     			
     			int tile;
@@ -53,6 +53,7 @@ public class Test
     				System.out.println("Adding new piece...");
     				TestAddPiece(tile, p, Colour.values()[id - 1]);
     				break;
+    				
     			case 2:
     				System.out.println("Onto which tile would you like to add the bear? (0 - 24)");
     				tile = sc.nextInt();
@@ -100,18 +101,19 @@ public class Test
     				
     			case 0:
     				exit = true;
-    				break;
+    				return true;
     				
     			case -1:
     				exit = true;
-    				return true;
-    				
+    				break;
     				
     			default:
     				wrong = true;
     				System.out.println("Incorrect input!");
     				break;
     			}
+    			if (!Game.getInstance().getTestStart())
+    	    		exit = true;
     		}
     	}
     	return false;
