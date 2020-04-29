@@ -19,8 +19,8 @@ public class Test
     }
     
     /**
-     *  This function communicates with the user,
-     *  Here you can choose which test you would like to run.
+     *  Ez a függvény kommunikál a felhasználóval,
+     *  Itt lehet kiválasztani melyik tesztesetet szeretnénk futtatni.
      */
     public void run()
     {
@@ -107,6 +107,9 @@ public class Test
     	}
     }
     
+    /*
+     *  Sor olvasása
+     */
     private List<String> ReadLine()
     {
         String line;
@@ -126,10 +129,11 @@ public class Test
     }
 
 	/**
-     *  Placing an eskimo/explorer with unique colour id on a given tile
-     *  @param tile The tile to add the piece on
-     *  @param type Eskimo/Explorer
-     *  @param id The colour of the piece
+	 *  Teszteset
+     *  Egy megadott egyedi színû és típusú (eszkimó/sarkkutató) bábut helyez a játéktáblára.
+     *  @param tile A mezõ ahova helyezni szeretnénk
+     *  @param type Típusa, ami lehet eszkimó vagy sarkkutató
+     *  @param id A bábu színe
      */
     private void TestAddPiece(int tile, int type, Colour id) {
     	try {   		
@@ -162,8 +166,9 @@ public class Test
     }
     
     /**
-     *  Placing the bear on a given tile
-     *  @param tile The tile to place the bear on
+	 *  Teszteset
+     *  Lehelyezzük a medvét a megadott mezõre
+     *  @param tile A mezõ ahova helyezni szeretnénk
      */
     private void TestAddBear(int tile) {
     	try {
@@ -178,9 +183,10 @@ public class Test
     }
     
     /**
-     *  Adding specific item to a given tile
-     *  @param tile The tile to place the item in
-     *  @param type The type of the item
+	 *  Teszteset
+     *  Egy választható fajtájú tárgyat helyez a megadott mezõbe.
+     *  @param tile A mezõ amibe helyezni szeretnénk
+     *  @param type A tárgy típusa
      */
     private void TestAddItem(int tile, String type) {
     	try {    		
@@ -221,9 +227,10 @@ public class Test
     }
     
     /**
-     *  Adding specific item to given piece (distinction by colour)
-     *  @param id The colour of the piece to give the item to
-     *  @param type The type of the item
+	 *  Teszteset
+     *  Egy választható fajtájú tárgyat ad a szín szerint választott bábunak
+     *  @param id A bábu színe aminek adni szeretnénk
+     *  @param type A tárgy típusa
      */
     private void TestGiveItem(Colour id, String type) {
     	try {
@@ -272,8 +279,9 @@ public class Test
     }
     
     /**
-     *  Creating an ice by replacing the old tile
-     *  @param tile The tile you change to ice
+	 *  Teszteset
+     *  Létrehoz egy jégtáblát a megadott mezõ helyén
+     *  @param tile A mezõ aminek fajtáját ki szeretnénk cserélni
      */
     private void TestCreateIce(int tile) {
     	try {
@@ -287,8 +295,9 @@ public class Test
     }
     
     /**
-     *  Creating an unstable ice by replacing the old tile
-     *  @param tile The tile you change to unstable
+	 *  Teszteset
+     *  Létrehoz egy instabil jégtáblát a megadott mezõ helyén
+     *  @param tile A mezõ aminek fajtáját ki szeretnénk cserélni
      */
     private void TestCreateUnstable(int tile, int cap) {
     	try {
@@ -302,8 +311,9 @@ public class Test
     }
     
     /**
-     *  Creating a hole by replacing the old tile
-     *  @param tile The tile you change to hole
+	 *  Teszteset
+     *  Létrehoz egy lyukat a megadott mezõ helyén
+     *  @param tile A mezõ aminek fajtáját ki szeretnénk cserélni
      */
     private void TestCreateHole(int tile) {
     	try {
@@ -317,7 +327,8 @@ public class Test
     }
     
     /**
-     *  Simulating the snowstorm
+	 *  Teszteset
+     *  Hóvihar
      */
     private void TestSnowStorm()
     {

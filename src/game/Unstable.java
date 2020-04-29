@@ -6,8 +6,8 @@ public class Unstable extends Ice
 		super(c,s);
 	}
 	/**
-	 * Moving to the tile
-	 * @param p The piece who moved to the tile
+	 * Az instabil jégtáblára léptetõ függvény
+	 * @param p A bábu ami odalép
 	 */
 	public void movedOn(Piece p)
 	{
@@ -21,7 +21,8 @@ public class Unstable extends Ice
 	}
 	
 	/**
-	 * Unstable flipping over and pieces fall into the water
+	 *  Az instabil jégtábla átfordul, ha túl sokan vannak rajta,
+	 *  Ezáltal a rajta tartózkodók vízbe esnek
 	 */
 	public void flip()
 	{
