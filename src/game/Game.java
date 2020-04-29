@@ -102,7 +102,7 @@ public class Game
 		if(win)
 			System.out.println("\nYou survived. WoW!");
 		else
-			System.out.println("\nSomeone died :( \nThe Coffin Niggas are on their way...");
+			System.out.println("\nSomeone died :( \nThe Coffin Dancers are on their way...");
 	}
 	
 	/**
