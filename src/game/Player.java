@@ -22,35 +22,9 @@ public class Player
 	 */
 	public Player(Colour c) { colour = c; }
 	
-	public Colour getColour() {
-		return colour;
-	}
-
-	public void setColour(Colour colour) {
-		this.colour = colour;
-	}
-
-	public void setPiece(Piece piece) {
-		this.piece = piece;
-	}
-	
-	public Piece getPiece() 
-	{
-		return piece;
-	}
-	
 	/**
-	 * A paraméterként kapott mezõre lépteti a piece-t.
-	 * 
-	 * @param t A mezõ, ahova lépni akarunk
-	 */
-	public void move(Tile t)
-	{
-		getPiece().moved(t);
-	}
-	
-	/**
-	 * A felhasználói input bekéréséért és végrehajtásáért felel
+	 * A felhasználói input bekéréséért és végrehajtásáért felel.
+	 * 6 akció közül tud választani a felhasználó (+1 rejtett, a '-1' inputtal a teszt módba kerül
 	 */
 	public void playerInput() 
 	{
@@ -74,7 +48,7 @@ public class Player
 			while(wrong) {
 				wrong = false;
 				System.out.println("\nNext player is: " + colour + ", standing on row: " + (Game.getInstance().getBoard().getTiles().indexOf(piece.getTile()) / 5 + 1) + " and col: " + (Game.getInstance().getBoard().getTiles().indexOf(piece.getTile()) % 5 + 1) + ", with " + piece.getActionPoints() +" action points.");
-				System.out.println("What do you want to do?\\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item\n");
+				System.out.println("What do you want to do?\n 1: Move | 2: Dig | 3: Ability | 4: Use Item | 5: Pick up Item | 0: Pass\n");
 				cmd = sc.nextInt();
 				
 				switch (cmd) {
@@ -151,18 +125,12 @@ public class Player
 	/**
 	 * 1 hómennyiséget ás a piece jelenlegi mezõjén
 	 */
-	private void dig() 
-	{
-		piece.dig();
-	}
+	private void dig() { piece.dig(); }
 	
 	/**
 	 * A piece használja a képességét
 	 */
-	private void useAbility()
-	{
-		piece.ability();
-	}
+	private void useAbility() { piece.ability(); }
 	
 	/**
 	 * Mekkérdézi a felhasználótól, hogy melyik tárgyat akarja használni, majd használja
@@ -192,4 +160,12 @@ public class Player
 		else
 			piece.pickUp();
 	}
+	
+	
+	public Colour getColour() { return colour; }
+	
+	public void setPiece(Piece p) { piece = p; }
+	
+	public Piece getPiece() { return piece; }
 }
+

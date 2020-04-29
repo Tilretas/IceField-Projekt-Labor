@@ -46,7 +46,7 @@ public class Board
 		String confPieces;
 		String confItems;
 
-		FileInputStream fstream = new FileInputStream("testmap.txt");
+		FileInputStream fstream = new FileInputStream(setupFile);
 		BufferedReader br = new BufferedReader(new InputStreamReader(fstream));
 		
 		for (int y = 0; y < 5; y++) 

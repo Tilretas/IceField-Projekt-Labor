@@ -3,6 +3,8 @@ package game;
 import java.io.*;
 import java.util.*;
 
+import com.sun.prism.paint.Stop;
+
 public class Test
 {
 	private boolean exit;
@@ -22,7 +24,7 @@ public class Test
      *  Ez a függvény kommunikál a felhasználóval,
      *  Itt lehet kiválasztani melyik tesztesetet szeretnénk futtatni.
      */
-    public void run()
+    public boolean run()
     {
     	while(!exit)
     	{
@@ -32,6 +34,7 @@ public class Test
     		
     		while(wrong) {
     			wrong = false;
+    			System.out.println("Test mode: ON");
     			System.out.println("What do you want to do?\n 1: AddPiece | 2: AddBear | 3: AddItem | 4: GiveItem | 5: CreateTile | 6: SnowStorm\n");
     			cmd = sc.nextInt();
     			
@@ -98,6 +101,12 @@ public class Test
     			case 0:
     				exit = true;
     				break;
+    				
+    			case -1:
+    				exit = true;
+    				return true;
+    				
+    				
     			default:
     				wrong = true;
     				System.out.println("Incorrect input!");
@@ -105,27 +114,7 @@ public class Test
     			}
     		}
     	}
-    }
-    
-    /*
-     *  Sor olvasása
-     */
-    private List<String> ReadLine()
-    {
-        String line;
-        List<String> input;
-        try
-        {
-            line = br.readLine();
-            if (line != null)
-            {
-                input = Arrays.asList(line.split(" "));
-                return input;
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        return null;
+    	return false;
     }
 
 	/**

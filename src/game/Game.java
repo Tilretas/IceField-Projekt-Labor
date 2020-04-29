@@ -15,10 +15,12 @@ public class Game
 	public boolean testStart;
 	private Test test;
 
-    public static Game getInstance() 
-    { 
-        return instance; 
-    } 
+	/**
+	 * Visszaadja a játék instance-ét
+	 * 
+	 * @return A játék példánya
+	 */
+    public static Game getInstance() { return instance; } 
     
 	public void startGame(int n)
 	{
@@ -29,13 +31,16 @@ public class Game
 		
 		board = new Board();
 		try {
-			board.initBoard("testmap");
+			board.initBoard("testmap.txt");
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}	
 	}
 	
+	/**
+	 * A körökért felelõs függvény.
+	 * Addig megy, amíg nem nyernek vagy veszítenek a játékosok, vagy a 0 paranccsal nem lépnek ki. 
+	 */
 	public void play()
 	{
 		stop = false;
@@ -56,16 +61,25 @@ public class Game
 		}
 	}
 	
+	/**
+	 * A tesztmód elindításáért felelõs függvény.
+	 */
 	public void testMode()
 	{
 		test = new Test();
-		test.run();
+		if(test.run())
+			play();
 	}
 	
+	/**
+	 * Minden kör végén meghívódik (amikor minden játékos elhasználta az akciópontjait).
+	 * 25% eséllyel lesz hóvihar.
+	 * A medve egy szomszédos mezõre lép.
+	 */
 	public void endRound()
 	{
 		Random r = new Random();
-		int x = r.nextInt(10);
+		int x = r.nextInt(4);
 		if(x == 0)
 			snowStorm();
 		moveBear();
@@ -74,6 +88,12 @@ public class Game
 		board.getTents().clear();
 	}
 	
+	/**
+	 * A játék végéért felelõs függvény.
+	 * Közli a játékosokkal a játék kimenetelét.
+	 * 
+	 * @param win Átadja, hogy nyertek-e a játékosok.
+	 */
 	public void endGame(boolean win)
 	{
 		stop = true;
@@ -85,16 +105,27 @@ public class Game
 			System.out.println("\nSomeone died :( \nThe Coffin Niggas are on their way...");
 	}
 	
+	/**
+	 * Ezen a függvényen keresztül értesül a játék egy bábu haláláról.
+	 * @param p A meghalt bábu.
+	 */
 	public void notifyPlayerDied(Piece p)
 	{
 		endGame(false);
 	}
 	
+	/**
+	 * Ezen a függvényen keresztül értesül a játék a játékosok gyõzelmérõl.
+	 */
 	public void notifyWin()
 	{
 		endGame(true);
 	}
 	
+	/**
+	 * A medve mozgatásáért felelõs.
+	 * Egy random kiválasztott szomszédos mezõre lép.
+	 */
 	public void moveBear()
 	{
 		Random r = new Random();
@@ -104,6 +135,11 @@ public class Game
 		b.moved(b.getTile().getNeighbor(Direction.values()[x]));
 	}
 	
+	/**
+	 * Hóviharért felelõs.
+	 * Minden mezõre kerül egy réteg hó.
+	 * A nem fedett játékosok veszítenek egy testhõt.
+	 */
 	public void snowStorm()
 	{
 		for(Tile t : board.getTiles())
@@ -121,10 +157,14 @@ public class Game
     	}  
 	}
 
+	//getter - setterek -------------------------
+
 	public int getnOfPlayers() { return nOfPlayers; }
 	
 	public ArrayList<Player> getPlayers() {	return players;	}
 	
 	public Board getBoard() { return board; }
+	
+	//getter - setterek ---------vége------------
 }
 
