@@ -49,14 +49,19 @@ public class Tile
 		pieces = new ArrayList<Piece>();
 		neighbors = new HashMap<>();
 	}
+	
+	/**
+	 * Eggyel növeli a hó mennyiségét 
+	 */
+	public void addSnow() { snow++; }
+	
+	/**
+	 * Eggyel csökkenti a hó mennyiségét
+	 */
+	public void removeSnow() { snow--; }
   
-	public ArrayList<Piece> getPieces() { return pieces; }
-
-	public void setPieces(ArrayList<Piece> p) { pieces = p; }
-
-	public Tile getNeighbor(Direction d) { return neighbors.get(d);	}
-
-	public void setNeighbor(Direction d, Tile t) { neighbors.put(d, t);	}
+	
+	
 	
 	/**
 	 * Ellenõrzi, hogy a paraméternek kapott mezõ ennek
@@ -77,25 +82,6 @@ public class Tile
 		
 		return isneighbor;
 	}
-	public Shelter getShelter() { return shelter; }
-
-	public void setShelter(Shelter s) { shelter = s; }
-
-	public int getCapacity() { return capacity;	}
-
-	public void setCapacity(int c) { capacity = c; }
-
-	public void setSnow(int s) { snow = s; }
-	
-	/**
-	 * Eggyel növeli a hó mennyiségét 
-	 */
-	public void addSnow() { snow++; }
-	
-	/**
-	 * Eggyel csökkenti a hó mennyiségét
-	 */
-	public void removeSnow() { snow--; }
 	
 	/**
 	 * A paraméterként kapott piece-t eltávolítja a mezőn lévő piece-ek közül
@@ -104,9 +90,27 @@ public class Tile
 	 */
 	public void removePiece(Piece p) { pieces.remove(p); }
 	
+	/**
+	 * Felüldefiniálandó függvény, mely akkor 
+	 * hivódik meg, ha rálépnek a mezőre
+	 * 
+	 * @param p A mezőre lépő bábu
+	 */
 	public void movedOn(Piece p) {}
 		
+	//getter - setterek -------------------------
+	
+	public Shelter getShelter() { return shelter; }
+
+	public void setShelter(Shelter s) { shelter = s; }
+
+	public int getCapacity() { return capacity;	}
+
+	public void setCapacity(int c) { capacity = c; }
+	
 	public int getSnow() { return snow; }
+	
+	public void setSnow(int s) { snow = s; }
 	
 	public Item getItem() { return null; }
 	
@@ -125,4 +129,13 @@ public class Tile
 	
 	public void setChecked(boolean c) { checked = c; }
 	
+	public ArrayList<Piece> getPieces() { return pieces; }
+
+	public void setPieces(ArrayList<Piece> p) { pieces = p; }
+
+	public Tile getNeighbor(Direction d) { return neighbors.get(d);	}
+
+	public void setNeighbor(Direction d, Tile t) { neighbors.put(d, t);	}
+	
+	//getter - setterek ---------vége------------
 }
