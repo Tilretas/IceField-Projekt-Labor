@@ -14,8 +14,12 @@ public class Shovel implements Item
 		p.setActionPoints(p.getActionPoints() - 1);
 	}
 	
+	//getter - setterek -------------------------
+	
 	public char getName() 
 	{
 		return 'S';
 	}
+	
+	//getter - setterek ---------vége------------
 }

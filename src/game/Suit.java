@@ -51,8 +51,12 @@ public class Suit implements Item
 		return t.getNeighbor(Direction.values()[idx-1]);
 	}
 	
+	//getter - setterek -------------------------
+	
 	public char getName() 
 	{
 		return 'D'; //diving suit (ütközött a shovellel)
 	}
+	
+	//getter - setterek ---------vége------------
 }
