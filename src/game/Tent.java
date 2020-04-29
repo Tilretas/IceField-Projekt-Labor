@@ -26,10 +26,6 @@ public class Tent implements Item, Shelter
 	 */
 	public void destroy() { onTile.setShelter(null); }
 	
-	public char getName() 
-	{
-		return 'T';
-	}
 	
 	/**
 	 * Visszadja, hogy megvéd-e a medve támadástól
@@ -43,4 +39,13 @@ public class Tent implements Item, Shelter
 			destroy();
 		return false;
 	}
+	
+	//getter - setterek -------------------------
+	
+	public char getName() 
+	{
+		return 'T';
+	}
+	
+	//getter - setterek ---------vége------------
 }

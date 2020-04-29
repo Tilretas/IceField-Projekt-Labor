@@ -14,5 +14,9 @@ public class Food implements Item
 		p.setActionPoints(p.getActionPoints() - 1);
 	}
 	
+	//getter - setterek -------------------------
+	
 	public char getName() { return 'F';	}
+	
+	//getter - setterek ---------vége------------
 }

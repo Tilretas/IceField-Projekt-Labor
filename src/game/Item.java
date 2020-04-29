@@ -7,5 +7,10 @@ public interface Item
 	 * @param p The piece
 	 */
 	public void used(Piece p);
+	
+	//getter - setterek -------------------------
+	
 	public char getName();
+
+	//getter - setterek ---------vége------------
 }

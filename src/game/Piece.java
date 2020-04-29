@@ -25,7 +25,7 @@ public abstract class Piece
 	private boolean inWater;
 	
 	/**
-	 * Fullasdozik-e a piece 
+	 * Fulladozik-e a piece 
 	 */
 	private boolean suffocate;
 	
@@ -130,6 +130,10 @@ public abstract class Piece
 		actionPoints--;
 	}
 	
+	/**
+	 * Absztrakt függvény a képesség használatára.
+	 * Felüldefiniálja mind a kutató, mind az eszkimó
+	 */
 	public abstract void ability();
 	
 	/**

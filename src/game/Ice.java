@@ -18,9 +18,7 @@ public class Ice extends Tile
 		super(c, s);
 	}
 	
-	public void setItem(Item i) {
-		item = i;
-	}
+	
 
 	/**
 	 * Hozzáadja a mezõn lévõ piece-ek közé a paraméterként kapott piece-t
@@ -33,8 +31,16 @@ public class Ice extends Tile
 		p.setTile(this);
 	}
 	
+	//getter - setterek -------------------------
+	
 	public Item getItem()
 	{
 		return item;
 	}
+	
+	public void setItem(Item i) {
+		item = i;
+	}
+	
+	//getter - setterek ---------vége------------
 }

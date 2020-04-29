@@ -13,10 +13,25 @@ import java.util.Scanner;
 
 public class Board
 {
+	/**
+	 * Bábukat tartalmazó lista
+	 */
 	private ArrayList<Piece> pieces = new ArrayList<Piece>();
+	/**
+	 * A mezõket tartalmazó lista
+	 */
 	private ArrayList<Tile> tiles = new ArrayList<Tile>();
+	/**
+	 * Eszközöket tartalmazó lista
+	 */
 	private ArrayList<Item> items = new ArrayList<Item>();
+	/**
+	 * Sátrakat tartalmazó lista
+	 */
 	private ArrayList<Tent> tents = new ArrayList<Tent>();
+	/**
+	 * Változó a medvére
+	 */
 	private Bear bear;
 
 	/**

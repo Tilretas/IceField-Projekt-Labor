@@ -2,6 +2,9 @@ package game;
 
 public class Bear
 {
+	/**
+	 * A mezõ, amelyiken a medve megtalálható
+	 */
 	private Tile onTile = null;
 		
 	/**
@@ -27,6 +30,10 @@ public class Bear
 				p.die();
 			
 	}
+	//getter - setterek -------------------------
 	
 	public Tile getTile() { return onTile; }
+
+	//getter - setterek ---------vége------------
+	
 }
