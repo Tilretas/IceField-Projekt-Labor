@@ -1,10 +1,18 @@
 package game;
+import graphics.*;
 
 public class Main {
 	public static void main(String[] args) {
-		Game game = Game.getInstance();
+		
+		java.awt.EventQueue.invokeLater(new Runnable() {
+            public void run() {
+                new NetBeansCopy().setVisible(true);
+            }
+        });        
+		
+		/*Game game = Game.getInstance();
 		game.startGame(4);
-		game.play();
+		game.play();*/
 		
 	}
 }
