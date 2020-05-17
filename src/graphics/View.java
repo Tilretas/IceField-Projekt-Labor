@@ -6,6 +6,8 @@ import java.util.ArrayList;
 
 import javax.swing.JFrame;
 
+import game.Player;
+
 
 /**
  * Maga az ablak(frame), bal oldalán az action gombok, középen a mezõk, jobb oldalon a tárgyak
@@ -15,10 +17,18 @@ import javax.swing.JFrame;
 public class View extends JFrame
 {
 	private boolean valid;	
-	private ActionPanel actionG;
-	private BoardPanel boardG;
-	private ItemGraphics itemG;
+	private Player activePlayer;
+	private ActionPanel actionPanel;
+	private BoardPanel boardPanel;
+	private ItemPanel itemPanel;
 	
+	public void Draw() 
+	{
+		//actionPanel.Draw();
+		//boardPanel.Draw();
+		itemPanel.Draw(activePlayer.getPiece().getInventory());
+		
+	}
 	
 	public void paintComponent(Graphics g)
 	{
