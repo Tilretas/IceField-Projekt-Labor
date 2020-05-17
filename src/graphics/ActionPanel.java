@@ -2,6 +2,7 @@ package graphics;
 
 import java.util.ArrayList;
 
+import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -11,13 +12,27 @@ import javax.swing.JPanel;
  *
  */
 public class ActionPanel extends JPanel{
-	private ArrayList<ActionButton> actions; //lehet nem kell action but, elég a sima radio
+	
+	private ArrayList<ActionButton> actions = new ArrayList<ActionButton>();
+	ButtonGroup group;
+	
+	public ActionPanel() {
+		super();
+	}
 	
 	public void Draw(JFrame view)
 	{
-		ArrayList<JPanel> sokPanelGrunak = new ArrayList<JPanel>();
-		for (int i = 0; i < 174; i++)
-			sokPanelGrunak.add(new JPanel());
+		actions.add(new ActionButton("Move"));
+		actions.add(new ActionButton("Dig"));
+		actions.add(new ActionButton("Ability"));
+		actions.add(new ActionButton("Use Item"));
+		actions.add(new ActionButton("Pick Up Item"));
+		group = new ButtonGroup();
+		for (ActionButton actionButton : actions) {
+			group.add(actionButton);
+			add(actionButton);
+		}
+		
 	}
 	
 }

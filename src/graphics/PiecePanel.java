@@ -11,7 +11,7 @@ import javax.swing.JPanel;
  */
 public class PiecePanel extends JPanel
 {
-	private ArrayList<PieceLabel> pieces;
+	private ArrayList<PieceLabel> pieces = new ArrayList<PieceLabel>();
 	
 	public void Draw(JPanel tp, ArrayList<game.Piece> p) {
 		pieces.clear();
