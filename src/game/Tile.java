@@ -137,5 +137,7 @@ public class Tile
 
 	public void setNeighbor(Direction d, Tile t) { neighbors.put(d, t);	}
 	
+	public int getType() { return 0; }
+	
 	//getter - setterek ---------vége------------
 }

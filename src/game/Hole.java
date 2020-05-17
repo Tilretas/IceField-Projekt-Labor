@@ -26,4 +26,7 @@ public class Hole extends Tile
 		p.setSuffocate(true);
 		this.setChecked(true);
 	}
+	
+	public int getType() { return 3; }
+
 }

@@ -16,5 +16,10 @@ public class PieceLabel extends JLabel{
 	private Colour colour;
 	private ImageIcon icon;
 	
+	public PieceLabel(game.Piece p) 
+	{
+		piece = p;
+		colour = p.getColour();
+	}
 	
 }

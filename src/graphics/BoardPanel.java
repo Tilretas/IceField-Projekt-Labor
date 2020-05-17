@@ -8,6 +8,14 @@ import java.util.ArrayList;
  *
  */
 public class BoardPanel {
-	private ArrayList<TilePanel> tilePanels; //25 db
+	private ArrayList<TilePanel> tilePanels = new ArrayList<TilePanel>(); //25 db
+	
+	public void Draw(ArrayList<game.Tile> tiles) {
+		for (game.Tile tile : tiles) {
+			TilePanel temp = new TilePanel(tile);
+			tilePanels.add(temp);
+			temp.Draw();
+		}
+	}
 
 }

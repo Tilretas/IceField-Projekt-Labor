@@ -42,5 +42,12 @@ public class Ice extends Tile
 		item = i;
 	}
 	
+	public int getType() { 
+		if(item == null)
+			return 1; 
+		return 2;
+	}
+
+	
 	//getter - setterek ---------vége------------
 }
