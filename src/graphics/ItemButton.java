@@ -1,5 +1,6 @@
 package graphics;
 
+import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 
 public class ItemButton extends JRadioButton
@@ -8,5 +9,10 @@ public class ItemButton extends JRadioButton
 	
 	public ItemButton(game.Item i) {
 		item = i;
+	}
+	
+	public void Draw(JPanel ip) 
+	{
+		
 	}
 }

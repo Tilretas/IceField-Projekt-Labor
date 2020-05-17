@@ -2,6 +2,7 @@ package graphics;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 import game.Colour;
 import game.Piece;
@@ -22,4 +23,8 @@ public class PieceLabel extends JLabel{
 		colour = p.getColour();
 	}
 	
+	public void Draw(JPanel pp) 
+	{
+		
+	}
 }

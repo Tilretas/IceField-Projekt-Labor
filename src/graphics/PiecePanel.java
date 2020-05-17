@@ -13,11 +13,12 @@ public class PiecePanel extends JPanel
 {
 	private ArrayList<PieceLabel> pieces;
 	
-	public void Draw(ArrayList<game.Piece> p) {
+	public void Draw(JPanel tp, ArrayList<game.Piece> p) {
 		pieces.clear();
 		for (game.Piece piece : p) {
-			
-			//pieces.add(p);
+			PieceLabel temp = new PieceLabel(piece);
+			pieces.add(temp);
+			temp.Draw(this);
 		}
 	}
 }

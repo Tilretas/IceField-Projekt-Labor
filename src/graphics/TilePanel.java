@@ -19,8 +19,8 @@ public class TilePanel extends JPanel
 		tile = t;
 	}
 	
-	public void Draw() {
-		labelT.Draw(tile);
-		pieceP.Draw(tile.getPieces());
+	public void Draw(JPanel ip) {
+		labelT.Draw(this, tile);
+		pieceP.Draw(this, tile.getPieces());
 	}
 }

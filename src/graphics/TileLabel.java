@@ -2,6 +2,8 @@ package graphics;
 
 import java.awt.Graphics;
 import javax.swing.JLabel;
+import javax.swing.JPanel;
+
 import game.Ice;
 
 /**
@@ -13,7 +15,7 @@ public class TileLabel extends JLabel
 {
 	private TileGraphics tileIcon;
 	
-	public void Draw(game.Tile t)
+	public void Draw(JPanel tp, game.Tile t)
 	{
 		int i = 0;
 		i += t.getType() * 100;

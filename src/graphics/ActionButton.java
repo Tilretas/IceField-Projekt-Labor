@@ -9,5 +9,5 @@ import javax.swing.JRadioButton;
  */
 public class ActionButton extends JRadioButton
 {
-
+	
 }
