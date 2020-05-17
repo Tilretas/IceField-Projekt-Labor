@@ -12,10 +12,15 @@ import game.Tile;
 public class TilePanel extends JPanel
 {	
 	private Tile tile;
-	private TileLabel label;
+	private TileLabel labelT;
 	private PiecePanel pieceP;
 	
+	public TilePanel(Tile t) {
+		tile = t;
+	}
+	
 	public void Draw() {
+		labelT.Draw(tile);
 		pieceP.Draw(tile.getPieces());
 	}
 }

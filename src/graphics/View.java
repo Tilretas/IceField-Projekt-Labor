@@ -25,7 +25,7 @@ public class View extends JFrame
 	public void Draw() 
 	{
 		//actionPanel.Draw();
-		//boardPanel.Draw();
+		boardPanel.Draw(game.Game.getInstance().getBoard().getTiles());
 		itemPanel.Draw(activePlayer.getPiece().getInventory());
 		
 	}
