@@ -5,9 +5,14 @@ import javax.swing.JLabel;
 
 import game.Ice;
 
+/**
+ * 1 mezõ kinézetét tárolja
+ * 
+ *
+ */
 public class TileLabel extends JLabel
 {
-	private Ice ice;
+	private TileGraphics tileIcon;
 
 	public void Draw(Graphics g)
 	{

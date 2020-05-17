@@ -1,5 +1,11 @@
 package graphics;
 
+
+/**
+ * Minden lehetséges mezõ kombináció
+ * 
+ *
+ */
 public enum TileGraphics {
 	Ice, 
 	IceIgloo, 

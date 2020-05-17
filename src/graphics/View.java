@@ -4,9 +4,21 @@ import java.awt.Graphics;
 import java.awt.image.BufferedImage;
 import java.util.ArrayList;
 
-public class View
+import javax.swing.JFrame;
+
+
+/**
+ * Maga az ablak(frame), bal oldalán az action gombok, középen a mezõk, jobb oldalon a tárgyak
+ * 
+ *
+ */
+public class View extends JFrame
 {
-	private boolean valid;
+	private boolean valid;	
+	private ActionPanel actionG;
+	private BoardPanel boardG;
+	private ItemGraphics itemG;
+	
 	
 	public void paintComponent(Graphics g)
 	{
