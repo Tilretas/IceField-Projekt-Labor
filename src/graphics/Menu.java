@@ -1,6 +1,11 @@
 package graphics;
 
-public class Menu
-{
+import javax.swing.JPanel;
 
+public class Menu extends JPanel
+{
+	public void Run()
+	{
+		
+	}
 }
