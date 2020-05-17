@@ -5,7 +5,7 @@ import java.awt.Image;
 
 import game.Ice;
 
-public class GraphicsIce extends GraphicsTile
+public class GraphicsIce extends TileLabel
 {
 	private Image imageIce;
 	private Ice ice;

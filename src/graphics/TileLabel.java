@@ -1,14 +1,14 @@
 package graphics;
 
 import java.awt.Graphics;
+import javax.swing.JLabel;
 
 import game.Ice;
 
-public class GraphicsTile implements Drawable
+public class TileLabel extends JLabel
 {
 	private Ice ice;
-	
-	@Override
+
 	public void Draw(Graphics g)
 	{
 		
