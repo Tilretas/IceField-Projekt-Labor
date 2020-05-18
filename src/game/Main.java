@@ -12,10 +12,9 @@ public class Main {
             }
         });   */     
 		
-		Game game = Game.getInstance(); 
-		game.initGame(4);
-
-		new View();
+		graphics.Menu menu = new Menu();
+		
+		
 		
 		
 		/*

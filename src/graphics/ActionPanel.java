@@ -35,9 +35,9 @@ public class ActionPanel extends JPanel{
 	}
 	
 	/**
+	 * Draw segitségével irjuk ki (bal oldalon) az akciókat
 	 * 
-	 * 
-	 * @param view - 
+	 * @param view - Keret (JFrame) az elrendezéshez
 	 */
 	public void Draw(JFrame view)
 	{
