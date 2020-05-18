@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * Élelemért felelõs osztály, amivel növelhetõ 1 bábu testhõje
+ */
 public class Food implements Item
 {
 	/**

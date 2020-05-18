@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * Az instabil jégmezõért felelõs osztály
+ */
 public class Unstable extends Ice
 {
 	public Unstable(int c, int s) {

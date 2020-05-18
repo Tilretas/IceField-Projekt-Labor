@@ -4,6 +4,10 @@ import java.util.Scanner;
 
 import graphics.Action;
 
+/**
+ * A játékost reprezentáló osztály.
+ * Itt találhatóak meg a játékos lehetõségei
+ */
 public class Player
 
 {

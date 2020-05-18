@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * A faásóért, mint eszközért felelõs osztály.
+ * Implementálja az Item interfészt
+ */
 public class Wooden extends Shovel
 {
 	/**

@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * Az igluért (mint menedékért) felelõs osztály
+ * Implementálja a Shelter interfészt
+ */
 public class Igloo implements Shelter
 {
 	/**

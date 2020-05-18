@@ -2,6 +2,9 @@ package game;
 
 import java.util.Scanner;
 
+/**
+ * Az egyik játszható karaktert (sarkkutatót) reprezentáló osztály
+ */
 public class Explorer extends Piece
 {
 	/**

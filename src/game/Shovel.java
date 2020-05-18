@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * Az ásóért, mint eszközért felelõs osztály.
+ * Implementálja az Item interfészt
+ */
 public class Shovel implements Item
 {
 	/**

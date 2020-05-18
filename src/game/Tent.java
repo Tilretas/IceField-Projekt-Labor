@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * A sátorért, mint eszközért és menedékért felelõs osztály.
+ * Implementálja az Item és Shelter interfészt
+ */
 public class Tent implements Item, Shelter
 {
 	/**

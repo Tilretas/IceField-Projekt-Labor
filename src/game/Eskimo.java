@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * Az egyik játszható karaktert (eszkimót) reprezentáló osztály
+ */
 public class Eskimo extends Piece
 {
 	/**

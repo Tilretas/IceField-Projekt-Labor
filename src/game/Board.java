@@ -11,6 +11,9 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.Scanner;
 
+/**
+ * A táblát kezelõ osztály
+ */
 public class Board
 {
 	/**
