@@ -1,6 +1,7 @@
 package graphics;
 
 import java.awt.Graphics;
+import java.awt.Image;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
@@ -96,7 +97,6 @@ public class TileLabel extends JLabel
 		default:
 			break;
 		}
-		
-		setIcon(new ImageIcon(tileIcon + "png")); // 50 x 50
+		setIcon(new ImageIcon(new ImageIcon("Images/" + tileIcon + ".png").getImage().getScaledInstance(100, 100, Image.SCALE_SMOOTH)));
 	}
 }
