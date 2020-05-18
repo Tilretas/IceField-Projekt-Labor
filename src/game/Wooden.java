@@ -26,24 +26,17 @@ public class Wooden extends Shovel
 	 */
 	public void used(Piece p)
 	{
-		try 
-		{
-			if(durability > 0) 
+		if(durability > 0) 
 			{
 				p.getTile().removeSnow();
 				p.getTile().removeSnow();
 				p.setActionPoints(p.getActionPoints() - 1);
 				durability--;				
 			}
-			else 
-			{
-				p.removeItem(this);
-				throw new Exception("The shovel broke!");
-			}
-		}
-		catch(Exception e) 
+		else 
 		{
-			System.out.println(e.toString()); //ez minek? ; Gondoltam valahogy jelezni kéne, ha eltörik az ásó nem?
+				p.removeItem(this);
+				Game.getInstance().getView().getStatPanel().settext_area("The shovel broke!");
 		}
 		
 	}

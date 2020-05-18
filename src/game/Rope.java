@@ -15,7 +15,7 @@ public class Rope implements Item
 	 */
 	public void used(Piece p, Tile t)
 	{
-		System.out.println("Select a piece to save!");
+		Game.getInstance().getView().getStatPanel().settext_area("Select a piece to save!");
 		/*Piece saved = getPiece();
 		if(saved == null)
 			return;

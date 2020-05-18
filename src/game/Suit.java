@@ -36,19 +36,19 @@ public class Suit implements Item
 	public Tile getDirection(Tile t)
 	{
 		Scanner scr = new Scanner(System.in);
-		System.out.println("On which tile do you want to move? (1: up | 2: right | 3: down | 4: left):");
+		Game.getInstance().getView().getStatPanel().settext_area("On which tile do you want to move?");
 		int idx = scr.nextInt();
 		
 		if(idx < 1 || idx > 4) 
 		{
-			System.out.println("There are only four options...");
+			Game.getInstance().getView().getStatPanel().settext_area("There are only four options...");
 			scr.close();
 			return null;
 		}
 		
 		while(t.getNeighbor(Direction.values()[idx-1]) == null) 
 		{
-			System.out.println("There is no tile in that direction!");
+			Game.getInstance().getView().getStatPanel().settext_area("There is no tile in that direction!");
 			idx = scr.nextInt();			
 		}
 		

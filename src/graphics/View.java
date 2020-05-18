@@ -119,6 +119,11 @@ public class View extends JFrame
 		statPanel.Refresh();
 	}
 
+	public StatPanel getStatPanel() 
+	{
+		return statPanel;
+	}
+	
 	/*
 	public void paintComponent(Graphics g)
 	{
