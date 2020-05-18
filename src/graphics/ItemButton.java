@@ -20,7 +20,7 @@ public class ItemButton extends JRadioButton
 		setForeground(new Color(214, 225, 150));
 		addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-				Game.getInstance().getView().setActiveItem(Inventory.valueOf(getText()));
+				Game.getInstance().setActiveItem(Inventory.valueOf(getText()));
 				//System.out.println(getText());
             }
         });

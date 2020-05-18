@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import graphics.Action;
+import graphics.Inventory;
 import graphics.View;
 
 public class Game
@@ -16,7 +18,11 @@ public class Game
 	public boolean stop;
 	public boolean testStart;
 	private Test test;
+	
 	private View view;
+	private Player activePlayer;
+	private Action activeAction;
+	private Inventory activeItem;
 
 	/**
 	 * Visszaadja a játék instance-ét
@@ -162,6 +168,7 @@ public class Game
 	
 	public void TilePressed(Tile t) 
 	{
+		
 		System.out.println(t.getSnow());
 	}
 
@@ -179,6 +186,14 @@ public class Game
 	
 	public void setView(View v) { view = v; }
 	
+	public void setActiveAction(Action ac) { activeAction = ac;}
+	
+	public void setActiveItem(Inventory ai) { activeItem = ai;}
+	
+	public void setActivePlayer(Player p) { activePlayer = p; }
+	
+	public Player getActivePlayer() { return activePlayer; }
+
 	//getter - setterek ---------vége------------
 }
 

@@ -37,10 +37,7 @@ public class View extends JFrame
 	private BoardPanel boardPanel;
 	private ItemPanel itemPanel;
 	private StatPanel statPanel;
-	
-	private Player activePlayer;
-	private Action activeAction;
-	private Inventory activeItem;
+	private Game game;
 	
 	private JPanel panel;
 
@@ -49,13 +46,13 @@ public class View extends JFrame
 		super("I miss my Coffin Niggas :'(");
 		Game.getInstance().setView(this);
 		init();
+		game = Game.getInstance();
 	}
 	
 	public void init()
 	{
 		panel = new JPanel();
 		panel.setLayout(new BorderLayout());
-		activePlayer = Game.getInstance().getPlayers().get(0);
 		
 		actionPanel = new ActionPanel();
 		boardPanel = new BoardPanel();
@@ -85,14 +82,11 @@ public class View extends JFrame
 	public void Draw() 
 	{
 		actionPanel.Draw(this);
-		boardPanel.Draw(this, game.Game.getInstance().getBoard().getTiles());
-		itemPanel.Draw(this, activePlayer.getPiece().getInventory());
-		
+		boardPanel.Draw(this, game.getBoard().getTiles());
+		itemPanel.Draw(this, game.getActivePlayer().getPiece().getInventory());
 	}
 	
-	public void setActiveAction(Action ac) { activeAction = ac;}
 	
-	public void setActiveItem(Inventory ai) { activeItem = ai;}
 
 	/*
 	public void paintComponent(Graphics g)
