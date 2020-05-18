@@ -1,5 +1,6 @@
 package game;
 
+import java.awt.Color;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
@@ -107,9 +108,15 @@ public class Game
 	{
 		gameEnd = true;
 		if(win)
-			System.out.println("\nYou survived. WoW!");
+		{
+			instance.getView().getStatPanel().settext_area("\nYou survived. WoW!");
+			instance.getView().getStatPanel().setBackground(Color.GREEN);
+		}
 		else
-			System.out.println("\nSomeone died :( \nThe Coffin Dancers are on their way...");
+		{
+			instance.getView().getStatPanel().settext_area("\nSomeone died :( \nThe Coffin Dancers are on their way...");
+			instance.getView().getStatPanel().setBackground(Color.RED);
+		}
 	}
 	
 	/**
