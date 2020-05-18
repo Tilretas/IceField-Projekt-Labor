@@ -17,7 +17,7 @@ public class Explorer extends Piece
 	 */
 	public void ability(Tile t)
 	{
-		System.out.println("\nWhich neighboring tile do you want to check?(0: under you | 1: up | 2: right | 3: down | 4: left)");
+		//System.out.println("\nWhich neighboring tile do you want to check?(0: under you | 1: up | 2: right | 3: down | 4: left)");
 		/*Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
 		

@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import com.sun.glass.events.WindowEvent;
+
 import graphics.Action;
 import graphics.Inventory;
 import graphics.View;
@@ -15,7 +17,7 @@ public class Game
 	private ArrayList<Player> players = new ArrayList<Player>();
 	private int nOfPlayers;
 	private Board board;
-	public boolean stop;
+	public boolean gameEnd;
 	public boolean testStart;
 	private Test test;
 	
@@ -53,7 +55,7 @@ public class Game
 	 * A körökért felelõs függvény.
 	 * Addig megy, amíg nem nyernek vagy veszítenek a játékosok, vagy a 0 paranccsal nem lépnek ki. 
 	 */
-	public void play()
+	/*public void play()
 	{
 		stop = false;
 		int p = 0;
@@ -71,17 +73,17 @@ public class Game
 		{
 			testMode();
 		}
-	}
+	}*/
 	
 	/**
 	 * A tesztmód elindításáért felelõs függvény.
 	 */
-	public void testMode()
+	/*public void testMode()
 	{
 		test = new Test();
 		if(test.run())
-			play();
-	}
+			//play();
+	}*/
 	
 	/**
 	 * Minden kör végén meghívódik (amikor minden játékos elhasználta az akciópontjait).
@@ -108,9 +110,7 @@ public class Game
 	 */
 	public void endGame(boolean win)
 	{
-		stop = true;
-		testStart = false;
-		
+		gameEnd = true;
 		if(win)
 			System.out.println("\nYou survived. WoW!");
 		else
@@ -171,6 +171,10 @@ public class Game
 	
 	public void TilePressed(Tile t) 
 	{
+		if(gameEnd) {
+			view.setVisible(false);
+			view.dispose();
+		}
 		if(activeAction != null)
 			activePlayer.playerInput(t, activeAction);
 	}
