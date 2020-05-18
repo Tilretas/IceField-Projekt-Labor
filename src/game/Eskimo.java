@@ -11,4 +11,6 @@ public class Eskimo extends Piece
 		this.getTile().setShelter(new Igloo());
 		setActionPoints(getActionPoints()-1);
 	}
+	
+	public String getType() { return "Esk"; }
 }

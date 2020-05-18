@@ -27,6 +27,10 @@ public class Hole extends Tile
 		this.setChecked(true);
 	}
 	
-	public int getType() { return 3; }
+	public int getType() { 
+		if(getSnow() == 0)
+			return 3; 
+		else return 1;
+	}
 
 }

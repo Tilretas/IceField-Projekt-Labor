@@ -16,7 +16,7 @@ public class Tile
 	/**
 	 * Medve a mezőn
 	 */
-	private Bear bear = null; //nem így kéne
+	private Bear bear = null;
 	/**
 	 * Volt-e már ellenőrizve a mező kapacitása
 	 */

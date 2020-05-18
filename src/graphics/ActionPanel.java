@@ -1,11 +1,13 @@
 package graphics;
 
+import java.awt.Insets;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
 
 /**
  * Az action gombokat tartalmazó panel (a frame bal oldalán)
@@ -23,6 +25,7 @@ public class ActionPanel extends JPanel{
 	
 	public void Draw(JFrame view)
 	{
+		setBorder(new EmptyBorder(new Insets(220, 30, 100, 30)));
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		actions.add(new ActionButton("Move"));
 		actions.add(new ActionButton("Dig"));

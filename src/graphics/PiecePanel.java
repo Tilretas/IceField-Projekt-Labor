@@ -2,6 +2,7 @@ package graphics;
 
 import java.util.ArrayList;
 
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 
 /**
@@ -13,9 +14,10 @@ public class PiecePanel extends JPanel
 {
 	private ArrayList<PieceLabel> pieces = new ArrayList<PieceLabel>();
 	
-	public void Draw(ArrayList<game.Piece> p) {
+	public void Draw(ArrayList<game.Piece> p, int s) {
 		
 		pieces.clear();
+		add(new JLabel(Integer.toString(s)));
 		for (game.Piece piece : p) {
 			PieceLabel temp = new PieceLabel(piece);
 			pieces.add(temp);

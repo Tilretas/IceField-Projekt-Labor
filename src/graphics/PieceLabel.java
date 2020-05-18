@@ -25,6 +25,6 @@ public class PieceLabel extends JLabel{
 	
 	public void Draw() 
 	{
-		setText("p");
+		setIcon(new ImageIcon(piece.getType() + colour));
 	}
 }

@@ -22,8 +22,8 @@ public class BoardPanel extends JPanel{
 		setLayout(new GridBagLayout());
         GridBagConstraints gbs = new GridBagConstraints();
         gbs.fill = GridBagConstraints.BOTH;
-        gbs.ipadx = 1;
-        gbs.ipady = 1;
+        gbs.ipadx = 0;
+        gbs.ipady = 0;
         gbs.weightx = 1.0;
         gbs.weighty = 1.0;
         gbs.insets = new java.awt.Insets(0, 0, 1, 1);
@@ -34,7 +34,6 @@ public class BoardPanel extends JPanel{
         	for(int y = 0; y < 5; y++) {
         		TilePanel temp = new TilePanel(tiles.get(x * 5 + y));
         		tilePanels.add(temp);
-        		temp.setBorder(BorderFactory.createEtchedBorder());
         		add(temp, gbs);
         		temp.Draw(this);
         	}

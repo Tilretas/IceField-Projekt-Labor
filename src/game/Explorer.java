@@ -35,4 +35,6 @@ public class Explorer extends Piece
 		setActionPoints(getActionPoints()-1);				
 	}
 	
+	public String getType() { return "Exp"; }
+
 }

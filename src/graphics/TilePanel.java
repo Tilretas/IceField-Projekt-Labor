@@ -32,7 +32,7 @@ public class TilePanel extends JPanel
 		add(pieceP, BorderLayout.SOUTH);
 		
 		labelT.Draw(tile);
-		pieceP.Draw(tile.getPieces());
+		pieceP.Draw(tile.getPieces(), tile.getSnow());
 	}
 	
 	public void Refresh() { labelT.Refresh(); }

@@ -20,6 +20,7 @@ import javax.swing.JTextField;
 import javax.swing.WindowConstants;
 import javax.swing.border.EmptyBorder;
 
+import game.Game;
 import game.Player;
 
 
@@ -49,6 +50,7 @@ public class View extends JFrame
 	{
 		panel = new JPanel();
 		panel.setLayout(new BorderLayout());
+		activePlayer = Game.getInstance().getPlayers().get(0);
 		
 		actionPanel = new ActionPanel();
 		boardPanel = new BoardPanel();
@@ -58,12 +60,13 @@ public class View extends JFrame
 		panel.add(boardPanel, BorderLayout.CENTER);
 		panel.add(itemPanel, BorderLayout.EAST);
 		
+		actionPanel.setMinimumSize(new Dimension(100, 700));
+		itemPanel.setMinimumSize(new Dimension(100, 700));
 
-		
 		Draw();
 		add(panel);
-		setLocation(750, 315);
-        setMinimumSize(new Dimension(700, 700));
+		setLocation(500, 200);
+        //setMinimumSize(new Dimension(700, 700));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);
@@ -74,7 +77,7 @@ public class View extends JFrame
 	{
 		actionPanel.Draw(this);
 		boardPanel.Draw(this, game.Game.getInstance().getBoard().getTiles());
-		//itemPanel.Draw(this, activePlayer.getPiece().getInventory());
+		itemPanel.Draw(this, activePlayer.getPiece().getInventory());
 		
 	}
 	/*

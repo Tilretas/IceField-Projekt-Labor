@@ -193,6 +193,8 @@ public abstract class Piece
 	
 	public Tile getTile() { return onTile; }
 	
+	public String getType() { return ""; }
+	
 	//getter - setterek ---------vége------------
 
 }
