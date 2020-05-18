@@ -15,9 +15,17 @@ import javax.swing.JPanel;
  *
  */
 public class BoardPanel extends JPanel{
-	
+	/**
+	 * A mezõk paneljeit (25db-ot) tartalmazó lista
+	 */
 	private ArrayList<TilePanel> tilePanels = new ArrayList<TilePanel>();
 	
+	/**
+	 * Draw segítségével rajzoljuk ki a mezõket
+	 * 
+	 * @param view - Keret (JFrame) az elrendezéshez
+	 * @param tiles - A játékban található mezõk listája
+	 */
 	public void Draw(JFrame view, ArrayList<game.Tile> tiles) {
 		
 		setBackground(new Color(231, 249, 251));
@@ -44,7 +52,11 @@ public class BoardPanel extends JPanel{
 		
 	}
 	
-	public void Refresh()
+	/**
+	 * Minden egyes mezõn végigmegy, és frissíti õket.
+	 */
+	public void Resfresh()
+
 	{
 		for (TilePanel tilePanel : tilePanels) {
 			tilePanel.Refresh();

@@ -10,20 +10,31 @@ import game.Ice;
 import game.Tile;
 
 /**
- * 1 mezõ kinézetét tárolja
- * 
- *
+ * Egy mezõ kinézetét tároló Label
  */
 public class TileLabel extends JLabel
 {
+	/**
+	 * A megjelenítendõ mezõ ikonját tároló változó
+	 */
 	private TileGraphics tileIcon;
+	/**
+	 * Maga a mezõ amit meg szeretnénk jeleníteni
+	 */
 	private Tile tile;
 	
+	/**
+	 * A mezõt kirajzoló függvény
+	 * @param t A kirajzolandó mezõ
+	 */
 	public void Draw(Tile t) { 
 		tile = t; 
 		Refresh();
 	}
 	
+	/**
+	 * A pályán levõ mezõt az új állapotára frissítõ függvény
+	 */
 	public void Refresh()
 	{
 		int i = 0;

@@ -15,7 +15,12 @@ import game.Game;
  */
 public class ActionButton extends JRadioButton
 {
-	
+	/**
+	 * Ebben a konstruktorban fogjuk egyesével kiirni az akciókat bal oldalon.
+	 * Ezt hivjuk meg minden akcióhoz az ActionPanel Draw függvényébõl
+	 * 
+	 * @param name - A kiirandó akció neve
+	 */
 	public ActionButton(String name)
 	{
 		super(name);

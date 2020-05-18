@@ -8,13 +8,19 @@ import javax.swing.JPanel;
 
 /**
  * Piece Label-eket tárol, amik 1-1 bábut jelenítenek meg
- * 
- *
  */
 public class PiecePanel extends JPanel
 {
+	/**
+	 * A mezõkhöz tartozó piece labelek tárolója
+	 */
 	private ArrayList<PieceLabel> pieces = new ArrayList<PieceLabel>();
 	
+	/**
+	 * A panelt kirajzoló függvény
+	 * @param p A bábukat tároló lista
+	 * @param s A hóréteg mérete
+	 */
 	public void Draw(ArrayList<game.Piece> p, int s) {
 		removeAll();
 		pieces.clear();

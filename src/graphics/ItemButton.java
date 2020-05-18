@@ -12,8 +12,18 @@ import game.Game;
  */
 public class ItemButton extends JRadioButton
 {
+	/**
+	 * Eszköz változó. Itt tároljuk, hogy milyen eszközhöz fog
+	 * tartozni a gombunk
+	 */
 	game.Item item;
 	
+	/**
+	 * Ezzel a függvénnyel hozunk létre egy gombot egy adott
+	 * eszközhöz
+	 * 
+	 * @param i - Az eszköz, melyhez a létrehozzuk a gombot
+	 */
 	public ItemButton(game.Item i) {
 		item = i;
 		setBackground(new Color(91, 92, 110));

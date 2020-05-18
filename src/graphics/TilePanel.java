@@ -10,16 +10,29 @@ import game.Game;
 import game.Tile;
 
 /**
- * 1 mezõnek megfelelõ panel
+ * Egy mezõt tároló panel
  * TileLabel ben jelenik meg a mezõ iconja
  * PiecePanelben vannak a bábuk
  */
 public class TilePanel extends JPanel
 {	
+	/**
+	 * A mezõ amihez a Panel tartozik
+	 */
 	private Tile tile;
+	/*
+	 * A Label, amiben megjelenítjük a mezõ ikonját
+	 */
 	private TileLabel labelT;
+	/**
+	 * A mezõhöz tartozó Panel, amelyen a bábukat jelenítjük meg
+	 */
 	private PiecePanel pieceP;
 	
+	/**
+	 * Konstruktor, amely beállítja a mezõt
+	 * @param t A mezõ amihez a Panel tartozik
+	 */
 	public TilePanel(Tile t) {
 		tile = t;
 		addMouseListener(new MouseAdapter() {
@@ -29,6 +42,9 @@ public class TilePanel extends JPanel
         });
 	}
 	
+	/**
+	 * A Panelt kirajzoló függvény
+	 */
 	public void Draw(JPanel ip) {
 		setLayout(new BorderLayout());
 		setBackground(new Color(231, 249, 251));
@@ -43,8 +59,12 @@ public class TilePanel extends JPanel
 		pieceP.Draw(tile.getPieces(), tile.getSnow());
 	}
 	
+	/**
+	 * Frissítõ függvény, a megváltozott állapotra változtatja a Label képét
+	 */
 	public void Refresh() {
 		labelT.Refresh();
 		pieceP.Draw(tile.getPieces(), tile.getSnow());
 	}
+
 }
