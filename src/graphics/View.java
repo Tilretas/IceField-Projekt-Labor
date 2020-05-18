@@ -63,7 +63,7 @@ public class View extends JFrame
 		Draw();
 		add(panel);
 		setLocation(750, 315);
-        setMinimumSize(new Dimension(350, 300));
+        setMinimumSize(new Dimension(700, 700));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);

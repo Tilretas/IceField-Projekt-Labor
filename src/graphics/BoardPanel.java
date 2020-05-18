@@ -4,6 +4,7 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 
@@ -33,6 +34,7 @@ public class BoardPanel extends JPanel{
         	for(int y = 0; y < 5; y++) {
         		TilePanel temp = new TilePanel(tiles.get(x * 5 + y));
         		tilePanels.add(temp);
+        		temp.setBorder(BorderFactory.createEtchedBorder());
         		add(temp, gbs);
         		temp.Draw(this);
         	}
