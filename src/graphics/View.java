@@ -36,6 +36,7 @@ public class View extends JFrame
 	private ActionPanel actionPanel;
 	private BoardPanel boardPanel;
 	private ItemPanel itemPanel;
+	private StatPanel statPanel;
 	
 	private Player activePlayer;
 	private Action activeAction;
