@@ -55,7 +55,7 @@ public class BoardPanel extends JPanel{
 	/**
 	 * Minden egyes mezõn végigmegy, és frissíti õket.
 	 */
-	public void Resfresh()
+	public void Refresh()
 
 	{
 		for (TilePanel tilePanel : tilePanels) {
