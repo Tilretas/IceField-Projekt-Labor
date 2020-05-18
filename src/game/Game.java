@@ -3,11 +3,7 @@ package game;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
-
-import com.sun.glass.events.WindowEvent;
-
 import graphics.Action;
-import graphics.Inventory;
 import graphics.View;
 
 public class Game
@@ -19,7 +15,6 @@ public class Game
 	private Board board;
 	public boolean gameEnd;
 	public boolean testStart;
-	private Test test;
 	
 	private View view;
 	private Player activePlayer;

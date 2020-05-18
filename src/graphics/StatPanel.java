@@ -1,6 +1,8 @@
 package graphics;
 
 import java.awt.Color;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.JButton;
@@ -53,6 +55,11 @@ public class StatPanel extends JPanel{
 		lb3.setText("Actionpoints:");
 		
 		skip.setText("Skip turn");
+		skip.addActionListener(new ActionListener() {
+            public void actionPerformed(ActionEvent evt) {
+            	Game.getInstance().NextPlayer();
+            }
+        });
 		
 		add(lb1);
 		add(tf1);

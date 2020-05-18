@@ -28,6 +28,7 @@ public class Hole extends Tile
 		p.setInWater(true);
 		p.setSuffocate(true);
 		this.setChecked(true);
+		this.setSnow(0);
 	}
 	
 	public int getType() { 
