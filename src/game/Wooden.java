@@ -44,8 +44,8 @@ public class Wooden extends Shovel
 		
 	}
 	
-	public char getName() 
+	public String getName() 
 	{
-		return 'W';
+		return "Wooden";
 	}
 }

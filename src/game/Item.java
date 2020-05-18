@@ -10,7 +10,7 @@ public interface Item
 	
 	//getter - setterek -------------------------
 	
-	public char getName();
+	public String getName();
 
 	//getter - setterek ---------vége------------
 }

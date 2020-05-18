@@ -16,9 +16,9 @@ public class Shovel implements Item
 	
 	//getter - setterek -------------------------
 	
-	public char getName() 
+	public String getName() 
 	{
-		return 'S';
+		return "Shovel";
 	}
 	
 	//getter - setterek ---------vége------------

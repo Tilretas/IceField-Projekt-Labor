@@ -42,9 +42,9 @@ public class Tent implements Item, Shelter
 	
 	//getter - setterek -------------------------
 	
-	public char getName() 
+	public String getName() 
 	{
-		return 'T';
+		return "Tent";
 	}
 	
 	//getter - setterek ---------vége------------
