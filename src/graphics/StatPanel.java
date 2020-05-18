@@ -2,8 +2,10 @@ package graphics;
 
 import java.util.ArrayList;
 
+import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JTextArea;
 import javax.swing.JTextField;
 
 import game.Game;
@@ -16,6 +18,7 @@ public class StatPanel extends JPanel{
 	private JLabel lb1 = new JLabel();
 	private JLabel lb2 = new JLabel();
 	private JLabel lb3 = new JLabel();
+	private JTextArea tarea = new JTextArea();
 	
 	public StatPanel() 
 	{
@@ -29,6 +32,7 @@ public class StatPanel extends JPanel{
 		tf1.setEditable(false);
 		tf2.setEditable(false);
 		tf3.setEditable(false);
+		tarea.setEditable(false);
 		
 		lb1.setText("Colour:");
 		lb2.setText("Body Temp:");
@@ -40,6 +44,9 @@ public class StatPanel extends JPanel{
 		add(tf2);
 		add(lb3);
 		add(tf3);
+		add(tarea);
+		
+		
 		
 		tf1.setText(currentPiece.getColour().toString());
 		tf2.setText(Integer.toString(currentPiece.getBodyTemp()));

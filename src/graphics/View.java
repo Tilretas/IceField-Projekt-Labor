@@ -55,6 +55,7 @@ public class View extends JFrame
 		actionPanel = new ActionPanel();
 		boardPanel = new BoardPanel();
 		itemPanel = new ItemPanel();
+		statPanel = new StatPanel();
 		
 		actionPanel.setBackground(new Color(91, 92, 110));
 		itemPanel.setBackground(new Color(91, 92, 110));
@@ -63,6 +64,7 @@ public class View extends JFrame
 		panel.add(actionPanel, BorderLayout.WEST);
 		panel.add(boardPanel, BorderLayout.CENTER);
 		panel.add(itemPanel, BorderLayout.EAST);
+		panel.add(statPanel, BorderLayout.SOUTH); 
 		
 		actionPanel.setMinimumSize(new Dimension(100, 700));
 		itemPanel.setMinimumSize(new Dimension(100, 700));
@@ -82,6 +84,7 @@ public class View extends JFrame
 		actionPanel.Draw(this);
 		boardPanel.Draw(this, Game.getInstance().getBoard().getTiles());
 		itemPanel.Draw(this, Game.getInstance().getActivePlayer().getPiece().getInventory());
+		statPanel.Draw();
 	}
 	
 	
