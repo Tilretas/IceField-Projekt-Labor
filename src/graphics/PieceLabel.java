@@ -1,11 +1,14 @@
 package graphics;
 
 import java.awt.Image;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 import game.Colour;
+import game.Game;
 import game.Piece;
 
 /**
@@ -34,6 +37,12 @@ public class PieceLabel extends JLabel{
 	{
 		piece = p;
 		colour = p.getColour();
+		
+		addMouseListener(new MouseAdapter() {
+			public void mouseReleased(MouseEvent evt) {
+				Game.getInstance().PiecePressed(piece);
+			}
+		});
 	}
 	
 	/**

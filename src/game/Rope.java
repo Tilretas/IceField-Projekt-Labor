@@ -38,9 +38,16 @@ public class Rope implements Item
 	 * 
 	 * @return A kimentedõ piece
 	 */
-	public Piece getPiece()
+	public void savePiece(Piece user, Piece saved)
 	{
-		Scanner scr = new Scanner(System.in);
+		if(user.getTile().isNeighbor(saved.getTile()) && saved.getInWater())
+		{
+			saved.moved(user.getTile());
+			saved.setInWater(false);
+			saved.setSuffocate(false);
+			user.setActionPoints(user.getActionPoints() - 1);
+		}
+		/*Scanner scr = new Scanner(System.in);
 		System.out.println("Which piece do you want to save?(0-" + (Game.getInstance().getnOfPlayers()-1) + ")");
 		int idx = scr.nextInt();
 		if(idx < 0 || idx > Game.getInstance().getnOfPlayers()-1) 
@@ -51,7 +58,7 @@ public class Rope implements Item
 		while(!Game.getInstance().getBoard().getPieces().get(idx).getInWater())
 			System.out.println("That piece isn't in da wa'er!");
 		
-		return Game.getInstance().getBoard().getPieces().get(idx);
+		return Game.getInstance().getBoard().getPieces().get(idx);*/
 	}
 	
 	//getter - setterek -------------------------

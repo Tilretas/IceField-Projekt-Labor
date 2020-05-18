@@ -1,10 +1,14 @@
 package graphics;
 
 import java.awt.Color;
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+
+import game.Game;
 
 /**
  * Piece Label-eket tárol, amik 1-1 bábut jelenítenek meg

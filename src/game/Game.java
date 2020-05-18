@@ -179,6 +179,12 @@ public class Game
 			activePlayer.playerInput(t, activeAction);
 	}
 	
+	public void PiecePressed(Piece p)
+	{
+		if(activeItem.getClass().equals(new Rope().getClass()) && activeAction == Action.UseItem)
+			new Rope().savePiece(activePlayer.getPiece(), p);
+	}
+	
 	public void NextPlayer() {
 		playerIdx++;
 		if(playerIdx >= nOfPlayers) {
