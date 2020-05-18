@@ -23,6 +23,8 @@ public class PiecePanel extends JPanel
 	 */
 	public void Draw(ArrayList<game.Piece> p, int s) {
 		removeAll();
+		revalidate();
+		repaint();
 		pieces.clear();
 		setBackground(new Color(231, 249, 251));
 		add(new JLabel(Integer.toString(s)));

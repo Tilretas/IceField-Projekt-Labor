@@ -27,6 +27,9 @@ public class ItemPanel extends JPanel
 	 */
 	public void Draw(JFrame view, ArrayList<game.Item> itemlist) 
 	{
+		removeAll();
+		revalidate();
+		repaint();
 		items.clear();
 		if(itemlist.size() == 0)
 			setBorder(new EmptyBorder(new Insets(220, 80, 100, 80)));

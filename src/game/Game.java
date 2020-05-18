@@ -177,6 +177,8 @@ public class Game
 	
 	public void NextPlayer() {
 		playerIdx++;
+		if(playerIdx >= nOfPlayers)
+			playerIdx = 0;
 		activePlayer = players.get(playerIdx);
 		view.Refresh();
 	}
