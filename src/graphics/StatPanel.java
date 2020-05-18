@@ -1,7 +1,9 @@
 package graphics;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
+import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -23,6 +25,7 @@ public class StatPanel extends JPanel{
 	private JLabel lb2 = new JLabel();
 	private JLabel lb3 = new JLabel();
 	private JTextArea tarea = new JTextArea();
+	private JButton skip = new JButton();
 	Piece currentPiece;
 	
 	/**
@@ -49,19 +52,42 @@ public class StatPanel extends JPanel{
 		lb2.setText("Body Temp:");
 		lb3.setText("Actionpoints:");
 		
+		skip.setText("Skip turn");
+		
 		add(lb1);
 		add(tf1);
 		add(lb2);
 		add(tf2);
 		add(lb3);
 		add(tf3);
-		add(tarea);
-		
-		
+		add(skip);
+		add(tarea);		
 		
 		tf1.setText(currentPiece.getColour().toString());
 		tf2.setText(Integer.toString(currentPiece.getBodyTemp()));
 		tf3.setText(Integer.toString(currentPiece.getActionPoints()));
+		
+		switch(currentPiece.getColour().toString()) 
+		{
+			case "RED":
+				tf1.setForeground(Color.RED);
+				break;				
+			case "YELlOW":
+				tf1.setForeground(Color.YELLOW);
+				break;
+			case "PURPLE":
+				tf1.setForeground(new Color(153, 50, 204));
+				break;
+			case "GREEN":
+				tf1.setForeground(Color.GREEN);
+				break;
+			case "CYAN":
+				tf1.setForeground(Color.CYAN);
+				break;
+			case "BLUE":
+				tf1.setForeground(Color.BLUE);
+				break;
+		}
 	}
 	
 	public void Refresh() 
@@ -70,6 +96,33 @@ public class StatPanel extends JPanel{
 		tf1.setText(currentPiece.getColour().toString());
 		tf2.setText(Integer.toString(currentPiece.getBodyTemp()));
 		tf3.setText(Integer.toString(currentPiece.getActionPoints()));
+		
+		switch(currentPiece.getColour().toString()) 
+		{
+			case "RED":
+				tf1.setForeground(Color.RED);
+				break;				
+			case "YELLOW":
+				tf1.setForeground(Color.YELLOW);
+				break;
+			case "PURPLE":
+				tf1.setForeground(new Color(153, 50, 204));
+				break;
+			case "GREEN":
+				tf1.setForeground(Color.GREEN);
+				break;
+			case "CYAN":
+				tf1.setForeground(Color.CYAN);
+				break;
+			case "BLUE":
+				tf1.setForeground(Color.BLUE);
+				break;
+		}
+	}
+	
+	public void settext_area(String s) 
+	{
+		tarea.setText(s);
 	}
 	
 }
