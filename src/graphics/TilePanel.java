@@ -43,5 +43,8 @@ public class TilePanel extends JPanel
 		pieceP.Draw(tile.getPieces(), tile.getSnow());
 	}
 	
-	public void Refresh() { labelT.Refresh(); }
+	public void Refresh() {
+		labelT.Refresh();
+		pieceP.Draw(tile.getPieces(), tile.getSnow());
+	}
 }

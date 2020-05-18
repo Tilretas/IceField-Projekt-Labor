@@ -2,6 +2,8 @@ package game;
 
 import java.util.Scanner;
 
+import graphics.Action;
+
 public class Player
 
 {
@@ -22,17 +24,8 @@ public class Player
 	 */
 	public Player(Colour c) { colour = c; }
 	
-	/**
-	 * A felhasználói input bekéréséért és végrehajtásáért felel.
-	 * 6 akció közül tud választani a felhasználó (+1 rejtett, a '-1' inputtal a teszt módba kerül
-	 */
-	public void playerInput() 
+	public void YourTurn()
 	{
-		if(Game.getInstance().stop == true)
-			return;
-		Scanner sc = new Scanner(System.in);
-		int cmd;
-		boolean wrong = true;
 		piece.setActionPoints(4);
 		if (piece.getInWater()) 
 		{
@@ -40,6 +33,50 @@ public class Player
 				piece.die();
 			else piece.setSuffocate(true);
 		}
+	}
+	
+	/**
+	 * A felhasználói input bekéréséért és végrehajtásáért felel.
+	 * 6 akció közül tud választani a felhasználó (+1 rejtett, a '-1' inputtal a teszt módba kerül
+	 */
+	public void playerInput(Tile t, Action activeAction) 
+	{
+		switch (activeAction) {
+		case Move:
+			Move(t);
+			break;
+
+		case Dig:
+			Dig(t);
+			break;
+		
+		case UseAbility:
+			UseAbility(t);
+			break;
+		
+		case UseItem:
+			
+			break;
+			
+		case PickUpItem:
+			PickUpItem(t);
+			break;
+			
+		default:
+			break;
+			
+		}
+		if(piece.getActionPoints() <= 0)
+			Game.getInstance().NextPlayer();
+		Game.getInstance().getView().Refresh();
+		System.out.println(t.getSnow());
+		
+		/*if(Game.getInstance().stop == true)
+			return;
+		Scanner sc = new Scanner(System.in);
+		int cmd;
+		boolean wrong = true;*/
+
 		
 		/*while(piece.getActionPoints() > 0) 
 		{

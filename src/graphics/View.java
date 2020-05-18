@@ -84,7 +84,11 @@ public class View extends JFrame
 		itemPanel.Draw(this, Game.getInstance().getActivePlayer().getPiece().getInventory());
 	}
 	
-	
+	public void Refresh() 
+	{
+		boardPanel.Refresh();
+		itemPanel.Draw(this, Game.getInstance().getActivePlayer().getPiece().getInventory());
+	}
 
 	/*
 	public void paintComponent(Graphics g)

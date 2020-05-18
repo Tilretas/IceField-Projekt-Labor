@@ -44,7 +44,7 @@ public class BoardPanel extends JPanel{
 		
 	}
 	
-	public void Resfresh()
+	public void Refresh()
 	{
 		for (TilePanel tilePanel : tilePanels) {
 			tilePanel.Refresh();

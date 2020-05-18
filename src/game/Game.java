@@ -21,7 +21,8 @@ public class Game
 	
 	private View view;
 	private Player activePlayer;
-	private Action activeAction;
+	private int playerIdx;
+	private Action activeAction = null;
 	private Inventory activeItem;
 
 	/**
@@ -37,7 +38,8 @@ public class Game
 		for (int i = 0; i < n; i++) {
 			players.add(new Player(Colour.values()[i]));
 		}
-		activePlayer = players.get(0);
+		playerIdx = 0;
+		activePlayer = players.get(playerIdx);
 		
 		board = new Board();
 		try {
@@ -57,7 +59,7 @@ public class Game
 		int p = 0;
 		while(!stop) 
 		{
-			players.get(p).playerInput();
+			//players.get(p).playerInput();
 			p++;
 			if(p >= nOfPlayers)
 			{
@@ -169,31 +171,14 @@ public class Game
 	
 	public void TilePressed(Tile t) 
 	{
-		switch (activeAction) {
-		case Move:
-			activePlayer.Move(t);
-			break;
-
-		case Dig:
-			activePlayer.Dig(t);
-			break;
-		
-		case UseAbility:
-			activePlayer.UseAbility(t);
-			break;
-		
-		case UseItem:
-			
-			break;
-			
-		case PickUpItem:
-			activePlayer.PickUpItem(t);
-			break;
-			
-		default:
-			break;
-		}
-		System.out.println(t.getSnow());
+		if(activeAction != null)
+			activePlayer.playerInput(t, activeAction);
+	}
+	
+	public void NextPlayer() {
+		playerIdx++;
+		activePlayer = players.get(playerIdx);
+		view.Refresh();
 	}
 
 	//getter - setterek -------------------------

@@ -75,11 +75,11 @@ public class Tile
 	{
 		boolean isneighbor = false;
 		
-		if(neighbors.get(Direction.UP).equals(t) || neighbors.get(Direction.RIGHT).equals(t) || neighbors.get(Direction.LEFT).equals(t) || neighbors.get(Direction.DOWN).equals(t)) 
-		{
-			isneighbor = true;
-		}
-		
+		for(int i = 0; i < 4; i++)
+			if(neighbors.get(Direction.values()[i]) != null)
+				if(neighbors.get(Direction.values()[i]).equals(t))
+					isneighbor = true;
+
 		return isneighbor;
 	}
 	

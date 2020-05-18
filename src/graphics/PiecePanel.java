@@ -16,9 +16,9 @@ public class PiecePanel extends JPanel
 	private ArrayList<PieceLabel> pieces = new ArrayList<PieceLabel>();
 	
 	public void Draw(ArrayList<game.Piece> p, int s) {
-		
-		setBackground(new Color(231, 249, 251));
+		removeAll();
 		pieces.clear();
+		setBackground(new Color(231, 249, 251));
 		add(new JLabel(Integer.toString(s)));
 		for (game.Piece piece : p) {
 			PieceLabel temp = new PieceLabel(piece);

@@ -13,12 +13,12 @@ public class ItemPanel extends JPanel
 	
 	public void Draw(JFrame view, ArrayList<game.Item> itemlist) 
 	{
+		items.clear();
 		if(itemlist.size() == 0)
 			setBorder(new EmptyBorder(new Insets(220, 80, 100, 80)));
 		else
 			setBorder(new EmptyBorder(new Insets(220, 30, 100, 30)));
 		
-		items.clear();
 		for (game.Item item : itemlist) {
 			ItemButton temp = new ItemButton(item);
 			items.add(temp);
