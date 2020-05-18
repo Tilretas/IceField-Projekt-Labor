@@ -3,9 +3,10 @@ package graphics;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.Dimension;
-
+import java.awt.event.MouseAdapter;
+import java.awt.event.MouseEvent;
 import javax.swing.JPanel;
-
+import game.Game;
 import game.Tile;
 
 /**
@@ -21,6 +22,11 @@ public class TilePanel extends JPanel
 	
 	public TilePanel(Tile t) {
 		tile = t;
+		addMouseListener(new MouseAdapter() {
+            public void mouseReleased(MouseEvent evt) {
+                Game.getInstance().TilePressed(tile);
+            }
+        });
 	}
 	
 	public void Draw(JPanel ip) {

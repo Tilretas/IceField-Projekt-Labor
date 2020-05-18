@@ -159,6 +159,11 @@ public class Game
     		}
     	}  
 	}
+	
+	public void TilePressed(Tile t) 
+	{
+		System.out.println(t.getSnow());
+	}
 
 	//getter - setterek -------------------------
 

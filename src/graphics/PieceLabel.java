@@ -22,7 +22,6 @@ public class PieceLabel extends JLabel{
 	{
 		piece = p;
 		colour = p.getColour();
-		System.out.println(colour);
 	}
 	
 	public void Draw() 
