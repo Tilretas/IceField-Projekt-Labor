@@ -37,7 +37,6 @@ public class View extends JFrame
 	private BoardPanel boardPanel;
 	private ItemPanel itemPanel;
 	private StatPanel statPanel;
-	private Game gameState;
 	
 	private JPanel panel;
 
@@ -46,7 +45,6 @@ public class View extends JFrame
 		super("I miss my Coffin Niggas :'(");
 		Game.getInstance().setView(this);
 		init();
-		gameState = Game.getInstance();
 	}
 	
 	public void init()
