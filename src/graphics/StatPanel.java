@@ -64,6 +64,9 @@ public class StatPanel extends JPanel{
 		tf3.setText(Integer.toString(currentPiece.getActionPoints()));
 	}
 	
+	/**
+	 * Statpanelt frissítõ függvény
+	 */
 	public void Refresh() 
 	{
 		currentPiece = Game.getInstance().getActivePlayer().getPiece();

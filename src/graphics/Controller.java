@@ -13,11 +13,18 @@ public class Controller
 	 */
 	private ArrayList<MouseEvent> events;
 	
+	/**
+	 * Esemény hozzáadása
+	 * @param event A hozzáadni kívánt esemény
+	 */
 	public void addEvent(MouseEvent event)
 	{
 		
 	}
 	
+	/**
+	 * Futtatás
+	 */
 	public void Run()
 	{
 		

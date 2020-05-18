@@ -14,6 +14,9 @@ import javax.swing.border.EmptyBorder;
 
 import game.Game;
 
+/**
+ * A menüt megjelenítõ grafikus felület
+ */
 @SuppressWarnings("serial")
 public class Menu extends JFrame{
     
@@ -25,6 +28,9 @@ public class Menu extends JFrame{
     private menuClick al;
     private JTextField tf;
     
+    /**
+     * Létrehozza a menüt
+     */
     public Menu(){
         
         super("Snowstorm Menu");
@@ -58,6 +64,9 @@ public class Menu extends JFrame{
         setVisible(true);
     }
     
+    /**
+     * Menün kattintást kezelõ actionlistener
+     */
     private class menuClick implements ActionListener{
         @Override
         public void actionPerformed(ActionEvent e)
@@ -90,6 +99,9 @@ public class Menu extends JFrame{
         
     }
     
+    /**
+     * Menü futtatása
+     */
 	public void Run()
 	{
 		
