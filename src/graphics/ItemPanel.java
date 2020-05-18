@@ -18,11 +18,11 @@ public class ItemPanel extends JPanel
 		else
 			setBorder(new EmptyBorder(new Insets(220, 30, 100, 30)));
 		
+		items.clear();
 		for (game.Item item : itemlist) {
 			ItemButton temp = new ItemButton(item);
 			items.add(temp);
 			add(temp);
-			temp.Draw(this);
 		}
 	}
 }

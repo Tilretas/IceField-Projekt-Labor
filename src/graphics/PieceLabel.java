@@ -27,6 +27,6 @@ public class PieceLabel extends JLabel{
 	
 	public void Draw() 
 	{
-		setIcon(new ImageIcon(new ImageIcon("Images/" + piece.getType() + colour + ".png").getImage().getScaledInstance(20, 40, Image.SCALE_SMOOTH)));
+		setIcon(new ImageIcon(new ImageIcon("Images/" + piece.getType() + colour + ".png").getImage().getScaledInstance(15, 30, Image.SCALE_SMOOTH)));
 	}
 }

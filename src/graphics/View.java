@@ -32,11 +32,13 @@ import game.Player;
  */
 public class View extends JFrame
 {
-	private boolean valid;	
-	private Player activePlayer;
 	private ActionPanel actionPanel;
 	private BoardPanel boardPanel;
 	private ItemPanel itemPanel;
+	
+	private Player activePlayer;
+	private Action activeAction;
+	private Inventory activeItem;
 	
 	private JPanel panel;
 
@@ -80,6 +82,11 @@ public class View extends JFrame
 		itemPanel.Draw(this, activePlayer.getPiece().getInventory());
 		
 	}
+	
+	public void setActiveAction(Action ac) { activeAction = ac;}
+	
+	public void setActiveItem(Inventory ai) { activeItem = ai;}
+
 	/*
 	public void paintComponent(Graphics g)
 	{

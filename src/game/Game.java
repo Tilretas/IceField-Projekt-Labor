@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+import graphics.View;
+
 public class Game
 {
 	private static final Game instance = new Game();
@@ -14,6 +16,7 @@ public class Game
 	public boolean stop;
 	public boolean testStart;
 	private Test test;
+	private View view;
 
 	/**
 	 * Visszaadja a játék instance-ét
@@ -166,6 +169,8 @@ public class Game
 	public Board getBoard() { return board; }
 	
 	public boolean getTestStart() { return testStart; }
+	
+	public View getView() { return view; }
 	
 	//getter - setterek ---------vége------------
 }
