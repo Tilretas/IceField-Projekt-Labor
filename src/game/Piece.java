@@ -2,6 +2,11 @@ package game;
 
 import java.util.ArrayList;
 
+/**
+ * A bábukért felelõs osztály.
+ * Absztrakt - ebbõl származik le a ténylegesen
+ * játszható eszkimó és sarkkutató
+ */
 public abstract class Piece
 {
 	/**

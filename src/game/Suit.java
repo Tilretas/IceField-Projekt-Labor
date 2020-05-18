@@ -2,6 +2,11 @@ package game;
 
 import java.util.Scanner;
 
+
+/**
+ * A búvárruháért, mint eszközért felelõs osztály.
+ * Implementálja az Item interfészt
+ */
 public class Suit implements Item
 {
 	/**

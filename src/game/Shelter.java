@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * Menedék interface - ebbõl származik
+ * le az iglu és a sátor
+ */
 public interface Shelter {
 	
 	/**

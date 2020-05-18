@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * A jégmezõért felelõs osztály
+ */
 public class Ice extends Tile
 {
 	/**

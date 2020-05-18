@@ -3,6 +3,10 @@ package game;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+/**
+ * A legalapabb mező tulajdonságokért és metódusokért felelős osztály.
+ * Minden tipusú mező ebből származik le
+ */
 public class Tile
 {
 	/**

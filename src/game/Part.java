@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * Az alkatrészekért felelõs osztály,
+ * melyekkel meg lehet nyerni a játékot
+ */
 public class Part implements Item
 {
 	/**

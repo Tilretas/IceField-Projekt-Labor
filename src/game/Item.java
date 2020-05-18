@@ -1,5 +1,9 @@
 package game;
 
+/**
+ * Eszköz interface - ebbõl származik le
+ * az összes eszköz
+ */
 public interface Item
 {
 	/**

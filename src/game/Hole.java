@@ -1,5 +1,8 @@
 package game;
 
+/**
+ * A lyuk mezõért felelõs osztály
+ */
 public class Hole extends Tile
 {
 	/**
