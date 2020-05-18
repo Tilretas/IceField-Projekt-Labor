@@ -7,19 +7,22 @@ public class Part implements Item
 	 * 
 	 * @param p A piece, aki az összeszerelést kezdeményezi
 	 */
-	public void used(Piece p)
+	public void used(Piece p, Tile t)
 	{
-		int counter = 0;
-		for (Piece b : p.getTile().getPieces()) 
-			for (Item i : b.getInventory()) 
-				if (this.getClass() == i.getClass())
-					counter++;
-		
-		if(counter >= 3) 
+		if(p.getTile().equals(t))
 		{
-			for(Piece b : p.getTile().getPieces())
-				b.setActionPoints(b.getActionPoints() - 1);
-			Game.getInstance().notifyWin();
+			int counter = 0;
+			for (Piece b : p.getTile().getPieces()) 
+				for (Item i : b.getInventory()) 
+					if (this.getClass() == i.getClass())
+						counter++;
+			
+			if(counter >= 3) 
+			{
+				for(Piece b : p.getTile().getPieces())
+					b.setActionPoints(b.getActionPoints() - 1);
+				Game.getInstance().notifyWin();
+			}
 		}
 			
 			

@@ -7,11 +7,14 @@ public class Shovel implements Item
 	 * 
 	 * @param p Az ásót használó piece
 	 */
-	public void used(Piece p)
+	public void used(Piece p, Tile t)
 	{
-		p.getTile().removeSnow();
-		p.getTile().removeSnow();
-		p.setActionPoints(p.getActionPoints() - 1);
+		if(p.getTile().equals(t))
+		{
+			p.getTile().removeSnow();
+			p.getTile().removeSnow();
+			p.setActionPoints(p.getActionPoints() - 1);
+		}
 	}
 	
 	//getter - setterek -------------------------

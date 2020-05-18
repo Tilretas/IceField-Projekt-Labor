@@ -12,13 +12,16 @@ public class Tent implements Item, Shelter
 	 * 
 	 * @param p A piece, aki lerakja a sátrat
 	 */
-	public void used(Piece p)
+	public void used(Piece p, Tile t)
 	{
-		onTile = p.getTile();
-		p.getInventory().remove(this);
-		p.getTile().setShelter(this);
-		p.setActionPoints(p.getActionPoints() - 1);
-		Game.getInstance().getBoard().getTents().add(this);
+		if(p.getTile().equals(t))
+		{
+			onTile = p.getTile();
+			p.getInventory().remove(this);
+			p.getTile().setShelter(this);
+			p.setActionPoints(p.getActionPoints() - 1);
+			Game.getInstance().getBoard().getTents().add(this);
+		}
 	}
 	
 	/**

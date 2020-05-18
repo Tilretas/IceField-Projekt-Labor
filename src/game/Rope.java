@@ -9,9 +9,10 @@ public class Rope implements Item
 	 * 
 	 *  @param p A piece aki használja a kötelet
 	 */
-	public void used(Piece p)
+	public void used(Piece p, Tile t)
 	{
-		Piece saved = getPiece();
+		System.out.println("Select a piece to save!");
+		/*Piece saved = getPiece();
 		if(saved == null)
 			return;
 		if(saved == p)
@@ -25,7 +26,7 @@ public class Rope implements Item
 			saved.setInWater(false);
 			saved.setSuffocate(false);
 			p.setActionPoints(p.getActionPoints() - 1);
-		}
+		}*/
 	}
 	
 	/**
@@ -33,7 +34,6 @@ public class Rope implements Item
 	 * 
 	 * @return A kimentedõ piece
 	 */
-	
 	public Piece getPiece()
 	{
 		Scanner scr = new Scanner(System.in);

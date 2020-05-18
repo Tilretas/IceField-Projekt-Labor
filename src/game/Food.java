@@ -7,11 +7,13 @@ public class Food implements Item
 	 * 
 	 * @param p A piece, aki használja az itemet 
 	 */
-	public void used(Piece p)
+	public void used(Piece p, Tile t)
 	{
-		p.incBodyTemp();
-		p.removeItem(this);
-		p.setActionPoints(p.getActionPoints() - 1);
+		if(p.getTile().equals(t)) {
+			p.incBodyTemp();
+			p.removeItem(this);
+			p.setActionPoints(p.getActionPoints() - 1);
+		}
 	}
 	
 	//getter - setterek -------------------------

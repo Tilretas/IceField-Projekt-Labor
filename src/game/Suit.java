@@ -9,11 +9,11 @@ public class Suit implements Item
 	 * 
 	 * @param p A búvárruhát használó piece
 	 */
-	public void used(Piece p)
+	public void used(Piece p, Tile t)
 	{
-		if(p.getInWater()) 
+		if(p.getInWater() && p.getTile().isNeighbor(t)) 
 		{
-			Tile t = getDirection(p.getTile());
+			Tile tasd = getDirection(p.getTile());
 			if(t== null)
 				return;
 			p.moved(t);              

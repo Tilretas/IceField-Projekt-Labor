@@ -23,7 +23,7 @@ public class Game
 	private Player activePlayer;
 	private int playerIdx;
 	private Action activeAction = null;
-	private Inventory activeItem;
+	private Item activeItem;
 
 	/**
 	 * Visszaadja a játék instance-ét
@@ -182,6 +182,7 @@ public class Game
 			snowStorm();
 			moveBear();
 		}
+		activeItem = null;
 		activePlayer = players.get(playerIdx);
 		activePlayer.YourTurn();
 		view.Refresh();
@@ -203,11 +204,13 @@ public class Game
 	
 	public void setActiveAction(Action ac) { activeAction = ac;}
 	
-	public void setActiveItem(Inventory ai) { activeItem = ai;}
+	public void setActiveItem(Item ai) { activeItem = ai;}
 	
 	public void setActivePlayer(Player p) { activePlayer = p; }
 	
 	public Player getActivePlayer() { return activePlayer; }
+	
+	public Item getActiveItem() { return activeItem; }
 
 	//getter - setterek ---------vége------------
 }

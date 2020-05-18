@@ -68,7 +68,7 @@ public abstract class Piece
 	 * 
 	 * @param i Az eszköz, amit használni akarunk 
 	 */
-	public void useItem(Item i)
+	public void useItem(Item i, Tile t)
 	{
 		
 		if(actionPoints == 0)
@@ -76,16 +76,16 @@ public abstract class Piece
 			System.out.println("No more action points!");
 			return;
 		}
-		
+		int itemIdx = -1;
 		boolean hasItem = false;
 		try 
 		{
 			for(int j = 0; j < inventory.size(); j++) 
 			{
-				if(inventory.get(j).getClass().equals(i.getClass()))		//Megnéztem, mûködik a feltétel
+				if(inventory.get(j).getClass().equals(i.getClass()))
 				{
 					hasItem = true;
-					i.used(this);
+					itemIdx = j;
 					break;
 				}
 			}
@@ -94,6 +94,8 @@ public abstract class Piece
 			{
 				throw new Exception("You don't have this item in your inventory!");
 			}
+			else
+				inventory.get(itemIdx).used(this, t);
 		}
 		catch(Exception e) 
 		{

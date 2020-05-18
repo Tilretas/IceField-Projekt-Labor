@@ -55,7 +55,8 @@ public class Player
 			break;
 		
 		case UseItem:
-			
+			if(Game.getInstance().getActiveItem() != null)
+				useItem(t, Game.getInstance().getActiveItem());
 			break;
 			
 		case PickUpItem:
@@ -180,8 +181,9 @@ public class Player
 	 */
 	public void useItem(Tile t, Item i)
 	{
-		System.out.println("Which item do you want to use? | Item index(0-"+ (piece.getInventory().size()-1) + "):\n");
-		/*for (int i = 0; i < piece.getInventory().size(); i++)
+		piece.useItem(i, t);
+		/*System.out.println("Which item do you want to use? | Item index(0-"+ (piece.getInventory().size()-1) + "):\n");
+		for (int i = 0; i < piece.getInventory().size(); i++)
 			System.out.print(i + ": " + piece.getInventory().get(i).getName() + " | ");
 		Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
