@@ -12,7 +12,7 @@ package graphics;
 public enum Action {
 	Move,
 	Dig,
-	Ability,
+	UseAbility,
 	UseItem,
 	PickUpItem
 }

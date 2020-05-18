@@ -41,7 +41,7 @@ public class Player
 			else piece.setSuffocate(true);
 		}
 		
-		while(piece.getActionPoints() > 0) 
+		/*while(piece.getActionPoints() > 0) 
 		{
 			Game.getInstance().getBoard().drawBoard();
 			wrong = true;
@@ -93,20 +93,20 @@ public class Player
 					break;
 				}
 			}
-		}
+		}*/
 	}
 	
 	/**
 	 * A felhasználó által megadott mezõre lépteti a piece-t, ha az szomszédos a jelenlegi mezõjével
 	 */
-	private void move() 
+	public void Move(Tile t) 
 	{
 		if(getPiece().getInWater() == true)
 		{
 			System.out.println("You need to use a diving suit to get out of water!");
 			return;
 		}
-		System.out.println("Where do you want to move? (1: up | 2: right | 3: down | 4: left) ");
+		/*System.out.println("Where do you want to move? (1: up | 2: right | 3: down | 4: left) ");
 		Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
 		if(idx < 1 || idx > 4) 
@@ -118,27 +118,33 @@ public class Player
 		{
 			System.out.println("There is no tile in that direction! Try again...");
 			idx = sc.nextInt();
-		}
-		piece.moved(piece.getTile().getNeighbor(Direction.values()[idx-1]));
+		}*/
+		if(piece.getTile().isNeighbor(t))
+			piece.moved(t);
 	}
 	
 	/**
 	 * 1 hómennyiséget ás a piece jelenlegi mezõjén
 	 */
-	private void dig() { piece.dig(); }
+	public void Dig(Tile t) { 
+		if(piece.getTile().equals(t))
+			piece.dig(); 
+	}
 	
 	/**
 	 * A piece használja a képességét
 	 */
-	private void useAbility() { piece.ability(); }
+	public void UseAbility(Tile t) {
+		piece.ability(t); 
+	}
 	
 	/**
 	 * Mekkérdézi a felhasználótól, hogy melyik tárgyat akarja használni, majd használja
 	 */
-	private void useItem()
+	public void useItem(Tile t, Item i)
 	{
 		System.out.println("Which item do you want to use? | Item index(0-"+ (piece.getInventory().size()-1) + "):\n");
-		for (int i = 0; i < piece.getInventory().size(); i++)
+		/*for (int i = 0; i < piece.getInventory().size(); i++)
 			System.out.print(i + ": " + piece.getInventory().get(i).getName() + " | ");
 		Scanner sc = new Scanner(System.in);
 		int idx = sc.nextInt();
@@ -146,19 +152,22 @@ public class Player
 		{
 			System.out.println("Incorrect item index!");
 			idx = sc.nextInt();
-		}
-		piece.useItem(piece.getInventory().get(idx));
+		}*/
+		
+		//piece.useItem(piece.getInventory().get(idx));
 	}
 	
 	/**
 	 * Felvesz egy tárgyat
 	 */
-	private void pickUpItem()
+	public void PickUpItem(Tile t)
 	{
-		if (piece.getTile().getItem() == null)
-			System.out.println("There is no item to pick up!");
-		else
-			piece.pickUp();
+		if(piece.getTile().equals(t)) {
+			if (piece.getTile().getItem() == null)
+				System.out.println("There is no item to pick up!");
+			else
+				piece.pickUp();
+		}
 	}
 	
 	

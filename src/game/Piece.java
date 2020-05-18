@@ -134,7 +134,7 @@ public abstract class Piece
 	 * Absztrakt függvény a képesség használatára.
 	 * Felüldefiniálja mind a kutató, mind az eszkimó
 	 */
-	public abstract void ability();
+	public abstract void ability(Tile t);
 	
 	/**
 	 * Hozzáadja a paraméterként kapott tárgyat a piece inventory-hoz

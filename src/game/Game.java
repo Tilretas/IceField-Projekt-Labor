@@ -37,6 +37,7 @@ public class Game
 		for (int i = 0; i < n; i++) {
 			players.add(new Player(Colour.values()[i]));
 		}
+		activePlayer = players.get(0);
 		
 		board = new Board();
 		try {
@@ -168,7 +169,30 @@ public class Game
 	
 	public void TilePressed(Tile t) 
 	{
+		switch (activeAction) {
+		case Move:
+			activePlayer.Move(t);
+			break;
+
+		case Dig:
+			activePlayer.Dig(t);
+			break;
 		
+		case UseAbility:
+			activePlayer.UseAbility(t);
+			break;
+		
+		case UseItem:
+			
+			break;
+			
+		case PickUpItem:
+			activePlayer.PickUpItem(t);
+			break;
+			
+		default:
+			break;
+		}
 		System.out.println(t.getSnow());
 	}
 
