@@ -115,16 +115,17 @@ public abstract class Piece
 	{
 		if(actionPoints == 0)
 		{
-			System.out.println("No more action points!");
+			Game.getInstance().setText("No more action points!");
 			return;
 		}
 		if(this.getTile().getSnow() > 0) 
 		{
+			Game.getInstance().setText("Digging");
 			this.getTile().removeSnow();		
 			actionPoints--;
 		}
 		else 
-			System.out.println("\nThere is no more snow to dig!");
+			Game.getInstance().setText("There is no more snow to dig!");
 	}
 	
 	/**
@@ -132,6 +133,7 @@ public abstract class Piece
 	 */
 	public void pickUp()
 	{
+		Game.getInstance().setText("Pick upping " + onTile.getItem().getName());
 		inventory.add(onTile.getItem());
 		onTile.setItem(null);
 		actionPoints--;

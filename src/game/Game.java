@@ -192,6 +192,11 @@ public class Game
 		activePlayer.YourTurn();
 		view.Refresh();
 	}
+	
+	public void setText(String s)
+	{
+		getView().getStatPanel().settext_area(s);
+	}
 
 	//getter - setterek -------------------------
 

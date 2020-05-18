@@ -60,7 +60,10 @@ public class Player
 		
 		case UseItem:
 			if(Game.getInstance().getActiveItem() != null)
+			{
 				useItem(t, Game.getInstance().getActiveItem());
+				Game.getInstance().setText("Iteming " + Game.getInstance().getActiveItem().getName());
+			}
 			break;
 			
 		case PickUpItem:
@@ -162,7 +165,10 @@ public class Player
 			idx = sc.nextInt();
 		}*/
 		if(piece.getTile().isNeighbor(t))
+		{
 			piece.moved(t);
+			Game.getInstance().setText("Moving");
+		}
 	}
 	
 	/**
@@ -177,6 +183,7 @@ public class Player
 	 * A piece használja a képességét
 	 */
 	public void UseAbility(Tile t) {
+		Game.getInstance().setText("Abiliting");
 		piece.ability(t); 
 	}
 	
