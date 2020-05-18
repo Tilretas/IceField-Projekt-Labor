@@ -113,6 +113,7 @@ public class View extends JFrame
 	{
 		boardPanel.Refresh();
 		itemPanel.Draw(this, Game.getInstance().getActivePlayer().getPiece().getInventory());
+		statPanel.Refresh();
 	}
 
 	/*

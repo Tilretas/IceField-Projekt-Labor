@@ -23,6 +23,7 @@ public class StatPanel extends JPanel{
 	private JLabel lb2 = new JLabel();
 	private JLabel lb3 = new JLabel();
 	private JTextArea tarea = new JTextArea();
+	Piece currentPiece;
 	
 	/**
 	 * Konstruktor amely meghívja az õsosztály konstruktorát
@@ -37,7 +38,7 @@ public class StatPanel extends JPanel{
 	 */
 	public void Draw() 
 	{
-		Piece currentPiece;
+		
 		currentPiece = Game.getInstance().getActivePlayer().getPiece();
 		tf1.setEditable(false);
 		tf2.setEditable(false);
@@ -62,4 +63,13 @@ public class StatPanel extends JPanel{
 		tf2.setText(Integer.toString(currentPiece.getBodyTemp()));
 		tf3.setText(Integer.toString(currentPiece.getActionPoints()));
 	}
+	
+	public void Refresh() 
+	{
+		currentPiece = Game.getInstance().getActivePlayer().getPiece();
+		tf1.setText(currentPiece.getColour().toString());
+		tf2.setText(Integer.toString(currentPiece.getBodyTemp()));
+		tf3.setText(Integer.toString(currentPiece.getActionPoints()));
+	}
+	
 }
