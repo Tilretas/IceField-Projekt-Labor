@@ -7,6 +7,7 @@ import java.awt.event.ActionListener;
 import javax.swing.BoxLayout;
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 import javax.swing.border.EmptyBorder;
@@ -19,7 +20,7 @@ public class Menu extends JFrame{
     private JPanel panel;
     private BoxLayout layout;
     private JButton bGame;
-    private JButton bPlayers;
+    private JLabel lPlayers;
     private JButton bExit;
     private menuClick al;
     private JTextField tf;
@@ -37,14 +38,16 @@ public class Menu extends JFrame{
         bGame.setMaximumSize(new Dimension(130, 30));
         tf = new JTextField("3");
         tf.setMaximumSize(new Dimension(260, 30));
-        bPlayers = new JButton("Players");
-        bPlayers.addActionListener(al);
-        bPlayers.setMaximumSize(new Dimension(130, 30));
+        tf.setHorizontalAlignment(JLabel.CENTER);
+        lPlayers = new JLabel("Players");
+        //lPlayers.addActionListener(al);
+        lPlayers.setHorizontalAlignment(JTextField.CENTER);
+        lPlayers.setMaximumSize(new Dimension(130, 30));
         bExit = new JButton("Exit");
         bExit.addActionListener(al);
         bExit.setMaximumSize(new Dimension(130, 30));
         panel.add(bGame);
-        panel.add(bPlayers);
+        panel.add(lPlayers);
         panel.add(tf);
         panel.add(bExit);
         add(panel);
@@ -61,10 +64,19 @@ public class Menu extends JFrame{
         {
             if (e.getSource() == bGame)
             {
-        		int temp = Integer.parseInt(tf.getText());              		
-            	Game game = Game.getInstance();
-        		game.initGame(temp);
-        		new View();
+            	try
+            	{
+            		int temp = Integer.parseInt(tf.getText());  
+            		if (temp < 3 || temp > 6)
+            		{
+            			throw new IllegalArgumentException();
+            		}
+            		Game game = Game.getInstance();
+            		game.initGame(temp);
+            		new View();
+            	} catch (Exception er) {
+            		System.out.println("Érvénytelen játékosszám. 3-6 játékos lehetséges");
+            	}
             }
             
             
