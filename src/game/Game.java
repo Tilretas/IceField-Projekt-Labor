@@ -180,6 +180,7 @@ public class Game
 		if(playerIdx >= nOfPlayers)
 			playerIdx = 0;
 		activePlayer = players.get(playerIdx);
+		activePlayer.YourTurn();
 		view.Refresh();
 	}
 
