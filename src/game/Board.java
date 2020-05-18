@@ -253,6 +253,7 @@ public class Board
 			pieces.get(i).setActionPoints(5);
 			pieces.get(i).moved(tiles.get(s));
 			Game.getInstance().getPlayers().get(i).setPiece(pieces.get(i));
+			pieces.get(i).setColour(Game.getInstance().getPlayers().get(i).getColour());
 		}
 		bear = new Bear();
 		bear.moved(tiles.get(0));

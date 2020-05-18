@@ -1,10 +1,12 @@
 package graphics;
 
 import java.awt.Graphics;
+
+import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-
 import game.Ice;
+import game.Tile;
 
 /**
  * 1 mezõ kinézetét tárolja
@@ -14,15 +16,21 @@ import game.Ice;
 public class TileLabel extends JLabel
 {
 	private TileGraphics tileIcon;
+	private Tile tile;
 	
-	public void Draw(JPanel tp, game.Tile t)
+	public void Draw(Tile t) { 
+		tile = t; 
+		Refresh();
+	}
+	
+	public void Refresh()
 	{
 		int i = 0;
-		i += t.getType() * 100;
-		if (t.getBear())
+		i += tile.getType() * 100;
+		if (tile.getBear())
 			i += 10;
-		if(t.getShelter() != null) {
-			if(t.getShelter().defend()) {
+		if(tile.getShelter() != null) {
+			if(tile.getShelter().defend()) {
 				i += 1;
 			}
 			else i += 2;
@@ -88,5 +96,7 @@ public class TileLabel extends JLabel
 		default:
 			break;
 		}
+		
+		setIcon(new ImageIcon(tileIcon + "png")); // 50 x 50
 	}
 }

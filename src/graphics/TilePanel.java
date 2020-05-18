@@ -1,5 +1,8 @@
 package graphics;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+
 import javax.swing.JPanel;
 
 import game.Tile;
@@ -20,7 +23,17 @@ public class TilePanel extends JPanel
 	}
 	
 	public void Draw(JPanel ip) {
-		labelT.Draw(this, tile);
-		pieceP.Draw(this, tile.getPieces());
+		setLayout(new BorderLayout());
+		
+		labelT = new TileLabel();
+		labelT.setMinimumSize(new Dimension(50, 50));
+		add(labelT, BorderLayout.CENTER);
+		pieceP = new PiecePanel();
+		add(pieceP, BorderLayout.SOUTH);
+		
+		labelT.Draw(tile);
+		pieceP.Draw(tile.getPieces());
 	}
+	
+	public void Refresh() { labelT.Refresh(); }
 }

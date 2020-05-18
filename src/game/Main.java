@@ -1,4 +1,6 @@
 package game;
+import java.io.IOException;
+
 import graphics.*;
 
 public class Main {
@@ -9,9 +11,14 @@ public class Main {
                 new NetBeansCopy().setVisible(true);
             }
         });   */     
-		View view = new View();
 		
-		/*Game game = Game.getInstance();
+		Game game = Game.getInstance(); 
+		game.initGame(4);
+
+		new View();
+		
+		
+		/*
 		game.startGame(4);
 		game.play();*/
 		

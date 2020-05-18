@@ -2,6 +2,7 @@ package graphics;
 
 import java.util.ArrayList;
 
+import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
@@ -22,6 +23,7 @@ public class ActionPanel extends JPanel{
 	
 	public void Draw(JFrame view)
 	{
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		actions.add(new ActionButton("Move"));
 		actions.add(new ActionButton("Dig"));
 		actions.add(new ActionButton("Ability"));

@@ -22,7 +22,7 @@ public class Game
 	 */
     public static Game getInstance() { return instance; } 
     
-	public void startGame(int n)
+	public void initGame(int n)
 	{
 		nOfPlayers = n;
 		for (int i = 0; i < n; i++) {
