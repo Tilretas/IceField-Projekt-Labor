@@ -109,12 +109,12 @@ public class Game
 		gameEnd = true;
 		if(win)
 		{
-			instance.getView().getStatPanel().settext_area("\nYou survived. WoW!");
+			instance.setText("\nYou survived. WoW!");
 			instance.getView().getStatPanel().setBackground(Color.GREEN);
 		}
 		else
 		{
-			instance.getView().getStatPanel().settext_area("\nSomeone died :( \nThe Coffin Dancers are on their way...");
+			instance.setText("\nSomeone died :( \nThe Coffin Dancers are on their way...");
 			instance.getView().getStatPanel().setBackground(Color.RED);
 		}
 	}
