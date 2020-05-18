@@ -46,7 +46,7 @@ public class ActionPanel extends JPanel{
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		actions.add(new ActionButton("Move"));
 		actions.add(new ActionButton("Dig"));
-		actions.add(new ActionButton("Ability"));
+		actions.add(new ActionButton("UseAbility"));
 		actions.add(new ActionButton("UseItem"));
 		actions.add(new ActionButton("PickUpItem"));
 		group = new ButtonGroup();

@@ -37,7 +37,6 @@ public class View extends JFrame
 	private BoardPanel boardPanel;
 	private ItemPanel itemPanel;
 	private StatPanel statPanel;
-	private Game game;
 	
 	private JPanel panel;
 
@@ -46,7 +45,6 @@ public class View extends JFrame
 		super("I miss my Coffin Niggas :'(");
 		Game.getInstance().setView(this);
 		init();
-		game = Game.getInstance();
 	}
 	
 	public void init()
@@ -82,8 +80,8 @@ public class View extends JFrame
 	public void Draw() 
 	{
 		actionPanel.Draw(this);
-		boardPanel.Draw(this, game.getBoard().getTiles());
-		itemPanel.Draw(this, game.getActivePlayer().getPiece().getInventory());
+		boardPanel.Draw(this, Game.getInstance().getBoard().getTiles());
+		itemPanel.Draw(this, Game.getInstance().getActivePlayer().getPiece().getInventory());
 	}
 	
 	
