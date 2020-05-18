@@ -16,7 +16,7 @@ public class Food implements Item
 	
 	//getter - setterek -------------------------
 	
-	public char getName() { return 'F';	}
+	public String getName() { return "Food";	}
 	
 	//getter - setterek ---------vége------------
 }

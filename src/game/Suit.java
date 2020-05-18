@@ -53,9 +53,9 @@ public class Suit implements Item
 	
 	//getter - setterek -------------------------
 	
-	public char getName() 
+	public String getName() 
 	{
-		return 'D'; //diving suit (ütközött a shovellel)
+		return "Suit"; //diving suit (ütközött a shovellel)
 	}
 	
 	//getter - setterek ---------vége------------

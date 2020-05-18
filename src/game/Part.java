@@ -28,9 +28,9 @@ public class Part implements Item
 	
 	//getter - setterek -------------------------
 	
-	public char getName() 
+	public String getName() 
 	{
-		return 'P';
+		return "Part";
 	}
 	
 	//getter - setterek ---------vége------------

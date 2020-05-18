@@ -52,9 +52,9 @@ public class Rope implements Item
 	
 	//getter - setterek -------------------------
 	
-	public char getName() 
+	public String getName() 
 	{
-		return 'R';
+		return "Rope";
 	}
 	
 	//getter - setterek ---------vége------------
