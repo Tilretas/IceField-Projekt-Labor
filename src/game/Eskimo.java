@@ -5,6 +5,10 @@ package game;
  */
 public class Eskimo extends Piece
 {
+	public Eskimo() {
+		setBodyTemp(5);
+	}
+	
 	/**
 	 * Az eszkimó képességét megvalósító függvény.
 	 * Egy iglut épít az eszkimó mezõjén

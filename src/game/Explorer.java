@@ -7,6 +7,10 @@ import java.util.Scanner;
  */
 public class Explorer extends Piece
 {
+	public Explorer() {
+		setBodyTemp(4);
+	}
+	
 	/**
 	 * A sarkkutató képességét megvalósító függvény.
 	 * Megkérdezi a felhasználótól, hogy melyik mezõ kapacitását szeretné megnézni
