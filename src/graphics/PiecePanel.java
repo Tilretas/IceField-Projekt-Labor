@@ -1,5 +1,6 @@
 package graphics;
 
+import java.awt.Color;
 import java.util.ArrayList;
 
 import javax.swing.JLabel;
@@ -16,6 +17,7 @@ public class PiecePanel extends JPanel
 	
 	public void Draw(ArrayList<game.Piece> p, int s) {
 		
+		setBackground(new Color(231, 249, 251));
 		pieces.clear();
 		add(new JLabel(Integer.toString(s)));
 		for (game.Piece piece : p) {

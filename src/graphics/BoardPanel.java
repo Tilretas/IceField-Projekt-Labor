@@ -1,5 +1,6 @@
 package graphics;
 
+import java.awt.Color;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.util.ArrayList;
@@ -18,6 +19,8 @@ public class BoardPanel extends JPanel{
 	private ArrayList<TilePanel> tilePanels = new ArrayList<TilePanel>();
 	
 	public void Draw(JFrame view, ArrayList<game.Tile> tiles) {
+		
+		setBackground(new Color(231, 249, 251));
         tilePanels.clear();
 		setLayout(new GridBagLayout());
         GridBagConstraints gbs = new GridBagConstraints();

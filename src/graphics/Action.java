@@ -11,8 +11,8 @@ package graphics;
  */
 public enum Action {
 	Move,
+	Dig,
 	Ability,
 	UseItem,
-	Dig,
 	PickUpItem
 }

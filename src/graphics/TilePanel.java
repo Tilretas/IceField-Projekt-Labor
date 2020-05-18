@@ -1,6 +1,7 @@
 package graphics;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 
 import javax.swing.JPanel;
@@ -24,7 +25,8 @@ public class TilePanel extends JPanel
 	
 	public void Draw(JPanel ip) {
 		setLayout(new BorderLayout());
-		
+		setBackground(new Color(231, 249, 251));
+		setBorder(javax.swing.BorderFactory.createEtchedBorder());
 		labelT = new TileLabel();
 		labelT.setMinimumSize(new Dimension(50, 50));
 		add(labelT, BorderLayout.CENTER);

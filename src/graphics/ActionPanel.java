@@ -1,6 +1,8 @@
 package graphics;
 
 import java.awt.Insets;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.ArrayList;
 
 import javax.swing.BoxLayout;
@@ -8,6 +10,8 @@ import javax.swing.ButtonGroup;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+
+import game.Game;
 
 /**
  * Az action gombokat tartalmazó panel (a frame bal oldalán)
@@ -21,6 +25,7 @@ public class ActionPanel extends JPanel{
 	
 	public ActionPanel() {
 		super();
+		
 	}
 	
 	public void Draw(JFrame view)
@@ -30,8 +35,8 @@ public class ActionPanel extends JPanel{
 		actions.add(new ActionButton("Move"));
 		actions.add(new ActionButton("Dig"));
 		actions.add(new ActionButton("Ability"));
-		actions.add(new ActionButton("Use Item"));
-		actions.add(new ActionButton("Pick Up Item"));
+		actions.add(new ActionButton("UseItem"));
+		actions.add(new ActionButton("PickUpItem"));
 		group = new ButtonGroup();
 		for (ActionButton actionButton : actions) {
 			group.add(actionButton);
