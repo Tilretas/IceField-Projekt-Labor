@@ -172,6 +172,8 @@ public class Game
 	
 	public View getView() { return view; }
 	
+	public void setView(View v) { view = v; }
+	
 	//getter - setterek ---------vége------------
 }
 

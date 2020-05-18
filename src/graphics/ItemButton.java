@@ -1,5 +1,6 @@
 package graphics;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JPanel;
@@ -15,7 +16,8 @@ public class ItemButton extends JRadioButton
 	
 	public ItemButton(game.Item i) {
 		item = i;
-		
+		setBackground(new Color(91, 92, 110));
+		setForeground(new Color(214, 225, 150));
 		addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
 				Game.getInstance().getView().setActiveItem(Inventory.valueOf(getText()));

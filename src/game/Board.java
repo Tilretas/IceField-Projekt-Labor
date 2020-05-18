@@ -82,7 +82,7 @@ public class Board
 				
 				char i = 'X';
 				if (tiles.get(y*5 + x).getItem() != null)
-					i = tiles.get(y*5 + x).getItem().getName();
+					i = 'T';
 				char p = (char) (tiles.get(y*5 + x).getPieces().size() + '0');
 				if (p == '0')
 					p = 'X';

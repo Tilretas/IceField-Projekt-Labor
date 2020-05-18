@@ -1,5 +1,6 @@
 package graphics;
 
+import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
@@ -18,11 +19,13 @@ public class ActionButton extends JRadioButton
 	public ActionButton(String name)
 	{
 		super(name);
-
+		setBackground(new Color(91, 92, 110));
+		setForeground(new Color(214, 225, 150));
 		addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
-				Game.getInstance().getView().setActiveAction(Action.valueOf(getText()));
-				//System.out.println(getText());
+            	Action temp = Action.valueOf(getText());
+				Game.getInstance().getView().setActiveAction(temp);
+				System.out.println(getText());
             }
         });
 	}

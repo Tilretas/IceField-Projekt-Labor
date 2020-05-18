@@ -30,6 +30,7 @@ public class ActionPanel extends JPanel{
 	
 	public void Draw(JFrame view)
 	{
+		//padding esetleg?
 		setBorder(new EmptyBorder(new Insets(220, 30, 100, 30)));
 		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		actions.add(new ActionButton("Move"));

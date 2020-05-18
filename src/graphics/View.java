@@ -1,6 +1,7 @@
 package graphics;
 
 import java.awt.BorderLayout;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.GridBagConstraints;
@@ -45,6 +46,7 @@ public class View extends JFrame
 	public View()
 	{
 		super("I miss my Coffin Niggas :'(");
+		Game.getInstance().setView(this);
 		init();
 	}
 	
@@ -57,6 +59,10 @@ public class View extends JFrame
 		actionPanel = new ActionPanel();
 		boardPanel = new BoardPanel();
 		itemPanel = new ItemPanel();
+		
+		actionPanel.setBackground(new Color(91, 92, 110));
+		itemPanel.setBackground(new Color(91, 92, 110));
+
 		
 		panel.add(actionPanel, BorderLayout.WEST);
 		panel.add(boardPanel, BorderLayout.CENTER);
