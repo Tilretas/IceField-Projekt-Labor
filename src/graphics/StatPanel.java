@@ -11,6 +11,10 @@ import javax.swing.JTextField;
 import game.Game;
 import game.Piece;
 
+/**
+ * A karakter statisztikáit kiíró panel
+ * TextFieldekben és Labelekben jeleníti meg ezeket
+ */
 public class StatPanel extends JPanel{
 	private JTextField tf1 = new JTextField();
 	private JTextField tf2 = new JTextField();
@@ -20,11 +24,17 @@ public class StatPanel extends JPanel{
 	private JLabel lb3 = new JLabel();
 	private JTextArea tarea = new JTextArea();
 	
+	/**
+	 * Konstruktor amely meghívja az õsosztály konstruktorát
+	 */
 	public StatPanel() 
 	{
 		super();
 	}
 	
+	/**
+	 * A statisztikák képernyõre kirajzolása
+	 */
 	public void Draw() 
 	{
 		Piece currentPiece;

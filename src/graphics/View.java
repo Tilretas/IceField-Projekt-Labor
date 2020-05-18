@@ -28,18 +28,34 @@ import game.Player;
 
 /**
  * Maga az ablak(frame), bal oldalán az action gombok, középen a mezõk, jobb oldalon a tárgyak
- * 
- *
+ * Továbbá tartozik hozzá egy statisztikákat kiíró panel
  */
 public class View extends JFrame
 {
+	/**
+	 * Az ablak bal oldalán található panel, ami az akciókhoz tartozik
+	 */
 	private ActionPanel actionPanel;
+	/**
+	 * A fõ panel, a mezõk megjelenítéséért felelõs
+	 */
 	private BoardPanel boardPanel;
+	/**
+	 * Az adott bábunál található itemeket megjelenítõ panel
+	 */
 	private ItemPanel itemPanel;
+	/**
+	 * Az adott bábu statisztikáit megjelenítõ panel
+	 */
 	private StatPanel statPanel;
-	
+	/**
+	 * Panel, amit új panelek létrehozására használunk
+	 */
 	private JPanel panel;
 
+	/**
+	 * Konstruktor, amely beállítja a játékot és megjeleníti grafikusan azt
+	 */
 	public View()
 	{
 		super("I miss my Coffin Niggas :'(");
@@ -47,6 +63,9 @@ public class View extends JFrame
 		init();
 	}
 	
+	/**
+	 * Inicializáló függvény
+	 */
 	public void init()
 	{
 		panel = new JPanel();
@@ -79,6 +98,9 @@ public class View extends JFrame
 
 	}
 	
+	/**
+	 * Kirajzoló függvény, amely meghívja az alpanelek kirajzoló függvényeit
+	 */
 	public void Draw() 
 	{
 		actionPanel.Draw(this);
