@@ -7,10 +7,24 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
 
+/**
+ * Az eszközöket tartalmazó panel. Ide irjuk ki
+ * a használható eszközöket
+ */
 public class ItemPanel extends JPanel
 {
+	/**
+	 * Az eszközöket reprezentáló gombok listája
+	 */
 	private ArrayList<ItemButton> items = new ArrayList<ItemButton>();
 	
+	/**
+	 * Kiirjuk az éppen használható eszközöket
+	 * 
+	 * @param view - Keret (JFrame) az elrendezéshez
+	 * @param itemlist - Eszközlista, amely megadja, hogy az adott 
+	 * játékosnál éppen milyen eszközök vannak
+	 */
 	public void Draw(JFrame view, ArrayList<game.Item> itemlist) 
 	{
 		if(itemlist.size() == 0)

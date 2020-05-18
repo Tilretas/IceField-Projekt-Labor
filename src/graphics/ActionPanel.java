@@ -20,14 +20,25 @@ import game.Game;
  */
 public class ActionPanel extends JPanel{
 	
+	/**
+	 * Az akciókhoz tartozó gombokat tároló lista
+	 */
 	private ArrayList<ActionButton> actions = new ArrayList<ActionButton>();
 	ButtonGroup group;
 	
+	/**
+	 * JPanel konstruktora segitségével inicializáljuk a panelt
+	 */
 	public ActionPanel() {
 		super();
 		
 	}
 	
+	/**
+	 * 
+	 * 
+	 * @param view - 
+	 */
 	public void Draw(JFrame view)
 	{
 		//padding esetleg?
