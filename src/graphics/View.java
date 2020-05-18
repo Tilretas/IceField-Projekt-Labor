@@ -44,7 +44,7 @@ public class View extends JFrame
 
 	public View()
 	{
-		super("szeretem kapit <3");
+		super("I miss my Coffin Niggas :'(");
 		init();
 	}
 	
