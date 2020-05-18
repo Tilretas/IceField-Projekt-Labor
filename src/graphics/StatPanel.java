@@ -90,6 +90,9 @@ public class StatPanel extends JPanel{
 		}
 	}
 	
+	/**
+	 * Statpanelt frissítõ függvény
+	 */
 	public void Refresh() 
 	{
 		currentPiece = Game.getInstance().getActivePlayer().getPiece();

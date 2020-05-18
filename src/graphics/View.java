@@ -109,6 +109,9 @@ public class View extends JFrame
 		statPanel.Draw();
 	}
 	
+	/**
+	 * A grafikus felület megjelenítését frissítõ felület
+	 */
 	public void Refresh() 
 	{
 		boardPanel.Refresh();

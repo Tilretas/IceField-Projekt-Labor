@@ -177,9 +177,13 @@ public class Game
 	
 	public void NextPlayer() {
 		playerIdx++;
-		if(playerIdx >= nOfPlayers)
+		if(playerIdx >= nOfPlayers) {
 			playerIdx = 0;
+			snowStorm();
+			moveBear();
+		}
 		activePlayer = players.get(playerIdx);
+		activePlayer.YourTurn();
 		view.Refresh();
 	}
 
