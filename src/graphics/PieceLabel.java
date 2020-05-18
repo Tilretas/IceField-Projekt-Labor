@@ -1,5 +1,7 @@
 package graphics;
 
+import java.awt.Image;
+
 import javax.swing.ImageIcon;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,6 +27,6 @@ public class PieceLabel extends JLabel{
 	
 	public void Draw() 
 	{
-		setIcon(new ImageIcon(piece.getType() + colour));
+		setIcon(new ImageIcon(new ImageIcon("Images/" + piece.getType() + colour + ".png").getImage().getScaledInstance(20, 40, Image.SCALE_SMOOTH)));
 	}
 }
