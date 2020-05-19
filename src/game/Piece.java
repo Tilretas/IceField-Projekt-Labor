@@ -55,7 +55,7 @@ public abstract class Piece
 		//TODO
 		if(actionPoints == 0)
 		{
-			System.out.println("No more action points!");
+			Game.getInstance().setText("No more action points!");
 		}
 		else
 		{

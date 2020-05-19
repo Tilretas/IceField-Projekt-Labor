@@ -47,6 +47,8 @@ public class Unstable extends Ice
 			flipped = false;
 			return 3;
 		}
-		return 1;
+		if(getItem() == null)
+			return 1; 
+		return 2;
 	}
 }

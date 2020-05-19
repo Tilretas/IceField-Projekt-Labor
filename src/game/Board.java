@@ -63,6 +63,7 @@ public class Board
 		createTiles(confTiles);
 		spawnPieces(confPieces);
 		generateItems(confItems);
+		drawBoard();
 	}
 	
 	/**
