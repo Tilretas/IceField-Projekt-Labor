@@ -41,7 +41,7 @@ public class View extends JFrame
 	 */
 	public View()
 	{
-		super("I miss my Coffin Niggas :'(");
+		super("Council of the Dark Eskimoes");
 		Game.getInstance().setView(this);
 		init();
 	}
@@ -74,7 +74,6 @@ public class View extends JFrame
 		Draw();
 		add(panel);
 		setLocation(500, 200);
-        //setMinimumSize(new Dimension(700, 700));
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         pack();
         setVisible(true);

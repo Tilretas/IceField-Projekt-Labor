@@ -14,21 +14,6 @@ public class Rope implements Item
 	public void used(Piece p, Tile t)
 	{
 		Game.getInstance().getView().getStatPanel().settext_area("Select a piece to save!");
-		/*Piece saved = getPiece();
-		if(saved == null)
-			return;
-		if(saved == p)
-		{
-			System.out.println("There's only one thing that you can use a rope on yourself for, and that stuff's waaaay too dark.");
-			return;
-		}
-		if(saved.getInWater())
-		{
-			saved.moved(p.getTile());
-			saved.setInWater(false);
-			saved.setSuffocate(false);
-			p.setActionPoints(p.getActionPoints() - 1);
-		}*/
 	}
 	
 	/**
@@ -45,18 +30,6 @@ public class Rope implements Item
 			saved.setSuffocate(false);
 			user.setActionPoints(user.getActionPoints() - 1);
 		}
-		/*Scanner scr = new Scanner(System.in);
-		System.out.println("Which piece do you want to save?(0-" + (Game.getInstance().getnOfPlayers()-1) + ")");
-		int idx = scr.nextInt();
-		if(idx < 0 || idx > Game.getInstance().getnOfPlayers()-1) 
-		{
-			System.out.println("There isn't a piece with that index!");
-			return null;
-		}
-		while(!Game.getInstance().getBoard().getPieces().get(idx).getInWater())
-			System.out.println("That piece isn't in da wa'er!");
-		
-		return Game.getInstance().getBoard().getPieces().get(idx);*/
 	}
 	
 	//getter - setterek -------------------------
