@@ -90,7 +90,7 @@ public class Game
 		}
 		else
 		{
-			instance.setText("\nSomeone died :( \nThe Coffin Dancers are on their way...");
+			instance.setText("Someone died :( \nThe Coffin Dancers are on their way...");
 			instance.getView().getStatPanel().setBackground(Color.RED);
 		}
 	}
@@ -161,6 +161,7 @@ public class Game
 	{
 		if(activeItem.getClass().equals(new Rope().getClass()) && activeAction == Action.UseItem)
 			new Rope().savePiece(activePlayer.getPiece(), p);
+		view.Refresh();
 	}
 	
 	public void NextPlayer() {
