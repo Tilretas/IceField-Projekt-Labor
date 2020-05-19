@@ -250,9 +250,9 @@ public class Board
 			s = 13;
 		for (int i = 0; i < Game.getInstance().getnOfPlayers(); i++) {
 			if (i % 2 == 0)
-				pieces.add(new Eskimo());
-			else
 				pieces.add(new Explorer());
+			else
+				pieces.add(new Eskimo());
 			pieces.get(i).setActionPoints(5);
 			pieces.get(i).moved(tiles.get(s));
 			Game.getInstance().getPlayers().get(i).setPiece(pieces.get(i));

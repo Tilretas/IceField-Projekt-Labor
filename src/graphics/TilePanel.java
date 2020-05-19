@@ -56,7 +56,10 @@ public class TilePanel extends JPanel
 		add(pieceP, BorderLayout.SOUTH);
 		
 		labelT.Draw(tile);
-		pieceP.Draw(tile.getPieces(), tile.getSnow());
+		int c = -1;
+		if(tile.getChecked())
+			c = tile.getCapacity();
+		pieceP.Draw(tile.getPieces(), tile.getSnow(), c);
 	}
 	
 	/**
@@ -64,7 +67,10 @@ public class TilePanel extends JPanel
 	 */
 	public void Refresh() {
 		labelT.Refresh();
-		pieceP.Draw(tile.getPieces(), tile.getSnow());
+		int c = -1;
+		if(tile.getChecked())
+			c = tile.getCapacity();
+		pieceP.Draw(tile.getPieces(), tile.getSnow(), c);
 	}
 
 }

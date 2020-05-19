@@ -191,8 +191,7 @@ public class Game
 		playerIdx++;
 		if(playerIdx >= nOfPlayers) {
 			playerIdx = 0;
-			snowStorm();
-			moveBear();
+			endRound();
 		}
 		activeItem = null;
 		activePlayer = players.get(playerIdx);
