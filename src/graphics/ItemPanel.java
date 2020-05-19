@@ -2,6 +2,8 @@ package graphics;
 
 import java.awt.Insets;
 import java.util.ArrayList;
+
+import javax.swing.BoxLayout;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -30,6 +32,7 @@ public class ItemPanel extends JPanel
 		revalidate();
 		repaint();
 		items.clear();
+		setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
 		if(itemlist.size() == 0)
 			setBorder(new EmptyBorder(new Insets(220, 80, 100, 80)));
 		else

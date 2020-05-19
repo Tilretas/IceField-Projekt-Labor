@@ -159,8 +159,9 @@ public class Game
 	
 	public void PiecePressed(Piece p)
 	{
-		if(activeItem.getClass().equals(new Rope().getClass()) && activeAction == Action.UseItem)
-			new Rope().savePiece(activePlayer.getPiece(), p);
+		if(activeItem != null)
+			if(activeItem.getClass().equals(new Rope().getClass()) && activeAction == Action.UseItem)
+				new Rope().savePiece(activePlayer.getPiece(), p);
 		view.Refresh();
 	}
 	

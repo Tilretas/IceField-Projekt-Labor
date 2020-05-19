@@ -17,9 +17,10 @@ public class Part implements Item
 		{
 			int counter = 0;
 			boolean sameTile = true;
-			for (Piece b : p.getTile().getPieces()) {
+			for (Piece b : Game.getInstance().getBoard().getPieces())
 				if(!p.getTile().equals(b.getTile()))
 					sameTile = false;
+			for (Piece b : p.getTile().getPieces()) {
 				for (Item i : b.getInventory()) 
 					if (this.getClass() == i.getClass())
 						counter++;
