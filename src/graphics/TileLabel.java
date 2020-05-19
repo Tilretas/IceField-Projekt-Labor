@@ -43,6 +43,10 @@ public class TileLabel extends JLabel
 			}
 			else i += 2;
 		}
+		if(i / 100 == 3)
+		{
+			i -= i % 10;
+		}
 		
 		switch (i) {
 		case 100:
