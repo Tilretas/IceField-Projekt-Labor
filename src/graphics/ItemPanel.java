@@ -2,7 +2,6 @@ package graphics;
 
 import java.awt.Insets;
 import java.util.ArrayList;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;

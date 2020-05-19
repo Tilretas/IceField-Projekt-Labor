@@ -1,7 +1,5 @@
 package game;
 
-import java.util.Scanner;
-
 /**
  * A kötélért, mint eszközért felelõs osztály.
  * Implementálja az Item interfészt

@@ -48,30 +48,6 @@ public class Game
 	}
 	
 	/**
-	 * A körökért felelõs függvény.
-	 * Addig megy, amíg nem nyernek vagy veszítenek a játékosok, vagy a 0 paranccsal nem lépnek ki. 
-	 */
-	/*public void play()
-	{
-		stop = false;
-		int p = 0;
-		while(!stop) 
-		{
-			//players.get(p).playerInput();
-			p++;
-			if(p >= nOfPlayers)
-			{
-				endRound();
-				p = 0;
-			}
-		}
-		if(testStart)
-		{
-			testMode();
-		}
-	}*/
-	
-	/**
 	 * A tesztmód elindításáért felelõs függvény.
 	 */
 	/*public void testMode()

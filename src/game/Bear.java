@@ -1,13 +1,10 @@
 package game;
 
-//import javax.swing.ImageIcon;
-
 /**
  * A medvéért felelõs osztály
  */
 public class Bear
 {
-	//public static ImageIcon pic = new GraphicsBear();
 	
 	/**
 	 * A mezõ, amelyiken a medve megtalálható
