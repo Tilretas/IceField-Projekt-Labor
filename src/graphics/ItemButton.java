@@ -32,7 +32,6 @@ public class ItemButton extends JRadioButton
 		addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent evt) {
 				Game.getInstance().setActiveItem(item);
-				//System.out.println(getText());
             }
         });
 	}

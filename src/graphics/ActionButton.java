@@ -30,7 +30,6 @@ public class ActionButton extends JRadioButton
             public void actionPerformed(ActionEvent evt) {
             	Action temp = Action.valueOf(getText());
 				Game.getInstance().setActiveAction(temp);
-				System.out.println(getText());
             }
         });
 	}

@@ -62,8 +62,14 @@ public abstract class Piece
 			if(onTile != null)
 				onTile.removePiece(this);
 			t.movedOn(this);			
-			if(t.getBear() == true)	
-				this.die();
+			if(t.getBear() == true) {
+				if(t.getShelter() != null) {
+					if(!t.getShelter().defend()) {
+						this.die();
+					}
+				}
+				else this.die();
+			}
 			actionPoints--;
 		}
 	}
