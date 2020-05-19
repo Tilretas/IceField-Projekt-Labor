@@ -32,7 +32,7 @@ public class Hole extends Tile
 	}
 	
 	public int getType() { 
-		if(getChecked())
+		if(getChecked() || getSnow() == 0)
 			return 3; 
 		return 1;
 	}
