@@ -16,12 +16,15 @@ public class Part implements Item
 		if(p.getTile().equals(t))
 		{
 			int counter = 0;
-			for (Piece b : p.getTile().getPieces()) 
+			boolean sameTile = true;
+			for (Piece b : p.getTile().getPieces()) {
+				if(!p.getTile().equals(b.getTile()))
+					sameTile = false;
 				for (Item i : b.getInventory()) 
 					if (this.getClass() == i.getClass())
 						counter++;
-			
-			if(counter >= 3) 
+			}
+			if(counter >= 3 && sameTile) 
 			{
 				for(Piece b : p.getTile().getPieces())
 					b.setActionPoints(b.getActionPoints() - 1);
