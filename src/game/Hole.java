@@ -34,7 +34,7 @@ public class Hole extends Tile
 	public int getType() { 
 		if(getSnow() == 0)
 			return 3; 
-		else return 1;
+		return 1;
 	}
 
 }

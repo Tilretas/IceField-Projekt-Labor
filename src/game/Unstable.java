@@ -5,9 +5,13 @@ package game;
  */
 public class Unstable extends Ice
 {
+	
+	private boolean flipped = false;
+	
 	public Unstable(int c, int s) {
 		super(c,s);
 	}
+	
 	/**
 	 * Az instabil jégtáblára léptetõ függvény
 	 * @param p A bábu ami odalép
@@ -31,5 +35,18 @@ public class Unstable extends Ice
 	{
 		for(Piece p : getPieces())
 			p.setInWater(true);
+		flipped = true;
+		Game.getInstance().setText("The tile has flipped!");
+	}
+	
+	@Override
+	public int getType() 
+	{
+		if(flipped)
+		{
+			flipped = false;
+			return 3;
+		}
+		return 1;
 	}
 }
