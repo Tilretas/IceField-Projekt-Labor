@@ -126,7 +126,9 @@ public class Player
 	{
 		if(piece.getTile().equals(t)) {
 			if (piece.getTile().getItem() == null)
-				System.out.println("There is no item to pick up!");
+				Game.getInstance().setText("There is no item to pick up!");
+			else if(t.getSnow() != 0)
+				Game.getInstance().setText("You need to remove the snow first!");
 			else
 				piece.pickUp();
 		}
