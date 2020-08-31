@@ -160,7 +160,7 @@ public class Game
 	public void PiecePressed(Piece p)
 	{
 		if(activeItem != null)
-			if(activeItem.getClass().equals(new Rope().getClass()) && activeAction == Action.UseItem)
+			if(activeItem.getName() == "Rope" && activeAction == Action.UseItem)
 				new Rope().savePiece(activePlayer.getPiece(), p);
 		view.Refresh();
 	}
