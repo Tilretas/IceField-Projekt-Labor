@@ -8,4 +8,4 @@ Your goal is to survive on an ice field, find all parts of a flare gun, in order
 
 ![](demo_pic.png)
 
-This was made by 5 students at BME-VIK for as a class submission.
+*This was made by 5 students at BME-VIK for as a class submission.*
